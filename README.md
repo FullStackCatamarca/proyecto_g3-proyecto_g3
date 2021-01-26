@@ -63,10 +63,10 @@ Mira los [tags en este repositorio](https://github.com/FullStackCatamarca/proyec
 _Quienes Levantamos este sitiio desde sus cimientos_
 
 * **Cesar Montiel** - [Cesarweb](https://github.com/cesarweb)
-* **Fulanito Detal** - [fulanitodetal](https://github.com/Dev-Gix)
+* **Jonathan Castillo** - [Dev-Gix](https://github.com/Dev-Gix)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/FullStackCatamarca/proyecto_g3-proyecto_g3/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md]() para detalles
+Este proyecto está bajo la Licencia ( # ) - mira el archivo [LICENSE.md](#) para detalles
