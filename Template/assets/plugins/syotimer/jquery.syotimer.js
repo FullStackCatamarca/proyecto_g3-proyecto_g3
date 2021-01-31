@@ -11,10 +11,10 @@
             day: ['день', 'дня', 'дней']
         },
         eng: {
-            second: ['second', 'seconds'],
-            minute: ['minute', 'minutes'],
-            hour: ['hour', 'hours'],
-            day: ['day', 'days']
+          second: ['segundo', 'segundos'],
+          minute: ['minuto', 'minutos'],
+          hour: ['hora', 'horas'],
+          day: ['dia', 'dias']
         }
     };
 
