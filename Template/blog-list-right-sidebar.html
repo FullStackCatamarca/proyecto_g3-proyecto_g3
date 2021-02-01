@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Blog Right Sidebar List View - Star Travel</title>
+    <title>Blog - Mis Viajes</title>
 
     <!-- Plugins css Style -->
     <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -53,28 +53,27 @@
   <!-- ====================================
   ——— HEADER
   ===================================== -->
-  <header class="header" id="pageTop">
+  <header class="header" id="pageTop">    
+
     <!-- Menu Zord -->
-    <nav class="nav-menuzord navbar-sticky">
+    <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
       <div class="container clearfix">
         <div id="menuzord" class="menuzord">
-          <a href="index.html" class="menuzord-brand">
-            <img class="lazyestload" data-src="assets/img/logo-color-big.png" src="assets/img/logo-color-big.png" alt="logo-img">
-          </a>
+          <a href="index.html" class="menuzord-logo-brand"></a>
 
           <div class="nav-item dropdown nav-item-left mr-0">
-            <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown"
-              role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">
               <i class="fa fa-search mr-0" aria-hidden="true"></i>
             </a>
           
             <div class="dropdown-menu dropdown-menu-right rounded-0">
               <form class="" action="index.html" method="post">
                 <div class="input-group input-group-sm">
-                  <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                  <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
                   <div class="input-group-append">
                     <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                      <span class="text-white text-uppercase font-weight-bold">Search</span>
+                      <span class="text-white text-uppercase font-weight-bold">Buscar</span>
                     </button>
                   </div>
                 </div>
@@ -83,189 +82,41 @@
           </div>
           
           <ul class="menuzord-menu menuzord-right">
-            <li class="">
-              <a class="" href="javascript:void(0)">Home</a>
-              <ul class="dropdown drop-up">
-                <li class="">
-                  <a href="index.html">Home Main</a>
-                </li>
-
-                <li class="">
-                  <a href="index-2.html">Home City</a>
-                </li>
-
-                <li class="">
-                  <a href="index-3.html">Home Destination</a>
-                </li>
-              </ul>
+            <li class=" active ">
+              <a class="" href="index.html">Portada</a>
             </li>
 
             <li class="">
-              <a href="javascript:void(0)">Tours</a>
-              <div class="megamenu drop-up">
-                <div class="megamenu-row">
-                  <div class="col4">
-                    <ul class="list-unstyled">
-                      <li>Tour Packages Grid View</li>
-                      <li class="">
-                        <a href="packages-grid-left-sidebar.html">Packages Sidebar Left</a>
-                      </li>
-
-                      <li class="">
-                        <a href="packages-grid-right-sidebar.html">Packages Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="packages-grid.html">Packages 3 Columns</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="col4">
-                    <ul class="list-unstyled">
-                      <li>Tour Packages List View</li>
-                      <li class="">
-                        <a href="packages-list-left-sidebar.html">Packages Sidebar Left</a>
-                      </li>
-                      
-                      <li class="">
-                        <a href="packages-list-right-sidebar.html">Packages Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="packages-list.html">Packages List</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="col4">
-                    <ul class="list-unstyled">
-                      <li>Single Package</li>
-                      <li class="">
-                        <a href="single-package-left-sidebar.html">Packages Sidebar Left</a>
-                      </li>
-
-                      <li class="">
-                        <a href="single-package-right-sidebar.html">Packages Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="single-package-fullwidth.html">Packages Fullwidth</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <a href="packages-grid-right-sidebar.html">Atracciones</a>
             </li>
 
             <li class="">
-              <a href="javascript:void(0)">Hotels</a>
-              <div class="megamenu drop-up">
-                <div class="megamenu-row">
-                  <div class="col3">
-                    <ul class="list-unstyled">
-                      <li>Hotels Grid View</li>
-
-                      <li class="">
-                        <a href="hotels-grid-left-sidebar.html">Hotels Sidebar Left</a>
-                      </li>
-
-                      <li class="">
-                        <a href="hotels-grid-right-sidebar.html">Hotels Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="hotels-grid.html">Hotels 3 Columns</a>
-                      </li>
-                    </ul>
-                  </div>
-            
-                  <div class="col3">
-                    <ul class="list-unstyled">
-                      <li>Hotels List View</li>
-                      <li class="">
-                        <a href="hotels-list-left-sidebar.html">Hotels Sidebar Left</a>
-                      </li>
-
-                      <li class="">
-                        <a href="hotels-list-right-sidebar.html">Hotels Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="hotels-list.html">Hotels List</a>
-                      </li>
-                    </ul>
-                  </div>
-            
-                  <div class="col3">
-                    <ul class="list-unstyled">
-                      <li>Single Hotel</li>
-                      <li class="">
-                        <a href="single-hotel-left-sidebar.html">Hotels Sidebar Left</a>
-                      </li>
-
-                      <li class="">
-                        <a href="single-hotel-right-sidebar.html">Hotels Sidebar Right</a>
-                      </li>
-
-                      <li class="">
-                        <a href="single-hotel-fullwidth.html">Hotels Fullwidth</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="col3">
-                    <ul class="list-unstyled">
-                      <li>Booking Steps</li>
-                      <li class="">
-                        <a href="booking-step-1.html">Step 1 - Personal Info</a>
-                      </li>
-
-                      <li class="">
-                        <a href="booking-step-2.html">Step 2 - Payment Info</a>
-                      </li>
-
-                      <li class="">
-                        <a href="booking-step-3.html">Step 3 - Confirmation</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <a href="hotels-list-right-sidebar.html">Hospedaje</a>
             </li>
 
             <li class="">
-              <a href="javascript:void(0)">Rental</a>
+              <a href="javascript:void(0)">Actividades</a>
 
               <ul class="dropdown drop-up">
                 <li class=" ||
                   ">
 
-                  <a href="javascript:void(0)">Cars</a>
+                  <a href="javascript:void(0)">Monumentos</a>
 
                   <ul class="dropdown drop-sub-menu-left drop-up">
                     <li class="">
                       <a href="cars-list.html">Cars List View</a>
                     </li>
-
-                    <li class="">
-                      <a href="cars-grid.html">Cars Grid View</a>
-                    </li>
                   </ul>
                 </li>
 
                 <li class=" ||
                   ">
 
-                  <a href="javascript:void(0)">Cruises</a>
-
+                  <a href="javascript:void(0)">Eventos</a>
                   <ul class="dropdown drop-sub-menu-left drop-up">
                     <li class="">
                       <a href="cruises-list.html">Cruises List View</a>
-                    </li>
-
-                    <li class="">
-                      <a href="cruises-grid.html">Cruises Grid View</a>
                     </li>
                   </ul>
                 </li>
@@ -273,112 +124,14 @@
             </li>
 
             <li class="">
-              <a href="javascript:void(0)">Pages</a>
+              <a href="javascript:void(0)">Mis Viajes</a>
               <ul class="dropdown drop-up">
                 <li class="">
-                  <a href="about-us.html">About Us</a>
+                  <a href="about-us.html">Acerca</a>
                 </li>
 
                 <li class="">
-                  <a href="contact.html">Contact Us</a>
-                </li>
-
-                <li class=" ||
-                     ||
-                    ">
-
-                  <a href="javascript:void(0)">Gallery</a>
-                  <ul class="dropdown drop-sub-menu-left drop-up">
-                    <li class="">
-                      <a href="gallery-grid.html">Gallery Grid</a>
-                    </li>
-
-                    <li class="">
-                      <a href="gallery-masonry.html">Gallery Masonry</a>
-                    </li>
-
-                    <li class="">
-                      <a href="gallery-photo-slider.html">Photo Slider</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class=" ||
-                    ">
-
-                  <a href="javascript:void(0)">Destinations</a>
-                  <ul class="dropdown drop-sub-menu-left drop-up">
-                    <li class="">
-                      <a href="destination-cities.html">Destination Cities</a>
-                    </li>
-
-                    <li class="">
-                      <a href="destination-single-city.html">Single Destination</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="">
-                    
-                  <a href="javascript:void(0)">Components</a>
-
-                  <ul class="dropdown drop-sub-menu-left drop-up navComponents">
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#alerts">Alerts</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#badge">Badge</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#breadcrumb">Breadcrumb</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#buttons">Buttons</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#collapse">Collapse</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#card">Card</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#forms">Forms</a>
-                    </li>
-
-                    <li class="scrolling">
-                      <a uk-scroll class="removeNav" href="components.html#dropdowns">Dropdowns</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#list-group">List Group</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#modal">Modal</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#navs">Navs</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a class="removeNav" href="components.html#pagination">Pagination</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#tooltips">Tooltips</a>
-                    </li>
-
-                    <li class="scrollNav">
-                      <a uk-scroll class="removeNav" href="components.html#progress">Progress</a>
-                    </li>
-                  </ul>
+                  <a href="contact.html">Contactanos</a>
                 </li>
 
                 <li><a href="404.html">404 Not Found</a></li>
@@ -387,105 +140,42 @@
               </ul>
             </li>
 
-            <li class=" active ">
-              <a href="javascript:void(0)">Blog</a>
-
-              <ul class="dropdown drop-up">
-                <li class=" ||
-                  ">
-
-                  <a href="javascript:void(0)">Blog Grid View</a>
-
-                  <ul class="dropdown drop-sub-menu-left drop-up">
-                    <li class="">
-                      <a href="blog-grid-three-col.html">Blog Grid 3 Col</a>
-                    </li>
-
-                    <li class="">
-                      <a href="blog-grid-two-col.html">Blog Grid 2 Col</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class=" active  ||
-                   ||
-                  ">
-
-                  <a href="javascript:void(0)">Blog List View</a>
-
-                  <ul class="dropdown drop-sub-menu-left drop-up">
-                    <li class=" active ">
-                      <a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a>
-                    </li>
-
-                    <li class="">
-                      <a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a>
-                    </li>
-
-                    <li class="">
-                      <a href="blog-list-fullwidth.html">Blog List Fullwidth</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class=" ||
-                    ">
-
-                  <a href="javascript:void(0)">Blog Single Post</a>
-
-                  <ul class="dropdown drop-sub-menu-left drop-up">
-                    <li class="">
-                      <a href="blog-single-right-sidebar.html">Blog Right Sidebar</a>
-                    </li>
-
-                    <li class="">
-                      <a href="blog-single-left-sidebar.html">Blog Left Sidebar</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+            <li class="">
+              <a href="blog-list-right-sidebar.html">Blog</a>
             </li>
 
             <li class="">
-              <a href="javascript:void(0)">Admin</a>
+              <a href="javascript:void(0)">Usuarios</a>
               <ul id="admin" class="dropdown drop-up">
                 <li class="">
-                  <a href="dashboard.html">Dashboard</a>
+                  <a href="dashboard.html">Panel</a>
                 </li>
 
                 <li class="">
-                  <a href="booking.html">Booking</a>
+                  <a href="profile.html">Perfil</a>
                 </li>
 
                 <li class="">
-                  <a href="profile.html">Profile</a>
+                  <a href="setting.html">Configuracion</a>
                 </li>
 
                 <li class="">
-                  <a href="setting.html">Settings</a>
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#signup">Unirte</a>
                 </li>
 
                 <li class="">
-                  <a href="javascript:void(0)" data-toggle="modal" data-target="#signup">Signup</a>
-                </li>
-
-                <li class="">
-                  <a href="javascript:void(0)" data-toggle="modal" data-target="#login">Login</a>
+                  <a href="javascript:void(0)" data-toggle="modal" data-target="#login">Ingresar</a>
                 </li>
               </ul>
             </li>
-
-            <!-- <li class="">
-              <a href="components.html">Components</a>
-            </li> -->
 
             <li class="py-4">
               <form class="d-lg-none" action="index.html" method="post">
                 <div class="input-group input-group-sm">
-                  <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                  <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
                   <div class="input-group-append">
                     <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                      <span class="text-white text-uppercase font-weight-bold">Search</span>
+                      <span class="text-white text-uppercase font-weight-bold">Buscar</span>
                     </button>
                   </div>
                 </div>
@@ -509,7 +199,7 @@
         <div class="col-lg-6">
           <div class="page-title-content">
             <div class="title-border">
-              <h2 class="text-uppercase text-white font-weight-bold">Blog List</h2>
+              <h2 class="text-uppercase text-white font-weight-bold">Blog</h2>
             </div>
             <p class="text-white mb-0"></p>
           </div>
@@ -846,7 +536,7 @@
           <div class="row">
             <div class="col-md-6 col-lg-12">
               <div class="bg-smoke border border-light-gray rounded p-3 mb-4">
-                <h3 class="mb-4">Search</h3>
+                <h3 class="mb-4">Buscar</h3>
                 <form class="form-subscribe mb-3" action="index.html" method="post">
                   <div class="input-group input-group-sm">
                     <input type="email" class="form-control form-control-sm border-0" required="" placeholder="">
@@ -864,7 +554,7 @@
                   <ul class="nav nav-tabs nav-justified blog-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" id="recent-tab" data-toggle="tab" href="#recent" role="tab"
-                        aria-controls="recent" aria-selected="true">Recent</a>
+                        aria-controls="recent" aria-selected="true">Reciente</a>
                     </li>
           
                     <li class="nav-item">
@@ -874,7 +564,7 @@
           
                     <li class="nav-item">
                       <a class="nav-link" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new"
-                        aria-selected="false">New</a>
+                        aria-selected="false">Nuevo</a>
                     </li>
                   </ul>
           
@@ -1132,7 +822,7 @@
           
             <div class="col-md-6 col-lg-12 d-none d-md-block">
               <div class="bg-smoke border border-light-gray rounded p-3 mb-4">
-                <h3 class="mb-4">Categories</h3>
+                <h3 class="mb-4">Categorias</h3>
           
                 <ul class="list-unstyled list-group list-group-flush">
                   <li class="list-group-item bg-transparent border-off-white border-top-0 p-0">
@@ -1243,7 +933,7 @@
         <ul class="nav nav-tabs nav-justified blog-tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="recent-blog-tab" data-toggle="tab" href="#recent-blog" role="tab" aria-controls="recent-blog"
-              aria-selected="true">Recent</a>
+              aria-selected="true">Reciente</a>
           </li>
     
           <li class="nav-item">
@@ -1253,7 +943,7 @@
     
           <li class="nav-item">
             <a class="nav-link" id="new-blog-tab" data-toggle="tab" href="#new-blog" role="tab" aria-controls="new-blog"
-              aria-selected="false">New</a>
+              aria-selected="false">Nuevo</a>
           </li>
         </ul>
     
@@ -1551,60 +1241,6 @@
           </li>
         </ul>
       </div>
-
-      <div class="bg-smoke border border-light-gray rounded p-3 mb-4 mb-lg-0">
-        <h3 class="mb-6">Instagram</h3>
-      
-        <div class="mb-2">
-          <div class="row px-2">
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-01.jpg" src="assets/img/blog/instagram-new-01.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-      
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-02.jpg" src="assets/img/blog/instagram-new-02.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-      
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-03.jpg" src="assets/img/blog/instagram-new-03.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="">
-          <div class="row px-2">
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-04.jpg" src="assets/img/blog/instagram-new-04.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-      
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-05.jpg" src="assets/img/blog/instagram-new-05.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-      
-            <div class="col-4 px-1">
-              <div class="img-overlay rounded">
-                <img class="w-100 lazyestload" data-src="assets/img/blog/instagram-new-06.jpg" src="assets/img/blog/instagram-new-06.jpg" alt="Generic placeholder image">
-                <a href="blog-single-right-sidebar.html" class="hover-img-overlay-dark"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -1617,7 +1253,7 @@
       <ul class="pagination justify-content-center align-items-center">
         <li class="page-item">
           <a class="page-link" href="javascript:void(0)" tabindex="-1">
-            <i class="fa fa-long-arrow-left d-none d-md-inline-block mr-md-1" aria-hidden="true"></i> Previous
+            <i class="fa fa-long-arrow-left d-none d-md-inline-block mr-md-1" aria-hidden="true"></i> Previo
           </a>
         </li>
     
@@ -1642,7 +1278,7 @@
         </li>
     
         <li class="page-item">
-          <a class="page-link" href="javascript:void(0)">Next
+          <a class="page-link" href="javascript:void(0)">Siguiente
             <i class="fa fa-long-arrow-right d-none d-md-inline-block ml-md-1" aria-hidden="true"></i>
           </a>
         </li>
@@ -1663,27 +1299,27 @@
     <footer class="footer">
       <div class="footer-bg-color py-9">
         <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
               <a class="d-inline-block" href="index.html">
                 <img class="w-100 mb-6 lazyestload" data-src="assets/img/logo-color-sm.png" src="assets/img/logo-color-sm.png" alt="img">
               </a>
-              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
+              <p class="mb-0">Una página web para incentivar el turismo. Nuestro deseo es concentrar la atención principalmente en los diferentes itinerarios y rutas relacionados a los monumentos, sitios culturales y atracciones de nuestra provincia.</p>
             </div>
     
             <div class="col-md-6 col-lg-3 mt-md-4 mb-7 mb-lg-0">
               <div class="title-tag">
-                <h6>Contact us</h6>
+                <h6>Contactenos</h6>
               </div>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
+              <p>Somos un Grupo de estudiantes realizando el curso DFS2020.</p>
               <ul class="list-unstyled mb-0">
                 <li class="media mb-2">
                   <div class="mr-3">
                     <i class="fa fa-home" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                     <a href="contact.html">61 Park Street, Fifth Avenue, NY</a>
+                     <a href="contact.html">Avenida Siempre Viva, 742, Springfield</a>
                   </div>
                 </li>
 
@@ -1692,7 +1328,7 @@
                     <i class="fa fa-phone" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                    <a href="tel:88657524332">[88] 657 524 332</a>
+                    <a href="tel:549383456789">[54] 383 456 789</a>
                   </div>
                 </li>
                 
@@ -1701,96 +1337,16 @@
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                    <a href="mailTo:info@star-travel.com">info@star-travel.com</a>
+                    <a href="mailTo:mail.misviajes@gmail.com">mail.misviajes@gmail.com</a>
                   </div>
                 </li>
               </ul>
             </div>
     
-            <div class="col-md-6 col-lg-3 mt-lg-4 mb-7 mb-md-0">
-              <div class="title-tag pb-1">
-                <h6>Gallery</h6>
-              </div>
-
-              <div class="row mr-auto gallery mb-2 mb-md-0">
-                <div class="col-4 mb-3">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-1.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-1.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-1.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4 mb-3">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-2.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-2.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-2.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4 mb-3">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-3.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-3.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-3.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-4.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-4.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-4.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-5.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-5.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-5.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <div class="media media-hover">
-                    <div class="content w-100">
-                      <img class="media-img lazyestload" data-src="assets/img/home/gallery/thumb-gallery-6.jpg"
-                        src="assets/img/home/gallery/thumb-gallery-6.jpg" alt="gallery-img">
-                      <a class="media-img-overlay" data-fancybox="footer-gallery" href="assets/img/home/gallery/gallery-6.jpg"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
             <div class="col-md-6 col-lg-3 mt-lg-4">
               <div class="title-tag">
-                <h6>Newsletter</h6>
+                <h6>Redes Sociales</h6>
               </div>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-              <form class="mb-6" action="index.html" method="post">
-                <div class="input-group input-group-sm">
-                  <input type="email" class="form-control form-control-sm form-transparent" required="" placeholder="Enter your email">
-                  <div class="input-group-append">
-                    <button class="input-group-text border-0 btn btn-append hover-bg-primary" type="submit">
-                      <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
 
               <ul class="list-inline d-flex mb-0">
                 <li class="mr-3 mr-lg-2 mr-xl-3">
@@ -1833,26 +1389,26 @@
           <div class="row align-items-center">
             <div class="col-md-6 order-1 order-md-0">
               <p class="mb-0 mb-md-0 text-md-left">Copyright &copy; 2021 All Rights Reserved by
-                <a href="http://www.iamabdus.com/" target="_blank">Abdus</a>
+                <a href="https://misviajes.somee.com/" target="_blank">misviajes</a>
               </p>
             </div>
             
             <div class="col-md-6">
               <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
                 <li class="mr-3">
-                  <a href="setting.html">Privacy policy</a>
+                  <a href="setting.html">Privacidad</a>
                 </li>
     
                 <li class="mr-3">
-                  <a href="about-us.html">About us</a>
+                  <a href="about-us.html">Acerca</a>
                 </li>
     
                 <li class="mr-3">
-                  <a href="contact.html">Support</a>
+                  <a href="contact.html">Soporte</a>
                 </li>
     
                 <li class="">
-                  <a href="blog-single-right-sidebar.html">Blog</a>
+                  <a href="blog-list-right-sidebar.html">Blog</a>
                 </li>
               </ul>
             </div>
@@ -1870,7 +1426,7 @@
       <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header rounded">
-            <h3 class="modal-title text-uppercase font-weight-bold">Create your account</h3>
+            <h3 class="modal-title text-uppercase font-weight-bold">Crea Tu Cuenta</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -1892,20 +1448,20 @@
               <div class="form-group form-check mb-0">
                 <input type="checkbox" class="form-check-input" id="exampleCheck4">
                 <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
-                  I agree to the terms of use and privacy.
+                  Acepto Los terminos y condiciones.
                 </label>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block text-uppercase">Login</button>
+              <button type="submit" class="btn btn-primary btn-block text-uppercase">Ingresar</button>
 
               <div class="text-uppercase text-center py-3">Or</div>
 
-              <button type="submit" class="btn btn-facebook btn-block text-uppercase">Login with facebook</button>
+              <button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
             </form>
           </div>
     
           <div class="modal-footer justify-content-center">
-            <p class="mb-1">Don’t have an Account? <a href="javascript:void(0)">Sign up</a></p>
+            <p class="mb-1">No tienes una cuenta? <a href="javascript:void(0)">Crear Cuenta</a></p>
           </div>
         </div>
       </div>
@@ -1916,7 +1472,7 @@
       <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header rounded">
-            <h3 class="modal-title text-uppercase font-weight-bold">Log in to your account</h3>
+            <h3 class="modal-title text-uppercase font-weight-bold">Ingresar con tu cuenta</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -1934,18 +1490,18 @@
               <div class="form-group form-check mb-0">
                 <input type="checkbox" class="form-check-input" id="exampleCheck5">
                 <label class="form-check-label text-gray-color mb-3" for="exampleCheck5">
-                  Remember me
+                  Recuerdame
                 </label>
-                <a class="pull-right" href="javascript:void(0)">Fogot Password?</a>
+                <a class="pull-right" href="javascript:void(0)">Olvisdastes tu contraseña?</a>
              </div>
-              <button type="submit" class="btn btn-primary btn-block text-uppercase">Login</button>
+              <button type="submit" class="btn btn-primary btn-block text-uppercase">Ingresar</button>
               <div class="text-uppercase text-center py-3">Or</div>
-              <button type="submit" class="btn btn-facebook btn-block text-uppercase">Login with facebook</button>
+              <button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
             </form>
           </div>
 
           <div class="modal-footer justify-content-center">
-            <p class="mb-1">Don’t have an Account? <a href="javascript:void(0)">Sign up</a></p>
+            <p class="mb-1">No tienes una cuenta? <a href="javascript:void(0)">Crear Cuenta</a></p>
           </div>
         </div>
       </div>
@@ -1956,7 +1512,7 @@
       <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header rounded">
-            <h3 class="modal-title text-uppercase font-weight-bold">Inquiry about tour</h3>
+            <h3 class="modal-title text-uppercase font-weight-bold">Consultas</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -1979,7 +1535,7 @@
                 <textarea class="form-control bg-smoke" rows="6" placeholder="Message"></textarea>
               </div>
     
-              <button type="submit" class="btn btn-primary text-uppercase">Submit</button>
+              <button type="submit" class="btn btn-primary text-uppercase">Enviar</button>
             </form>
           </div>
         </div>
