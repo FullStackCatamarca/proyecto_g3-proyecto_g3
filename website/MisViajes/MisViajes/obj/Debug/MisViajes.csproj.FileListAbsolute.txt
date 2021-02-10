@@ -1,0 +1,254 @@
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\MisViajes.dll.config
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\MisViajes.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\MisViajes.pdb
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csc.exe
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csc.exe.config
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csc.rsp
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csi.exe
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csi.exe.config
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\csi.rsp
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.AppContext.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Console.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.IO.Compression.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Net.Http.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Net.Sockets.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.ValueTuple.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\vbc.exe
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\vbc.exe.config
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\vbc.rsp
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\VBCSCompiler.exe
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Antlr3.Runtime.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\EntityFramework.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\EntityFramework.SqlServer.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Newtonsoft.Json.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Owin.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Helpers.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Mvc.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Optimization.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Razor.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.Razor.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\WebGrease.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Helpers.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Mvc.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Optimization.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.Razor.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\System.Web.WebPages.Razor.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Newtonsoft.Json.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Antlr3.Runtime.pdb
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\EntityFramework.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\EntityFramework.SqlServer.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.Helpers.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.Mvc.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.Optimization.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.Razor.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.WebPages.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\EntityFramework.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\obj\Debug\MisViajes.csprojAssemblyReference.cache
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\obj\Debug\MisViajes.csproj.CoreCompileInputs.cache
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\obj\Debug\MisViajes.csproj.CopyComplete
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\obj\Debug\MisViajes.dll
+C:\Users\cmontiel\Desktop\MisViajes\MisViajes\MisViajes\MisViajes\MisViajes\obj\Debug\MisViajes.pdb
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\MisViajes.dll.config
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\MisViajes.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\MisViajes.pdb
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csc.exe
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csc.exe.config
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csc.rsp
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csi.exe
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csi.exe.config
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\csi.rsp
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.AppContext.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Collections.Immutable.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Console.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Globalization.Calendars.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.IO.Compression.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.IO.FileSystem.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Net.Http.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Net.Sockets.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Reflection.Metadata.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.ValueTuple.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Xml.XPath.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\vbc.exe
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\vbc.exe.config
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\vbc.rsp
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\VBCSCompiler.exe
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\roslyn\VBCSCompiler.exe.config
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Antlr3.Runtime.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\EntityFramework.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\EntityFramework.SqlServer.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Google.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Web.Infrastructure.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Newtonsoft.Json.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Owin.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Helpers.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Mvc.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Optimization.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Razor.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.Deployment.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.Razor.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\WebGrease.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Helpers.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Mvc.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Optimization.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.Razor.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.Deployment.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\System.Web.WebPages.Razor.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Newtonsoft.Json.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Antlr3.Runtime.pdb
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\EntityFramework.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\EntityFramework.SqlServer.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Google.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.Helpers.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.Mvc.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.Optimization.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.Razor.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.WebPages.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\EntityFramework.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\EntityFramework.SqlServer.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Google.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\obj\Debug\MisViajes.csprojAssemblyReference.cache
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\obj\Debug\MisViajes.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\obj\Debug\MisViajes.csproj.CopyComplete
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\obj\Debug\MisViajes.dll
+D:\Desarrollo\Nueva carpeta (3)\proyecto_g3-proyecto_g3\website\MisViajes\MisViajes\obj\Debug\MisViajes.pdb

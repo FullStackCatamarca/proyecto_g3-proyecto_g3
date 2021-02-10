@@ -1,0 +1,30 @@
+﻿@using MisViajes.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "loginform" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", placeholder = "email" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", placeholder = "Password" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group form-check mb-0">
+        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label text-gray-color mb-3" })
+        <a class="pull-right" href="javascript:void(0)">Olvisdastes tu contraseña?</a>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block text-uppercase">Ingresar</button>
+    <div class="text-uppercase text-center py-3">Or</div>
+    <button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
+
+}
