@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using MisViajes.Models
+@model MisViajes.Models.RegisterViewModel
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,21 +11,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@ViewBag.Title - DFS 2020</title>
-    <link href="../assets/plugins/isotope/isotope.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/selectric/selectric.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/daterangepicker/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/dzsparallaxer/dzsparallaxer.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/css/star.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/animate/animate.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" type="text/css"/>
-    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/plugins/isotope/isotope.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/selectric/selectric.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/daterangepicker/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/dzsparallaxer/dzsparallaxer.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/star.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/animate/animate.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png" />
 
 </head>
 
@@ -55,10 +58,16 @@
     <header class="header" id="pageTop">
 
         <!-- Menu Zord -->
-        <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
+        <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky" id="NavBar">
             <div class="container clearfix">
                 <div id="menuzord" class="menuzord">
-                    @Html.ActionLink(" ", "Index", "Home", null, new { @class = "menuzord-logo-brand" })
+                    <!-- Menu Zord For Index -->
+                    @Html.ActionLink(" ", "Index", "Home", null, new { @class = "menuzord-logo-brand", id = "LogoBlack" })
+
+                    <!-- Menu Zord for Dashboar (view script in dashboar) -->
+                    <a href='@Url.Action("Index", "Home")' class="menuzord-brand" style="display:none" id="LogoColor">
+                        <img src='@Url.Content("../assets/img/logo-color-big.png")' />
+                    </a>
 
                     <div class="nav-item dropdown nav-item-left mr-0">
                         <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -108,8 +117,7 @@
                                     </ul>
                                 </li>
 
-                                <li class=" ||
-                  ">
+                                <li class=" || ">
 
                                     <a href="javascript:void(0)">Eventos</a>
                                     <ul class="dropdown drop-sub-menu-left drop-up">
@@ -327,7 +335,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @Html.Partial("_USingUp")
+                    @{
+                        ViewDataDictionary RdataDictionary = new ViewDataDictionary<RegisterViewModel>(Model);
+                        RdataDictionary.TemplateInfo.HtmlFieldPrefix = "S";
+                    }
+                    @Html.Partial("_USingUp", RdataDictionary);
+
+
                 </div>
             </div>
         </div>
@@ -344,7 +358,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @Html.Partial("_ULogIn")
+                    @Html.Partial("_ULogIn");
                 </div>
 
                 <div class="modal-footer justify-content-center">
@@ -413,43 +427,56 @@
     <script src="../assets/plugins/smoothscroll/SmoothScroll.js"></script>
 
     <script type="text/javascript">
-        $("#loginform").submit(function (event) {
-            if $("#loginform").validate() {
+        $("#BttnLogin").click(function (event) {
+            if ($("#loginform").validate()) {
                 var form = $('#__AjaxAntiForgeryForm');
                 var token = $('input[name="__RequestVerificationToken"]', form).val();
                 var data = $('#loginform').serialize();
-                console.log(data);
                 $.ajax({
                     url: '@Url.Action("Login", "Account")',
                     type: 'POST',
                     data: data,
                     success: function (result) {
-                        alert(result.someValue);
+                        if (result.ok == false) {
+                            $("#ValLog").text(result.message);
+                            $("#ValLog").show();
+                        }
+                        if (result.ok == true) {
+                            window.location.replace(result.message);
+                        }
                     }
                 });
                 return false;
             }
         });
 
-        $("#formRegister").submit(function (event) {
-            if $("#loginform").validate() {
+        $("#BttnSingIn").click(function (event) {
+            if ($("#formRegister").validate()) {
                 var form = $('#__AjaxAntiForgeryForm');
                 var token = $('input[name="__RequestVerificationToken"]', form).val();
                 var data = $('#formRegister').serialize();
+                data = data.replace("S.Email=", "Email=");
+                data = data.replace("S.Password=", "Password=");
+                data = data.replace("S.ConfirmPassword=", "ConfirmPassword=");
                 console.log(data);
                 $.ajax({
                     url: '@Url.Action("Register", "Account")',
                     type: 'POST',
                     data: data,
                     success: function (result) {
-                        alert(result.someValue);
+                        if (result.ok == false) {
+                            $("#ValSing").text(result.message);
+                            $("#ValSing").show();
+                        }
+                        if (result.ok == true) {
+                            window.location.replace(result.message);
+                        }
                     }
                 });
                 return false;
             }
         });
     </script>
-    "~/Scripts/jquery.validate*"));
     <script src="../scripts/jquery.validate.min.js"></script>">
     @RenderSection("scripts", required: false)
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->

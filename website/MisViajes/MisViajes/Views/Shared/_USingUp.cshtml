@@ -5,10 +5,12 @@
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "", id = "formRegister" }))
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="validation-summary-valid text-danger">
+        <p id="ValSing" style="display:none"></p>
+    </div>
 
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", placeholder = "Email" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", type = "email", placeholder = "Email" })
     </div>
 
     <div class="form-group">
@@ -20,19 +22,16 @@
     </div>
 
     <div class="form-group form-check mb-0">
-        <input type="checkbox" class="form-check-input" id="exampleCheck4">
+        <input type="checkbox" class="form-check-input" id="exampleCheck4" required="Required">
         <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
             Acepto Los terminos y condiciones.
         </label>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block text-uppercase">Ingresar</button>
+}
+
+<button type="button" id="BttnSingIn" class="btn btn-primary btn-block text-uppercase">Registrarse</button>
 
     <div class="text-uppercase text-center py-3">Or</div>
 
     <button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

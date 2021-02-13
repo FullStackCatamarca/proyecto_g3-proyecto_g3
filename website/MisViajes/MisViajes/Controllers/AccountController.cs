@@ -78,14 +78,14 @@ namespace MisViajes.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return Json(new { ok = true, message = (returnUrl == null) ? "../Home/Dashboard" : returnUrl });
                 case SignInStatus.LockedOut:
                     return Json(new { ok = false, message = "Usuario Bloqueado. Intenre mas trade." });
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
+                    return Json(new { ok = false, message = "Usuario o contraseña no válido." });
                 default:
-                    ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
                     return Json(new { ok = false, message = "Intento de inicio de sesión no válido." });
             }
         }
@@ -148,27 +148,39 @@ namespace MisViajes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            Microsoft.AspNet.Identity.IdentityResult result= new IdentityResult();
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
                     // Enviar correo electrónico con este vínculo
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return Json(new { ok = true, message = "../Home/Dashboard" });
                 }
-                AddErrors(result);
+                return Json(new { ok = false, message = string.Join(", ", result.Errors) });
+            }
+            var errors = ModelState.Select(x => x.Value.Errors)
+                           .Where(y => y.Count > 0)
+                           .ToList();
+            string err = "";
+            foreach (var er in errors)
+            {
+                foreach (var e in er)
+                    err += " " + e.ErrorMessage.ToString();
             }
 
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-            return View(model);
+            return Json(new { ok = false, message = string.Join(", ", err)});
         }
 
         //

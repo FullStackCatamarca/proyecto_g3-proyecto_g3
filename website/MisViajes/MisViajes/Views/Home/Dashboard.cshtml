@@ -2,9 +2,8 @@
 @{
     ViewBag.Title = "Dashboard";
 }
-
-<div class="main-wrapper dashboard" style="margin-top: 35px;">
-
+    
+<div class="main-wrapper dashboard">
 
     <!-- Header dashboard -->
     <section class="section-top">
@@ -718,6 +717,13 @@
         </div>
     </section>
 
+    @section Scripts{
+        <script type="text/javascript">
+            $("#LogoBlack").hide();
+            $("#LogoColor").show();
+            $("#NavBar").toggleClass("nav-menuzord-transparent");
+            
 
-
-</div><!-- element wrapper ends -->
+        </script>
+        }
+</div >< !--element wrapper ends-- >
