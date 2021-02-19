@@ -57,13 +57,13 @@
                         <li class="nav-item dropdown nav-item-left mr-0">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">
-                                <img src="assets/img/dashboard/dash-user.jpg" data-src="assets/img/dashboard/dash-user.jpg" alt="Generic placeholder image" class="w-100 rounded-circle mr-1 lazyestload">
+                                <img src="../assets/img/dashboard/dash-user.jpg" data-src="../assets/img/dashboard/dash-user.jpg" alt="Generic placeholder image" class="w-100 rounded-circle mr-1 lazyestload">
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right dropdown-left">
                                 <ul class="list-unstyled list-group list-group-flush">
                                     <li class="">
-                                        <a href="Home/Profile" class="list-group-item rounded-0 border-bottom first-child">
+                                        <a href="../Home/Profile" class="list-group-item rounded-0 border-bottom first-child">
                                             <h5 class="fon-size-15 text-dark">Perfil</h5>
                                         </a>
                                     </li>
@@ -95,7 +95,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link " href="Home/Profile">
+                            <a class="nav-link " href="../Home/Profile">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span>Perfil</span>
                             </a>
@@ -151,7 +151,7 @@
 
                             <li class="nav-item dropdown nav-item-left mr-0">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/img/dashboard/dash-user.jpg" data-src="assets/img/dashboard/dash-user.jpg" alt="Generic placeholder image" class="w-100 rounded-circle mr-1 lazyestload">
+                                    <img src="../assets/img/dashboard/dash-user.jpg" data-src="../assets/img/dashboard/dash-user.jpg" alt="Generic placeholder image" class="w-100 rounded-circle mr-1 lazyestload">
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right dropdown-left">
@@ -194,7 +194,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-5 col-xl-4">
                         <div class="mb-6 mb-md-0">
-                            <img class="w-100 lazyestload" data-src="assets/img/dashboard/profile-img-01.jpg" src="assets/img/dashboard/profile-img-01.jpg" alt="Generic placeholder image">
+                            <img class="w-100 lazyestload" data-src="../assets/img/dashboard/profile-img-01.jpg" src="../assets/img/dashboard/profile-img-01.jpg" alt="Generic placeholder image">
                         </div>
                     </div>
 
@@ -402,7 +402,7 @@
                             <div class="bg-white rounded p-5">
                                 <div class="media meta-post-sm border-bottom border-off-white pb-3 mb-3">
                                     <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="assets/img/blog/tab-02.jpg" src="assets/img/blog/tab-02.jpg" alt="Generic placeholder image">
+                                        <img class="lazyestload" data-src="../assets/img/blog/tab-02.jpg" src="../assets/img/blog/tab-02.jpg" alt="Generic placeholder image">
                                         <a href="" class="hover-img-overlay-dark"></a>
                                     </div>
 
@@ -422,7 +422,7 @@
 
                                 <div class="media meta-post-sm ">
                                     <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="assets/img/blog/tab-04.jpg" src="assets/img/blog/tab-04.jpg" alt="Generic placeholder image">
+                                        <img class="lazyestload" data-src="../assets/img/blog/tab-04.jpg" src="../assets/img/blog/tab-04.jpg" alt="Generic placeholder image">
                                         <a href="" class="hover-img-overlay-dark"></a>
                                     </div>
 
@@ -466,6 +466,16 @@
         </div>
     </section>
 
+
+    @section Scripts{
+        <script type="text/javascript">
+            $("#LogoBlack").hide();
+            $("#LogoColor").show();
+            $("#NavBar").toggleClass("nav-menuzord-transparent");
+
+
+        </script>
+    }
 
 
 </div><!-- element wrapper ends -->
