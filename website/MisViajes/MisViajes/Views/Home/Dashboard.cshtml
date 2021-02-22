@@ -1,8 +1,9 @@
-﻿
+﻿@using MisViajes.Extensions
+
 @{
-    ViewBag.Title = "Dashboard";
+    ViewBag.Title = "Panel De Usuario";
 }
-    
+
 <div class="main-wrapper dashboard">
 
     <!-- Header dashboard -->
@@ -75,7 +76,7 @@
                                     </li>
 
                                     <li class="">
-                                        <a href="javascript:void(0)" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
+                                        <a href="../Account/LogOff" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
                                             <h5 class="fon-size-15 text-dark">Salir</h5>
                                         </a>
                                     </li>
@@ -169,7 +170,7 @@
                                         </li>
 
                                         <li class="">
-                                            <a href="javascript:void(0)" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
+                                            <a href="../Account/LogOff" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
                                                 <h5 class="fon-size-15 text-dark">Salir</h5>
                                             </a>
                                         </li>
@@ -190,7 +191,8 @@
     <section class="py-9">
         <div class="container">
             <div class="mb-7">
-                <h2 class="text-uppercase font-size-22 font-weight-semibold">Hi Sergey Karen, Welcome to <span class="text-primary"> Star travel!</span></h2>
+
+                <h2 class="text-uppercase font-size-22 font-weight-semibold">Hola @User.Identity.GetFullName() Bienveniado a <span class="text-primary"> Mis Viajes</span></h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua.
@@ -722,8 +724,8 @@
             $("#LogoBlack").hide();
             $("#LogoColor").show();
             $("#NavBar").toggleClass("nav-menuzord-transparent");
-            
+
 
         </script>
-        }
-</div >< !--element wrapper ends-- >
+    }
+</div>

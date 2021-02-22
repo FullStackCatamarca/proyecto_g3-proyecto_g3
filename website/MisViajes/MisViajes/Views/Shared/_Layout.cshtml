@@ -1,6 +1,4 @@
 ﻿@using MisViajes.Models
-@model MisViajes.Models.RegisterViewModel
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,26 +151,31 @@
                         <li class="">
                             <a href="javascript:void(0)">Usuarios</a>
                             <ul id="admin" class="dropdown drop-up">
-                                <li class="">
-                                    <a href="Home/Dashboard">Panel</a>
-                                </li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="">
+                                        <a href="Home/Dashboard">Panel</a>
+                                    </li>
 
-                                <li class="">
-                                    <a href="Home/Profile">Perfil</a>
-                                </li>
+                                    <li class="">
+                                        <a href="Home/Profile">Perfil</a>
+                                    </li>
 
-                                <li class="">
-                                    <a href="setting.html">Configuracion</a>
-                                </li>
+                                    <li class="">
+                                        <a href="setting.html">Configuracion</a>
+                                    </li>
+                                }
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li class="">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#signup">Unirte</a>
+                                    </li>
 
-                                <li class="">
-                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#signup">Unirte</a>
-                                </li>
-
-                                <li class="">
-                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#login">Ingresar</a>
-                                </li>
-                            </ul>
+                                    <li class="">
+                                        <a href="javascript:void(0)" data-toggle="modal" data-target="#login">Ingresar</a>
+                                    </li>
+                                }
+                                </ul>
                         </li>
 
                         <li class="py-4">
@@ -335,13 +338,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @{
-                        ViewDataDictionary RdataDictionary = new ViewDataDictionary<RegisterViewModel>(Model);
-                        RdataDictionary.TemplateInfo.HtmlFieldPrefix = "S";
-                    }
-                    @Html.Partial("_USingUp", RdataDictionary);
-
-
+                    @Html.Partial("_USingUP", new RegisterViewModel());
                 </div>
             </div>
         </div>
@@ -358,12 +355,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    @Html.Partial("_ULogIn");
+                    @Html.Partial("_ULogIn", new LoginViewModel());
                 </div>
 
                 <div class="modal-footer justify-content-center">
 
-                    <p class="mb-1">No tienes una cuenta? <a href="javascript:void(0)" data-toggle="modal" data-target="#signup">Crear Cuenta</a></p>
+                    <p class="mb-1">No tienes una cuenta? <a href="javascript:void(0)" data-toggle="modal" data-target="#signup" id="CrearC">Crear Cuenta</a></p>
                 </div>
             </div>
         </div>
@@ -448,6 +445,10 @@
                 });
                 return false;
             }
+        });
+
+        $("#CrearC").click(function (event) {
+            $('#login').modal('toggle');
         });
 
         $("#BttnSingIn").click(function (event) {

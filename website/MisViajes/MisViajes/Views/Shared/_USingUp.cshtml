@@ -1,6 +1,9 @@
 ﻿@using MisViajes.Models
 @model RegisterViewModel
-@{}
+
+@{
+    ViewBag.Title = "Registrarse";
+}
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "", id = "formRegister" }))
 {
@@ -10,15 +13,15 @@
     </div>
 
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", type = "email", placeholder = "Email" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", id = "S.Email=", type = "email", placeholder = "Email" })
     </div>
 
     <div class="form-group">
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", placeholder = "Password" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", id = "S.Password=", placeholder = "Password" })
     </div>
 
     <div class="form-group">
-        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-smoke", placeholder = "Confirmar Password" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-smoke", id = "S.ConfirmPassword=", placeholder = "Confirmar Password" })
     </div>
 
     <div class="form-group form-check mb-0">
@@ -32,6 +35,6 @@
 
 <button type="button" id="BttnSingIn" class="btn btn-primary btn-block text-uppercase">Registrarse</button>
 
-    <div class="text-uppercase text-center py-3">Or</div>
+<div class="text-uppercase text-center py-3">Or</div>
 
-    <button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
+<button type="submit" class="btn btn-facebook btn-block text-uppercase">Ingresar con facebook</button>
