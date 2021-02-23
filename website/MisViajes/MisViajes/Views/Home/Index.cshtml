@@ -3,7 +3,7 @@
 }
 
 
-<div class="main-wrapper home-main">
+<div class="main-wrapper home-main nav-menuzord-transparent">
 
 
     <!-- ====================================
@@ -295,3 +295,11 @@
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
     </div>
+    @section Scripts{
+        <script type="text/javascript">
+            $("#LogoBlack").show();
+            $("#LogoColor").hide();
+            $("#NavBar").toggleClass("nav-menuzord-transparent");
+        </script>
+    }
+

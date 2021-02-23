@@ -56,14 +56,14 @@
     <header class="header" id="pageTop">
 
         <!-- Menu Zord -->
-        <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky" id="NavBar">
+        <nav class="nav-menuzord  navbar-sticky" id="NavBar">
             <div class="container clearfix">
                 <div id="menuzord" class="menuzord">
                     <!-- Menu Zord For Index -->
-                    @Html.ActionLink(" ", "Index", "Home", null, new { @class = "menuzord-logo-brand", id = "LogoBlack" })
+                    @Html.ActionLink(" ", "Index", "Home", null, new { @class = "menuzord-logo-brand", id = "LogoBlack", @style = "display:none" })
 
                     <!-- Menu Zord for Dashboar (view script in dashboar) -->
-                    <a href='@Url.Action("Index", "Home")' class="menuzord-brand" style="display:none" id="LogoColor">
+                    <a href='@Url.Action("Index", "Home")' class="menuzord-brand"  id="LogoColor">
                         <img src='@Url.Content("../assets/img/logo-color-big.png")' />
                     </a>
 
@@ -404,6 +404,7 @@
 
 
     <!-- Javascript -->
+
     <script src="../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/plugins/menuzord/js/menuzord.js"></script>
