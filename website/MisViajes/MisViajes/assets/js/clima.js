@@ -150,7 +150,7 @@ function mostrarTemperatura({ weather: [{ icon }], main: { temp, temp_max, temp_
 
     setTimeout(() => {
         limpiarHtml(informacionClima);
-    },7000)
+    },18000)
 }
 
 
