@@ -1,10 +1,11 @@
-﻿@{
+﻿@model List<MisViajes.Models.Departamentos>
+@{
     ViewBag.Title = "Portada Mis Viajes";
 }
 
 
-<div class="main-wrapper home-main nav-menuzord-transparent">
 
+<div class="main-wrapper home-main nav-menuzord-transparent">
 
     <!-- ====================================
     ———	BANNER SECTION
@@ -295,11 +296,79 @@
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
     </div>
+
+    <!--Barra para la Busqueda del Clima-->
+
+    <div class="clima" id="clima">
+
+        <div class="text-center informacion-clima" id="informacion-clima">
+
+        </div>
+        <div id="menu-BusquedaClima" class="d-flex justify-content-center align-items-center bg-dark p-2">
+            <div class="row container ">
+                <div class="col-12 col-lg-3">
+                    <p class="fs-5 text-uppercase text-white m-0 mt-2 text-lg-end">Buscar Clima en :</p>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <select class="form-control " id="selectDepartamentos">
+                        <option value="" disabled selected>Seleccione un Departamento</option>
+                    </select>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <select class="form-control" id="selectLocalidades">
+                        <option value="" selected disabled>Seleccione una Localidad</option>
+                    </select>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <input class="btn   text-white" style="background-color:#fd7e14;" type="button" value="Buscar" id="consultarClima">
+                </div>
+            </div>
+        </div>
+    </div>
+    
     @section Scripts{
+
         <script type="text/javascript">
+
             $("#LogoBlack").show();
             $("#LogoColor").hide();
             $("#NavBar").toggleClass("nav-menuzord-transparent");
+
+
+
+            //CLIMA
+            document.addEventListener("DOMContentLoaded", function () {
+
+                //Obtenemos los Departamentos
+                $.ajax({
+                    url: ("@Url.Content("~/Home/ObtenerDepartamentos")"),
+                    type: 'GET',
+                    success: function (response) {
+                        mostrarDpto(response);
+                    }
+                });
+
+            });
+
+            document.querySelector('#selectDepartamentos').addEventListener("change", function () {
+
+                let idDpto = parseInt(document.querySelector('#selectDepartamentos').value);
+
+               //Obtenemos las Localidades
+            $.ajax({
+                url: ("@Url.Content("~/Home/ObtenerLocalidades")"),
+                type: 'POST',
+                data: { idDepartamento: idDpto },
+                success: function (response) {
+                    mostrarLocl(response);
+
+                }
+            });
+
+            })
+
         </script>
+        <script src="~/assets/js/clima.js"></script>
+
     }
 
