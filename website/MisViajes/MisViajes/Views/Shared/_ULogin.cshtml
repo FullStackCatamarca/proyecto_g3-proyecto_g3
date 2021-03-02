@@ -11,18 +11,18 @@
         <p id="ValLog" style="display:none"></p>
     </div>
     <div class="form-group">
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", type = "email", placeholder = "email" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", type = "email", placeholder = "email", id = "L.Email=" })
         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", placeholder = "Password" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", placeholder = "Password", id = "L.Password=" })
         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group form-check mb-0">
         @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
-        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label text-gray-color mb-3" })
+        @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label text-gray-color mb-3", id = "L.RememberMe=" })
         <a class="pull-right" href="../Account/ForgotPassword">Olvidastes tu contraseña?</a>
         <div class="text-center">
             <a class="justify-content-center" href="../Account/ForgotEmailConfirm">Confirmastes tu correo?</a>

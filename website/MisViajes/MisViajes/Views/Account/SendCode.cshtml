@@ -2,22 +2,58 @@
 @{
     ViewBag.Title = "Enviar";
 }
-
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Enviar código de verificación</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-8">
-            Seleccione el proveedor de autenticación en dos fases:
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Enviar" class="btn btn-default" />
+<div class="main-wrapper element-title">
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken"
+             style="background-image: url(../assets/img/pages/page-title-bg5.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">@ViewBag.Title</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-}
+    </section>
+
+    <!-- ====================================
+    ———	CONTACT INFO SECTION
+    ===================================== -->
+    <section class="py-9 pt-md-10">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 col-lg-6 col-xl-7">
+
+                    @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("rememberMe", @Model.RememberMe)
+                        <h4>Enviar código de verificación</h4>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-8">
+                                Seleccione el proveedor de autenticación en dos fases:
+                                @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+                                <input type="submit" value="Enviar" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- element wrapper ends -->
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

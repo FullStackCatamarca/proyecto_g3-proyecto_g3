@@ -76,7 +76,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right rounded-0">
-                            <form class="" action="index.html" method="post">
+                            <form class="" action="@Url.Action("Index", "Home")" method="post">
                                 <div class="input-group input-group-sm">
                                     <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
                                     <div class="input-group-append">
@@ -112,7 +112,7 @@
 
                                     <ul class="dropdown drop-sub-menu-left drop-up">
                                         <li class="">
-                                            <a href="cars-list.html">Cars List View</a>
+                                            <a href="@Url.Action("Index", "Home")">Cars List View</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -122,7 +122,7 @@
                                     <a href="javascript:void(0)">Eventos</a>
                                     <ul class="dropdown drop-sub-menu-left drop-up">
                                         <li class="">
-                                            <a href="cruises-list.html">Cruises List View</a>
+                                            <a href="@Url.Action("Index", "Home")">Cruises List View</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -133,21 +133,21 @@
                             <a href="javascript:void(0)">Mis Viajes</a>
                             <ul class="dropdown drop-up">
                                 <li class="">
-                                    <a href="Home/About">Acerca</a>
+                                    <a href="@Url.Action("About", "Home")">Acerca</a>
                                 </li>
 
                                 <li class="">
-                                    <a href="Home/Contact">Contactanos</a>
+                                    <a href="@Url.Action("Contact", "Home")">Contactanos</a>
                                 </li>
 
-                                <li><a href="404.html">404 Not Found</a></li>
+                                @*<li><a href="404.html">404 Not Found</a></li>
 
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>*@
                             </ul>
                         </li>
 
                         <li class="">
-                            <a href="blog-list-right-sidebar.html">Blog</a>
+                            <a href="@Url.Action("Index", "Home")">Blog</a>
                         </li>
 
                         <li class="">
@@ -156,15 +156,15 @@
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                     <li class="">
-                                        <a href="Home/Dashboard">Panel</a>
+                                        <a href="@Url.Action("Dashboard", "Home")">Panel</a>
                                     </li>
 
                                     <li class="">
-                                        <a href="Home/Profile">Perfil</a>
+                                        <a href="@Url.Action("Profile", "Home")">Perfil</a>
                                     </li>
 
                                     <li class="">
-                                        <a href="setting.html">Configuracion</a>
+                                        <a href="@Url.Action("Index", "Home")">Configuracion</a>
                                     </li>
                                 }
                                 @if (!User.Identity.IsAuthenticated)
@@ -181,7 +181,7 @@
                         </li>
 
                         <li class="py-4">
-                            <form class="d-lg-none" action="index.html" method="post">
+                            <form class="d-lg-none" action="@Url.Action("Index", "Home")" method="post">
                                 <div class="input-group input-group-sm">
                                     <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
                                     <div class="input-group-append">
@@ -209,7 +209,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
-                        <a class="d-inline-block" href="index.html">
+                        <a class="d-inline-block" href="@Url.Action("Index", "Home")">
                             <img class="w-100 mb-6 lazyestload" data-src="../assets/img/logo-color-sm.png" src="../assets/img/logo-color-sm.png" alt="img">
                         </a>
                         <p class="mb-0">Una página web para incentivar el turismo. Nuestro deseo es concentrar la atención principalmente en los diferentes itinerarios y rutas relacionados a los monumentos, sitios culturales y atracciones de nuestra provincia.</p>
@@ -305,19 +305,19 @@
                     <div class="col-md-6">
                         <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
                             <li class="mr-3">
-                                <a href="setting.html">Privacidad</a>
+                                <a href="@Url.Action("Index", "Home")">Privacidad</a>
                             </li>
 
                             <li class="mr-3">
-                                <a href="about">Acerca</a>
+                                <a href="@Url.Action("About", "Home")">Acerca</a>
                             </li>
 
                             <li class="mr-3">
-                                <a href="Home/Contact">Soporte</a>
+                                <a href="@Url.Action("Contact", "Home")">Soporte</a>
                             </li>
 
                             <li class="">
-                                <a href="blog-list-right-sidebar.html">Blog</a>
+                                <a href="@Url.Action("Index", "Home")">Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -380,7 +380,7 @@
                     </button>
                 </div>
                 <div class="modal-body pb-3">
-                    <form class="" action="index.html" method="post">
+                    <form class="" action="@Url.Action("Index", "Home")" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control bg-smoke" required="" placeholder="Your Name">
                         </div>
@@ -430,9 +430,14 @@
     <script type="text/javascript">
         $("#BttnLogin").click(function (event) {
             if ($("#loginform").validate()) {
+                $("#preloader").css("opacity", "0.3");
+                $("#preloader").show();
                 var form = $('#__AjaxAntiForgeryForm');
                 var token = $('input[name="__RequestVerificationToken"]', form).val();
                 var data = $('#loginform').serialize();
+                data = data.replace("L.Email=", "Email=");
+                data = data.replace("L.Password=", "Password=");
+                data = data.replace("L.RememberMe=", "RememberMe=");
                 $.ajax({
                     url: '@Url.Action("Login", "Account")',
                     type: 'POST',
@@ -441,12 +446,17 @@
                         if (result.ok == false) {
                             $("#ValLog").text(result.message);
                             $("#ValLog").show();
+                            $("#preloader").hide();
+                            $("#preloader").css("opacity", "1");
                         }
                         if (result.ok == true) {
                             window.location.replace(result.message);
+                            $("#preloader").hide();
+                            $("#preloader").css("opacity", "1");
                         }
                     }
                 });
+                
                 return false;
             }
         });
@@ -457,6 +467,8 @@
 
         $("#BttnSingIn").click(function (event) {
             if ($("#formRegister").validate()) {
+                $("#preloader").css("opacity", "0.3");
+                $("#preloader").show();
                 var form = $('#__AjaxAntiForgeryForm');
                 var token = $('input[name="__RequestVerificationToken"]', form).val();
                 var data = $('#formRegister').serialize();
@@ -472,9 +484,13 @@
                         if (result.ok == false) {
                             $("#ValSing").text(result.message);
                             $("#ValSing").show();
+                            $("#preloader").hide();
+                            $("#preloader").css("opacity", "1");
                         }
                         if (result.ok == true) {
                             window.location.replace(result.message);
+                            $("#preloader").hide();
+                            $("#preloader").css("opacity", "1");
                         }
                     }
                 });

@@ -846,6 +846,7 @@
     <Content Include="Views\Shared\_headerDashboard.cshtml" />
     <Content Include="Views\Account\ForgotEmailConfirm.cshtml" />
     <Content Include="Views\Account\ForgotEmailConfirmConfirmation.cshtml" />
+    <Content Include="Views\Home\_BarraClima.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

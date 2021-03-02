@@ -96,5 +96,11 @@ namespace MisViajes.Controllers
                 
             return RedirectToAction("../Home/Profile");
         }
+
+        [AllowAnonymous]
+        public ActionResult _BarraClima()
+        {
+            return View();
+        }
     }
 }
