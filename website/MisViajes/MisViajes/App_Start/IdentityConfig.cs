@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -19,6 +20,14 @@ namespace MisViajes
         public Task SendAsync(IdentityMessage message)
         {
             // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
+            SmtpClient client = new SmtpClient();
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.To.Add(message.Destination);
+            mailMessage.Subject = message.Subject;
+            mailMessage.Body = message.Body;
+
+            client.Send(mailMessage);
+
             return Task.FromResult(0);
         }
     }

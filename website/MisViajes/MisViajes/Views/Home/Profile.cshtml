@@ -1,4 +1,8 @@
-﻿@{
+﻿@using MisViajes.Extensions
+@using MisViajes.Models
+@model ApplicationUser
+
+@{
     ViewBag.Title = "Profile";
 }
 
@@ -11,284 +15,153 @@
     ===================================== -->
     <section class="py-9">
         <div class="container">
-            <div class="hover-profile mb-7 mb-lg-9">
-                <div class="row">
-                    <div class="col-md-6 col-lg-5 col-xl-4">
-                        <div class="mb-6 mb-md-0">
-                            <img class="w-100 lazyestload" data-src="../assets/img/dashboard/profile-img-01.jpg" src="../assets/img/dashboard/profile-img-01.jpg" alt="Generic placeholder image">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-7 col-xl-8">
-                        <div class="d-flex justify-content-between align-items-baseline">
-                            <div class="mb-6 mb-md-4 mb-lg-6">
-                                <h2 class="text-uppercase font-weight-bold">Sergey Karen</h2>
-                                <p class="mb-0">CEO, D9 Studio</p>
-                            </div>
-
-                            <div class="icon-setting">
-                                <a href="setting.html">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
+            @using (Html.BeginForm("Profile", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="hover-profile mb-7 mb-lg-9">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-5 col-xl-4">
+                            <div class="mb-6 mb-md-0">
+                                <img class="w-100" data-src=" @User.Identity.GetImgUrl() " src=" @User.Identity.GetImgUrl() " alt="Generic placeholder image">
                             </div>
                         </div>
 
-                        <p class="line-height-26">
-                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est labor sed ut
-                            perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                        </p>
-
-                        <ul class="list-unstyled">
-                            <li class="media media-profile-list">
-                                <strong>Nombre:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Sergey</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Apellido:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Karen</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Teléfono:</strong>
-
-                                <div class="media-body ml-2">
-                                    <a href="tel:+12512353256" class="text-gray-color hover-text-primary">(+1) 251-235-3256</a>
-                                    <span class="text-gray-color">,</span>
-                                    <a href="tel:+13623464367" class="text-gray-color hover-text-primary ml-md-1">(+1) 362-346-4367</a>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Dirección:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">1612 Collins Street Australia - 8007</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Código Postal:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">8007</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>País:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Australia</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Email:</strong>
-
-                                <div class="media-body ml-2">
-                                    <a href="mail:to" class="text-gray-color hover-text-primary">info@sergeykaren.com</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <ul class="list-inline d-flex mb-0">
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-rss" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-vimeo" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="mb-7 mb-lg-9">
-                <h3 class="text-uppercase font-weight-bold mb-4">Acerca de Ti</h3>
-                <p class="line-height-26 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="bg-smoke p-2 p-md-5 p-lg-6 rounded">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mb-7 mb-lg-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Beneficios</h6>
-
-                            <ul class="list-unstyled mb-0 bg-white rounded p-5">
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Some benefit
+                        <div class="col-md-6 col-lg-7 col-xl-8">
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <div class="mb-6 mb-md-4 mb-lg-6 center-block">
+                                    <h2 class="text-uppercase font-weight-bold">
+                                        @User.Identity.GetFullName()
+                                        <a onclick="editar()" href="javascript:void(0);">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
                                         </a>
+                                        <input class="dfor" type="submit" value="Guardar" style="display: none" />
+                                    </h2>
+                                    <i class="= font-size-15 text-gray-color efor" style="display: none">Los cambios en su nombre se veran reflejados en su proximo login </i>
+                                    <p class="mb-0 dfor"> @Html.DisplayFor(model => model.Posicion)
+                                    <p class="mb-0 efor" style="display: none"> @Html.EditorFor(model => model.Posicion, new { htmlAttributes = new { placeholder = "Posicion" } })</p>
+                                </div>
+
+
+                            </div>
+
+                            <p class="line-height-26 dfor"> @Html.DisplayFor(model => model.Acerca)</p>
+                            <p class="line-height-26 efor" style="display: none"> @Html.TextAreaFor(model => model.Acerca, 3, 50, new { placeholder = "Breve Descripcion" })</p>
+
+                            <ul class="list-unstyled">
+                                <li class="media media-profile-list">
+                                    <strong>Nombre:</strong>
+
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor"> @Html.DisplayFor(model => model.Nombre)</span>
+                                        <span class="text-gray-color efor" style="display: none"> @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { placeholder = "Nombre" } })</span>
+                                </li>
+
+                                <li class="media media-profile-list">
+                                    <strong>Apellido:</strong>
+
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor">@Html.DisplayFor(model => model.Apellido)</span>
+                                        <span class="text-gray-color efor" style="display: none">@Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { placeholder = "Apellido" } })</span>
+                                </li>
+
+                                <li class="media media-profile-list">
+                                    <strong>Teléfono:</strong>
+
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor">@Html.DisplayFor(model => model.PhoneNumber)</span>
+                                        <span class="text-gray-color efor" style="display: none">@Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { placeholder = "Telefono" } })</span>
                                     </div>
                                 </li>
 
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
+                                <li class="media media-profile-list">
+                                    <strong>Dirección:</strong>
 
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Curabitur viveraj
-                                        </a>
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor">@Html.DisplayFor(model => model.Domicilio)</span>
+                                        <span class="text-gray-color efor" style="display: none">@Html.EditorFor(model => model.Domicilio, new { htmlAttributes = new { placeholder = "Direccion" } })</span>
                                     </div>
                                 </li>
 
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
+                                <li class="media media-profile-list">
+                                    <strong>Código Postal:</strong>
 
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Donec null rhonus
-                                        </a>
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor">@Html.DisplayFor(model => model.CodigoPostal)</span>
+                                        <span class="text-gray-color efor" style="display: none">@Html.EditorFor(model => model.CodigoPostal, new { htmlAttributes = new { placeholder = "CP" } })</span>
                                     </div>
                                 </li>
 
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
+                                <li class="media media-profile-list">
+                                    <strong>País:</strong>
 
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Morbi up sum eismod
-                                        </a>
+                                    <div class="media-body ml-2">
+                                        <span class="text-gray-color dfor">@Html.DisplayFor(model => model.Pais)</span>
+                                        <span class="text-gray-color efor" style="display: none">@Html.EditorFor(model => model.Pais, new { htmlAttributes = new { placeholder = "Pais" } })</span>
                                     </div>
                                 </li>
 
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
+                                <li class="media media-profile-list">
+                                    <strong>Email:</strong>
 
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Praesent nisi ante
-                                        </a>
+                                    <div class="media-body ml-2">
+                                        <a href="mail:to" class="text-gray-color hover-text-primary dfor">@Html.DisplayFor(model => model.Email)</a>
+                                        <a href="mail:to" class="text-gray-color hover-text-primary efor" style="display: none">@Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email" } })</a>
                                     </div>
                                 </li>
+                            </ul>
 
-                                <li class="media">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
+                            <ul class="list-inline d-flex mb-0">
+                                <li class="mr-3 mr-lg-2 mr-xl-3">
+                                    <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
 
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Vesti bulum int daum
-                                        </a>
-                                    </div>
+                                <li class="mr-3 mr-lg-2 mr-xl-3">
+                                    <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+
+                                <li class="mr-3 mr-lg-2 mr-xl-3">
+                                    <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                        <i class="fa fa-vimeo" aria-hidden="true"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mb-7 mb-lg-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Ofertas Recientes</h6>
+                <!-- Contact Section -->
+                <div class="mb-7 mb-lg-9">
+                    <h3 class="text-uppercase font-weight-bold mb-4">Acerca de Ti</h3>
+                    <p class="line-height-26 mb-0 dfor">@Html.DisplayFor(model => model.Descripcion)</p>
+                    <p class="line-height-26 mb-0 efor" style="display: none">@Html.TextAreaFor(model => model.Descripcion, 5, 100, new { placeholder = "A Cerca de TI" })</p>
+                </div>
 
-                            <div class="bg-white rounded p-5">
-                                <div class="media meta-post-sm border-bottom border-off-white pb-3 mb-3">
-                                    <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="../assets/img/blog/tab-02.jpg" src="../assets/img/blog/tab-02.jpg" alt="Generic placeholder image">
-                                        <a href="" class="hover-img-overlay-dark"></a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
-                                            Totam rem apria.
-                                        </a>
-
-                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
-                                            <li class="meta-tag text-gray-color mr-4 mb-1">
-                                                <span class="d-block text-capitalize">Family package</span>
-                                                <span class="text-primary font-size-base">$25</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="media meta-post-sm ">
-                                    <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="../assets/img/blog/tab-04.jpg" src="../assets/img/blog/tab-04.jpg" alt="Generic placeholder image">
-                                        <a href="" class="hover-img-overlay-dark"></a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
-                                            Rodney samp deo.
-                                        </a>
-
-                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
-                                            <li class="meta-tag text-gray-color mr-4 mb-1">
-                                                <span class="d-block text-capitalize">Tours package</span>
-                                                <span class="text-primary font-size-base">$30</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-lg-4">
-                        <div class="mb-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Necesitas Ayuda</h6>
-
-                            <div class="bg-dark rounded p-5">
-                                <p class="text-white line-height-24 mb-6 text-uppercase">
-                                    llámanos por teléfono.
-                                </p>
-
-                                <div class="mb-3">
-                                    <a href="tel:[54]383 456 789" class="btn btn-lg btn-primary rounded-0 btn-block font-weight-semibold">
-                                        <span class="mr-1"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                        [54]383 456 789
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            }
+            <!-- Contact Section -->
+            <div class="bg-smoke p-2 p-md-5 p-lg-6 rounded efor" style="display: none">
+                <div class="row justify-content-center">
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+            function editar() {
+                $(".efor").toggle();
+                $(".dfor").toggle();
+            }
+    </script>
 
- 
 
 
 </div><!-- element wrapper ends -->

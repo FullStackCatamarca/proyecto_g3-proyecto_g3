@@ -32,7 +32,7 @@ namespace MisViajes.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Agregar aquí notificaciones personalizadas de usuario
             userIdentity.AddClaim(new Claim("FullName", this.Apellido + " " + this.Nombre));
-            userIdentity.AddClaim(new Claim("ImgUrl", (this.ImgUrl != null) ? this.ImgUrl : string.Empty));
+            userIdentity.AddClaim(new Claim("ImgUrl", (this.ImgUrl != null) ? this.ImgUrl : "../assets/img/dashboard/profile-img-01.jpg"));
             userIdentity.AddClaim(new Claim("AvatarUrl", (this.AvatarUrl != null) ? this.AvatarUrl : string.Empty));
             
             return userIdentity;

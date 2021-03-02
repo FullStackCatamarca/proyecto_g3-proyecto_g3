@@ -23,7 +23,10 @@
     <div class="form-group form-check mb-0">
         @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
         @Html.LabelFor(m => m.RememberMe, new { @class = "form-check-label text-gray-color mb-3" })
-        <a class="pull-right" href="javascript:void(0)">Olvisdastes tu contraseña?</a>
+        <a class="pull-right" href="../Account/ForgotPassword">Olvidastes tu contraseña?</a>
+        <div class="text-center">
+            <a class="justify-content-center" href="../Account/ForgotEmailConfirm">Confirmastes tu correo?</a>
+        </div>
     </div>
 
 }

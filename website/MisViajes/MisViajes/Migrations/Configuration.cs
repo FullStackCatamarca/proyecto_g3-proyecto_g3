@@ -5,15 +5,14 @@ namespace MisViajes.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MisViajes.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MisViajes.Models.misviajesEntities>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "MisViajes.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MisViajes.Models.ApplicationDbContext context)
+        protected override void Seed(MisViajes.Models.misviajesEntities context)
         {
             //  This method will be called after migrating to the latest version.
 
