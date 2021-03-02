@@ -69,26 +69,28 @@ function limpiarHtml(idelement) {
 //Obtenemos los datos de la Localidad Seleccionada  y extraemos su lat y long
 function obtenerLocalidad() {
     const localidadID = parseInt(SelectLocalidades.value);
-    let localidadSelect = localidades.find((loc)=> loc.ID === localidadID); //Buscamos la localidad Seleccionada y la retornamos en localidadSelect
-    
+    let localidadSelect = localidades.find((loc) => loc.ID === localidadID); //Buscamos la localidad Seleccionada y la retornamos en localidadSelect
+
     //Consultar Clima
-    getClima(localidadSelect);
-    
+
+    getClima(localidadSelect.Latitud, localidadSelect.Longitud, localidadSelect.Nombre);
+
 }
 
 const convertTemp = x => x - 273.15; //Convierte kelvins a celsius  K => C°
 
 //Ocupamos el Api de OpenWeatherMap
-async function getClima({ Latitud, Longitud, Nombre }) {
-   
-     // const latitud = -28.406547;
-     // const longitud = -65.805996;
+async function getClima(Latitud = "-28.4846581947085", Longitud = "-65.7867892937631", Nombre = "SAN FERNANDO DEL VALLE DE CATAMARCA") {
+
+    // const latitud = -28.406547;
+    // const longitud = -65.805996;
+
     const key = '4f3a4ab942697c944a4bf3a501ccc131';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${Latitud}&lon=${Longitud}&appid=${key}`;
     spinner();
     await fetch(url)
         .then(request => request.json())
-        .then(result =>  mostrarTemperatura(result,Nombre))
+        .then(result => mostrarTemperatura(result, Nombre))
 
 
 }
@@ -151,9 +153,7 @@ function mostrarTemperatura({ weather: [{ icon }], main: { temp, temp_max, temp_
     informacionClima.appendChild(min);
     informacionClima.appendChild(max);
 
-    setTimeout(() => {
-        limpiarHtml(informacionClima);
-    },18000)
+ 
 }
 
 
