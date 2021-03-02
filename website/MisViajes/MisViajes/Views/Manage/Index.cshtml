@@ -1,289 +1,29 @@
-﻿@model MisViajes.Models.ApplicationUser
+﻿@model MisViajes.Models.IndexViewModel
 @{
-    ViewBag.Title = "Administrar";
+    ViewBag.Title = "Configurar";
 }
+
 <div class="main-wrapper dashboard">
 
     @Html.Partial("_headerDashboard")
 
+</div>
 
-    <p class="text-success">@ViewBag.StatusMessage</p>
-
-
+<div class="main-wrapper">
     <!-- ====================================
-    ——— PROFILE SECTION
+    ———	PAGE TITLE
     ===================================== -->
-    <section class="py-9">
-        <div class="container">
-            <div class="hover-profile mb-7 mb-lg-9">
-                <div class="row">
-                    <div class="col-md-6 col-lg-5 col-xl-4">
-                        <div class="mb-6 mb-md-0">
-                            <img class="w-100 lazyestload" data-src="../assets/img/dashboard/profile-img-01.jpg" src="../assets/img/dashboard/profile-img-01.jpg" alt="Generic placeholder image">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-7 col-xl-8">
-                        <div class="d-flex justify-content-between align-items-baseline">
-                            <div class="mb-6 mb-md-4 mb-lg-6">
-                                <h2 class="text-uppercase font-weight-bold">@Model.Apellido  @Model.Nombre </h2>
-                                <p class="mb-0">CEO, D9 Studio</p>
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken"
+             style="background-image: url(../assets/img/pages/page-title-bg5.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">@ViewBag.Title</h2>
                             </div>
-
-                            <div class="icon-setting">
-                                <a href="setting.html">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="line-height-26">
-                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est labor sed ut
-                            perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                        </p>
-
-                        <ul class="list-unstyled">
-                            <li class="media media-profile-list">
-                                <strong>Nombre:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Sergey</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Apellido:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Karen</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Teléfono:</strong>
-
-                                <div class="media-body ml-2">
-                                    <a href="tel:+12512353256" class="text-gray-color hover-text-primary">(+1) 251-235-3256</a>
-                                    <span class="text-gray-color">,</span>
-                                    <a href="tel:+13623464367" class="text-gray-color hover-text-primary ml-md-1">(+1) 362-346-4367</a>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Dirección:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">1612 Collins Street Australia - 8007</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Código Postal:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">8007</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>País:</strong>
-
-                                <div class="media-body ml-2">
-                                    <span class="text-gray-color">Australia</span>
-                                </div>
-                            </li>
-
-                            <li class="media media-profile-list">
-                                <strong>Email:</strong>
-
-                                <div class="media-body ml-2">
-                                    <a href="mail:to" class="text-gray-color hover-text-primary">info@sergeykaren.com</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <ul class="list-inline d-flex mb-0">
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-rss" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="">
-                                <a class="icon-default icon-light-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-vimeo" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="mb-7 mb-lg-9">
-                <h3 class="text-uppercase font-weight-bold mb-4">Acerca de Ti</h3>
-                <p class="line-height-26 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="bg-smoke p-2 p-md-5 p-lg-6 rounded">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mb-7 mb-lg-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Beneficios</h6>
-
-                            <ul class="list-unstyled mb-0 bg-white rounded p-5">
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Some benefit
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Curabitur viveraj
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Donec null rhonus
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Morbi up sum eismod
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="media mb-2">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Praesent nisi ante
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="media">
-                                    <div class="mr-2">
-                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
-                                            Vesti bulum int daum
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mb-7 mb-lg-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Ofertas Recientes</h6>
-
-                            <div class="bg-white rounded p-5">
-                                <div class="media meta-post-sm border-bottom border-off-white pb-3 mb-3">
-                                    <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="../assets/img/blog/tab-02.jpg" src="../assets/img/blog/tab-02.jpg" alt="Generic placeholder image">
-                                        <a href="" class="hover-img-overlay-dark"></a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
-                                            Totam rem apria.
-                                        </a>
-
-                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
-                                            <li class="meta-tag text-gray-color mr-4 mb-1">
-                                                <span class="d-block text-capitalize">Family package</span>
-                                                <span class="text-primary font-size-base">$25</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="media meta-post-sm ">
-                                    <div class="img-overlay rounded mr-3">
-                                        <img class="lazyestload" data-src="../assets/img/blog/tab-04.jpg" src="../assets/img/blog/tab-04.jpg" alt="Generic placeholder image">
-                                        <a href="" class="hover-img-overlay-dark"></a>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
-                                            Rodney samp deo.
-                                        </a>
-
-                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
-                                            <li class="meta-tag text-gray-color mr-4 mb-1">
-                                                <span class="d-block text-capitalize">Tours package</span>
-                                                <span class="text-primary font-size-base">$30</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-lg-4">
-                        <div class="mb-0">
-                            <h6 class="font-size-15 text-uppercase mb-5">Necesitas Ayuda</h6>
-
-                            <div class="bg-dark rounded p-5">
-                                <p class="text-white line-height-24 mb-6 text-uppercase">
-                                    llámanos por teléfono.
-                                </p>
-
-                                <div class="mb-3">
-                                    <a href="tel:[54]383 456 789" class="btn btn-lg btn-primary rounded-0 btn-block font-weight-semibold">
-                                        <span class="mr-1"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                        [54]383 456 789
-                                    </a>
-                                </div>
-                            </div>
+                            <p class="text-white mb-0"></p>
                         </div>
                     </div>
                 </div>
@@ -291,89 +31,61 @@
         </div>
     </section>
 
+    <!-- ====================================
+    ———	CONTACT INFO SECTION
+    ===================================== -->
+    <section class="py-9 pt-md-10">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 col-lg-6 col-xl-7">
 
-
-
-
+                    <p class="text-success">@ViewBag.StatusMessage</p>
+                    <div>
+                        <h4>Aquí podra cambiar la configuración de su cuenta</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>Contraseña:</dt>
+                            <dd>
+                                [
+                                @if (Model.HasPassword)
+                                {
+                                    @Html.ActionLink("Cambiar la contraseña", "ChangePassword")
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Crear", "SetPassword")
+                                }
+                                ]
+                            </dd>
+                            <dt>Inicios de sesión externos:</dt>
+                            <dd>
+                                @Model.Logins.Count [
+                                @Html.ActionLink("Administrar", "ManageLogins") ]
+                            </dd>
+                           
+                            <dt>Número de teléfono:</dt>
+                            <dd>
+                                @(Model.PhoneNumber ?? "Ninguno")
+                                @if (Model.PhoneNumber != null)
+                                {
+                                    <a onclick="editar()" href="@Url.Action("AddPhoneNumber", "Manage")">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <text> [<input type="submit" value="Quitar" class="btn-link" />] </text>
+                                    }
+                                }
+                                else
+                                {
+                                    <text>[&nbsp;&nbsp;@Html.ActionLink("Agregar", "AddPhoneNumber")&nbsp;&nbsp;]</text>
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div><!-- element wrapper ends -->
-
-<div>
-    <h4>Cambiar la configuración de la cuenta</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Contraseña:</dt>
-        @*<dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Cambiar la contraseña", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Crear", "SetPassword")
-            }
-            ]
-        </dd>
-        <dt>Inicios de sesión externos:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Administrar", "ManageLogins") ]
-        </dd>
-        @*
-            Los números de teléfono se pueden usar como una segunda fase de comprobación en un sistema de autenticación en dos fases.
-
-             Consulte <a href="https://go.microsoft.com/fwlink/?LinkId=403804">este artículo</a>
-                para obtener detalles sobre cómo configurar esta aplicación ASP.NET para que sea compatible con la autenticación en dos fases mediante SMS.
-
-             Quite la marca de comentario del bloque siguiente después de configurar la autenticación en dos fases
-
-        <dt>Número de teléfono:</dt>
-        <dd>
-            @(Model.PhoneNumber ?? "None")
-            @if (Model.PhoneNumber != null)
-            {
-                <br />
-                <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <text>[<input type="submit" value="Quitar" class="btn-link" />]</text>
-                }
-            }
-            else
-            {
-                <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-            }
-        </dd>
-
-        <dt>Autenticación de dos factores:</dt>
-        <dd>
-            <p>
-                No hay ningún proveedor de autenticación en dos fases configurado. Consulte <a href="https://go.microsoft.com/fwlink/?LinkId=403804">este artículo</a>
-                para obtener detalles sobre cómo configurar esta aplicación ASP.NET para que sea compatible con la autenticación en dos fases.
-            </p>
-            @if (Model.TwoFactor)
-            {
-                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <text>Habilitado
-                        <input type="submit" value="Deshabilitar" class="btn btn-link" />
-                    </text>
-                }
-            }
-            else
-            {
-                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <text>Deshabilitada
-                        <input type="submit" value="Habilitar" class="btn btn-link" />
-                    </text>
-                }
-            }
-        </dd>
-        *@
-    </dl>
-</div>
-</div>

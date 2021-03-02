@@ -166,6 +166,7 @@ namespace MisViajes.Controllers
         {
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
             // Enviar un SMS a través del proveedor de SMS para verificar el número de teléfono
+            ViewBag.code = code;
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
