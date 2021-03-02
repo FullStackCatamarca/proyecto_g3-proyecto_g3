@@ -125,21 +125,24 @@ function mostrarTemperatura({ weather: [{ icon }], main: { temp, temp_max, temp_
 
    
 
-    lugar.classList.add('ClimaText');
+    lugar.classList.add('text-primary');
 
-    lugarAproximado.classList.add('text-black');
+    iconClima.classList.add('bg-info');
+    iconClima.classList.add('rounded-circle');
+
+    lugarAproximado.classList.add('text-warning');
 
     temperatura.textContent = `${Math.round(convertTemp(temp))}C°`;
 
-    temperatura.classList.add('text-black');
+    temperatura.classList.add('text-white');
 
     min.textContent = `Min: ${Math.round(convertTemp(temp_min))}C°`;
 
-    min.classList.add('m-0', 'text-black');
+    min.classList.add('m-0', 'text-white');
 
     max.textContent = `Max: ${Math.round(convertTemp(temp_max))}C°`;
 
-    max.classList.add('m-0', 'text-black');
+    max.classList.add('m-0', 'text-white');
 
     informacionClima.appendChild(iconClima);
     informacionClima.appendChild(lugar);

@@ -395,10 +395,6 @@
     <Content Include="assets\img\home\slider\slider-02.jpg" />
     <Content Include="assets\img\home\slider\slider-03.jpg" />
     <Content Include="assets\img\home\slider\slider-04.jpg" />
-    <Content Include="assets\img\home\slider\slider-05.jpg" />
-    <Content Include="assets\img\home\slider\slider-06.jpg" />
-    <Content Include="assets\img\home\slider\slider-07.jpg" />
-    <Content Include="assets\img\home\slider\slider-08.jpg" />
     <Content Include="assets\img\icons\cloud-rain.png" />
     <Content Include="assets\img\icons\cloud-sm.png" />
     <Content Include="assets\img\icons\cloud.png" />
