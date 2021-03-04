@@ -160,7 +160,14 @@ namespace MisViajes.Models
             string constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
             con = new SqlConnection(constr);
         }
+    }
 
+    public class UserRoleModel
+
+    {
+        public string UserID { get; set; }
+        public string Nombre { get; set; }
+        public string Roles { get; set; }
     }
 
 }

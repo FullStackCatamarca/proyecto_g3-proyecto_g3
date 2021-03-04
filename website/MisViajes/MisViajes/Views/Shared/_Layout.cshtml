@@ -9,22 +9,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@ViewBag.Title - DFS 2020</title>
-    <link href="../assets/plugins/isotope/isotope.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/selectric/selectric.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/daterangepicker/css/daterangepicker.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/dzsparallaxer/dzsparallaxer.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/css/star.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/animate/animate.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/isotope/isotope.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/fancybox/jquery.fancybox.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/selectric/selectric.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/daterangepicker/css/daterangepicker.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/dzsparallaxer/dzsparallaxer.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/revolution/css/settings.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/star.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/animate/animate.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord-animations.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
 
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png" />
-    <link rel="stylesheet" href="~/assets/css/StyleSheet.css" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/StyleSheet.css")" type="text/css" />
     <!--ChatBot BlueCaribu-->
     <script async>(function (w, d) { var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://app.bluecaribu.com/conversion/integration/c3063dc2d99319e631631e58cd8c7b14"); h.appendChild(s); })(window, document);</script>
 </head>
@@ -66,7 +66,7 @@
 
                     <!-- Menu Zord for Dashboar (view script in dashboar) -->
                     <a href='@Url.Action("Index", "Home")' class="menuzord-brand"  id="LogoColor">
-                        <img src='@Url.Content("../assets/img/logo-color-big.png")' />
+                        <img src='@Url.Content("~/assets/img/logo-color-big.png")' />
                     </a>
 
                     <div class="nav-item dropdown nav-item-left mr-0">
@@ -210,7 +210,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
                         <a class="d-inline-block" href="@Url.Action("Index", "Home")">
-                            <img class="w-100 mb-6 lazyestload" data-src="../assets/img/logo-color-sm.png" src="../assets/img/logo-color-sm.png" alt="img">
+                            <img class="w-100 mb-6 lazyestload" data-src="@Url.Content("~/assets/img/logo-color-sm.png")" src="@Url.Content("~/assets/img/logo-color-sm.png")" alt="img">
                         </a>
                         <p class="mb-0">Una página web para incentivar el turismo. Nuestro deseo es concentrar la atención principalmente en los diferentes itinerarios y rutas relacionados a los monumentos, sitios culturales y atracciones de nuestra provincia.</p>
                     </div>
@@ -408,24 +408,24 @@
 
     <!-- Javascript -->
 
-    <script src="../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/plugins/menuzord/js/menuzord.js"></script>
+    <script src="@Url.Content("~/assets/plugins/jquery/jquery-3.4.1.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/menuzord/js/menuzord.js")"></script>
 
-    <script src='../assets/plugins/isotope/isotope.min.js'></script>
-    <script src='../assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js'></script>
-    <script src='../assets/plugins/fancybox/jquery.fancybox.min.js'></script>
+    <script src="@Url.Content("~/assets/plugins/isotope/isotope.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/fancybox/jquery.fancybox.min.js")"></script>
 
-    <script src='../assets/plugins/selectric/jquery.selectric.min.js'></script>
-    <script src='../assets/plugins/daterangepicker/js/moment.min.js'></script>
-    <script src='../assets/plugins/daterangepicker/js/daterangepicker.min.js'></script>
+    <script src="@Url.Content("~/assets/plugins/selectric/jquery.selectric.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/daterangepicker/js/moment.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/daterangepicker/js/daterangepicker.min.js")"></script>
 
-    <script src="../assets/plugins/lazyestload/lazyestload.js"></script>
-    <script src='../assets/plugins/dzsparallaxer/dzsparallaxer.js'></script>
+    <script src="@Url.Content("~/assets/plugins/lazyestload/lazyestload.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/dzsparallaxer/dzsparallaxer.js")"></script>
 
-    <script src='../assets/plugins/revolution/js/jquery.themepunch.tools.min.js'></script>
-    <script src='../assets/plugins/revolution/js/jquery.themepunch.revolution.min.js'></script>
-    <script src="../assets/plugins/smoothscroll/SmoothScroll.js"></script>
+    <script src="@Url.Content("~/assets/plugins/revolution/js/jquery.themepunch.tools.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js")"></script>
+    <script src="@Url.Content("~/assets/plugins/smoothscroll/SmoothScroll.js")"></script>
 
     <script type="text/javascript">
         $("#BttnLogin").click(function (event) {
@@ -494,21 +494,21 @@
             }
         });
     </script>
-    <script src="../scripts/jquery.validate.min.js"></script>">
+    <script src="@Url.Content("~/scripts/jquery.validate.min.js")"></script>">
     @RenderSection("scripts", required: false)
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="../assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
-    <script src="../assets/js/star.js"></script>
+    <script src="@Url.Content("~/assets/js/star.js")"></script>
 </body>
 </html>
 

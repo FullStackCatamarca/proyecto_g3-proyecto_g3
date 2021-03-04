@@ -16,6 +16,8 @@ namespace MisViajes.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -101,6 +103,13 @@ namespace MisViajes.Controllers
         public ActionResult _BarraClima()
         {
             return View();
+        }
+
+        [ChildActionOnly]
+        [AllowAnonymous]
+        public ActionResult ShowSlides()
+        {
+            return PartialView("_Slides", db.Slides.ToList());
         }
     }
 }

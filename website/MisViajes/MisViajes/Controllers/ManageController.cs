@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MisViajes.Models;
+using static MisViajes.Models.MantenimientoUsuario;
 
 namespace MisViajes.Controllers
 {
@@ -334,7 +337,52 @@ namespace MisViajes.Controllers
             base.Dispose(disposing);
         }
 
-#region Aplicaciones auxiliares
+ 
+        public ActionResult AdminUserManagement()
+        {
+            var context = new ApplicationDbContext();
+            var allUsers = context.Users.ToList();
+            var viewModels = new List<UserRoleModel>();
+            Dictionary<string, string> rolesCache = new Dictionary<string, string>();
+
+            using (var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext())))
+                foreach (var user in allUsers)
+                {
+                List<string> strRoles = new List<string>();
+                    if (user.Roles.Count() > 0) foreach (var role in user.Roles)
+                        {
+                            if (!rolesCache.ContainsKey(role.RoleId.ToString()))
+                            {
+                                IdentityRole IRole = rm.FindById(role.RoleId.ToString());
+                                rolesCache[role.RoleId.ToString()] = IRole.Name;
+                            }
+                            strRoles.Add(rolesCache[role.RoleId.ToString()]);
+                        }
+
+                viewModels.Add(new UserRoleModel { UserID = user.Id, Nombre = user.UserName, Roles = string.Join(", ", strRoles) });
+            }
+
+            return View(viewModels);
+        }
+
+        public ActionResult AddUserRole(string Id, string Role)
+        {
+            if ( Role != null)
+                using (var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext())))
+                    using (var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+                        if (rm.RoleExists(Role)) um.AddToRole(Id, Role);
+            return RedirectToAction("AdminUserManagement", "Manage");
+        }
+
+        public ActionResult RemUserRole(string Id, string Role)
+        {
+            if (Role != null)
+                using (var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+                    if (um.IsInRole(Id, Role)) um.RemoveFromRole(Id, Role);
+            return RedirectToAction("AdminUserManagement", "Manage");
+        }
+
+        #region Aplicaciones auxiliares
         // Se usan para protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";
 
@@ -385,6 +433,18 @@ namespace MisViajes.Controllers
             Error
         }
 
-#endregion
+        private ActionResult AddRoles()
+        {
+
+            using (var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext())))
+            using (var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+            {
+                var roleResult = rm.Create(new IdentityRole("Administrador"));
+                roleResult = rm.Create(new IdentityRole("Staff"));
+            }
+            return Redirect("AdminUserManagement");
+        }
+
+        #endregion
     }
 }

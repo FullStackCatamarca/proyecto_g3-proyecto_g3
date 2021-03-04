@@ -50,5 +50,7 @@ namespace MisViajes.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MisViajes.Slider.Slides> Slides { get; set; }
     }
 }
