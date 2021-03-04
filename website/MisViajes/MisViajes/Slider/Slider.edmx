@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="misviajesSliderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'misviajes.dbo.Slides' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Slides">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="UrlImagen" />
+            <PropertyRef Name="TxtBoton" />
+            <PropertyRef Name="Habilitado" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="UrlImagen" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Encabezado" Type="nvarchar" MaxLength="50" />
+          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+          <Property Name="UrlDestino" Type="nvarchar" MaxLength="100" />
+          <Property Name="TxtBoton" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="misviajesSliderModelStoreContainer">
+          <EntitySet Name="Slides" EntityType="Self.Slides" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Slides].[id] AS [id], 
+    [Slides].[UrlImagen] AS [UrlImagen], 
+    [Slides].[Encabezado] AS [Encabezado], 
+    [Slides].[Titulo] AS [Titulo], 
+    [Slides].[Descripcion] AS [Descripcion], 
+    [Slides].[UrlDestino] AS [UrlDestino], 
+    [Slides].[TxtBoton] AS [TxtBoton], 
+    [Slides].[Habilitado] AS [Habilitado]
+    FROM [dbo].[Slides] AS [Slides]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="misviajesSliderModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Slides">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="UrlImagen" />
+            <PropertyRef Name="TxtBoton" />
+            <PropertyRef Name="Habilitado" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="UrlImagen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Encabezado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UrlDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TxtBoton" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="misviajesSliderEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Slides" EntityType="Self.Slides" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="misviajesSliderModelStoreContainer" CdmEntityContainer="misviajesSliderEntities">
+          <EntitySetMapping Name="Slides">
+            <EntityTypeMapping TypeName="misviajesSliderModel.Slides">
+              <MappingFragment StoreEntitySet="Slides">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UrlImagen" ColumnName="UrlImagen" />
+                <ScalarProperty Name="Encabezado" ColumnName="Encabezado" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="UrlDestino" ColumnName="UrlDestino" />
+                <ScalarProperty Name="TxtBoton" ColumnName="TxtBoton" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

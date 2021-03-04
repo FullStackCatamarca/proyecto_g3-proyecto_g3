@@ -1,0 +1,546 @@
+﻿@using MisViajes.Extensions
+
+@{
+    ViewBag.Title = "Panel De Usuario";
+}
+
+<div class="main-wrapper dashboard">
+
+    @Html.Partial("_headerDashboard")
+
+
+    <!-- ====================================
+    ——— USER SECTION
+    ===================================== -->
+    <section class="py-9">
+        <div class="container">
+            <div class="mb-7">
+
+                <h2 class="text-uppercase font-size-22 font-weight-semibold">Hola @User.Identity.GetFullName() Bienveniado a <span class="text-primary"> Mis Viajes</span></h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                </p>
+            </div>
+
+            <!-- Alert Section -->
+            <div class="mb-7">
+                <div class="alert alert-success alert-dismissible alert-confirm fade show mb-5" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">Dismiss</span>
+                    </button>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <span><strong>Thank you!</strong> Your booking is confirmed. Invoice Sent in your email address</span>
+                </div>
+
+                <div class="alert alert-danger alert-dismissible alert-confirm fade show mb-7" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">Dismiss</span>
+                    </button>
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                    <span><strong>Oops!</strong> Something is wrong. Please input your validate email address</span>
+                </div>
+            </div>
+
+            <!-- Booking Section -->
+            <div class="mb-7">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-md text-white rounded-top-0 bg-info mb-3 mb-lg-0">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div class="">
+                                    <h2 class="font-weight-bold text-white mb-1">3,502</h2>
+                                    <p class="card-text text-white text-capitalize">Tour packages</p>
+                                </div>
+
+                                <div class="badge border border-white rounded-circle badge-sm p-0">
+                                    <span class="d-block">
+                                        <i class="fa fa-gift"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a href="" class="btn card-footer text-capitalize text-white font-size-15 d-flex justify-content-between align-items-center">
+                                <div class="">
+                                    View details
+                                </div>
+
+                                <div class="">
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-md text-white rounded-top-0 bg-danger mb-3 mb-lg-0">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div class="">
+                                    <h2 class="font-weight-bold text-white mb-1">4,603</h2>
+                                    <p class="card-text text-white text-capitalize">Hotels</p>
+                                </div>
+
+                                <div class="badge border border-white rounded-circle badge-sm p-0">
+                                    <span class="d-block">
+                                        <i class="fa fa-fort-awesome"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a href="" class="btn card-footer text-capitalize text-white font-size-15 d-flex justify-content-between align-items-center">
+                                <div class="View-details">
+                                    View details
+                                </div>
+
+                                <div class="arrow-right">
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-md text-white rounded-top-0 bg-success-light mb-3 mb-md-0">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div class="">
+                                    <h2 class="font-weight-bold text-white mb-1">5,709</h2>
+                                    <p class="card-text text-white text-capitalize">Flights</p>
+                                </div>
+
+                                <div class="badge border border-white rounded-circle badge-sm p-0">
+                                    <span class="d-block">
+                                        <i class="fa fa-plane"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a href=""
+                               class="btn card-footer text-capitalize text-white font-size-15 d-flex justify-content-between align-items-center">
+                                <div class="View-details">
+                                    View details
+                                </div>
+
+                                <div class="arrow-right">
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card card-md text-white rounded-top-0 bg-primary mb-3 mb-md-0">
+                            <div class="card-body d-flex align-items-center justify-content-between">
+                                <div class="">
+                                    <h2 class="font-weight-bold text-white mb-1">6,104</h2>
+                                    <p class="card-text text-white text-capitalize">Transport</p>
+                                </div>
+
+                                <div class="badge border border-white rounded-circle badge-sm p-0">
+                                    <span class="d-block">
+                                        <i class="fa fa-car"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <a href=""
+                               class="btn card-footer text-capitalize text-white font-size-15 d-flex justify-content-between align-items-center">
+                                <div class="View-details">
+                                    View details
+                                </div>
+
+                                <div class="arrow-right">
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="table-dashboard mb-7">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-uppercase mb-3">Recent activity</h2>
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="badge badge-primary">
+                                            <span class="d-block">
+                                                <h1>25</h1>
+                                                <h3>July</h3>
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <td class="second-child">
+                                        <i class="fa fa-fort-awesome" aria-hidden="true"></i>
+                                        <div>
+                                            <a href="" class="hover-text-primary">Hilton hotel &amp; resorts</a>
+                                            <p class="">2 Adults Staying</p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <h2 class="">$125</h2>
+                                        <h4>AVG/Person</h4>
+                                    </td>
+
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li class="">
+                                                <h5>Trip id</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6>5754-8DK8-8EE</h6>
+                                            </li>
+
+                                            <li class="">
+                                                <h5>Booked on</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6 class="mb-0">Tuesday, Jul 25, 2019</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <div class="badge badge-info">
+                                            <span class="d-block">
+                                                <h1>26</h1>
+                                                <h3>July</h3>
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <td class="second-child">
+                                        <i class="fa fa fa-plane border-info text-info" aria-hidden="true"></i>
+                                        <div>
+                                            <a href="" class="hover-text-info">India to England</a>
+                                            <p class="">You are flying</p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <h2 class="text-info">$130</h2>
+                                        <h4>AVG/Person</h4>
+                                    </td>
+
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li class="">
+                                                <h5>Trip id</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6>5754-8DK8-8EE</h6>
+                                            </li>
+
+                                            <li class="">
+                                                <h5>Booked on</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6 class="mb-0">Tuesday, Jul 25, 2019</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <div class="badge badge-success-light">
+                                            <span class="d-block">
+                                                <h1>27</h1>
+                                                <h3>July</h3>
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <td class="second-child">
+                                        <i class="fa fa-car border-success-light text-success-light" aria-hidden="true"></i>
+                                        <div>
+                                            <a href="" class="hover-text-success-light">Economy car</a>
+                                            <p class="">You are driving</p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <h2 class="text-success-light">$120</h2>
+                                        <h4>AVG/Person</h4>
+                                    </td>
+
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li class="">
+                                                <h5>Trip id</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6>5754-8DK8-8EE</h6>
+                                            </li>
+
+                                            <li class="">
+                                                <h5>Booked on</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6 class="mb-0">Tuesday, Jul 25, 2019</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <div class="badge badge-danger">
+                                            <span class="d-block">
+                                                <h1>28</h1>
+                                                <h3>July</h3>
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <td class="second-child">
+                                        <i class="fa fa-gift border-danger text-danger" aria-hidden="true"></i>
+                                        <div>
+                                            <a href="" class="hover-text-danger">London tour package</a>
+                                            <p class="">3 Days 2 nights</p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <h2 class="text-danger">$140</h2>
+                                        <h4>AVG/Person</h4>
+                                    </td>
+
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li class="">
+                                                <h5>Trip id</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6>5754-8DK8-8EE</h6>
+                                            </li>
+
+                                            <li class="">
+                                                <h5>Booked on</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6 class="mb-0">Tuesday, Jul 25, 2019</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <div class="badge badge-info">
+                                            <span class="d-block">
+                                                <h1>29</h1>
+                                                <h3>July</h3>
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <td class="d-flex align-items-center second-child">
+                                        <i class="fa fa-train border-info text-info" aria-hidden="true"></i>
+                                        <div>
+                                            <a href="" class="hover-text-info">Maldiv Hotel &amp; Resorts</a>
+                                            <p class="">You are travelling</p>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <h2 class="text-info">$150</h2>
+                                        <h4>AVG/Person</h4>
+                                    </td>
+
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <h5 class="">Trip id</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6>5754-8DK8-8EE</h6>
+                                            </li>
+
+                                            <li class="">
+                                                <h5 class="">Booked on</h5>
+                                            </li>
+
+                                            <li>
+                                                <h6 class="mb-0">Tuesday, Jul 25, 2019</h6>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="bg-smoke p-2 p-md-5 p-lg-6 rounded">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="mb-7 mb-lg-0">
+                            <h6 class="font-size-15 text-uppercase mb-5">Benefits</h6>
+
+                            <ul class="list-unstyled mb-0 bg-white rounded p-5">
+                                <li class="media mb-2">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Some benefit
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="media mb-2">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Curabitur viveraj
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="media mb-2">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Donec null rhonus
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="media mb-2">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Morbi up sum eismod
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="media mb-2">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Praesent nisi ante
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-2">
+                                        <i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-gray-color hover-text-primary text-capitalize mb-0">
+                                            Vesti bulum int daum
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="mb-7 mb-lg-0">
+                            <h6 class="font-size-15 text-uppercase mb-5">Recent offers</h6>
+
+                            <div class="bg-white rounded p-5">
+                                <div class="media meta-post-sm border-bottom border-off-white pb-3 mb-3">
+                                    <div class="img-overlay rounded mr-3">
+                                        <img class="lazyestload" data-src="../assets/img/blog/tab-02.jpg" src="../assets/img/blog/tab-02.jpg" alt="Generic placeholder image">
+                                        <a href="" class="hover-img-overlay-dark"></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
+                                            Totam rem apria.
+                                        </a>
+
+                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
+                                            <li class="meta-tag text-gray-color mr-4 mb-1">
+                                                <span class="d-block text-capitalize">Family package</span>
+                                                <span class="text-primary font-size-base">$25</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="media meta-post-sm ">
+                                    <div class="img-overlay rounded mr-3">
+                                        <img class="lazyestload" data-src="../assets/img/blog/tab-04.jpg" src="../assets/img/blog/tab-04.jpg" alt="Generic placeholder image">
+                                        <a href="" class="hover-img-overlay-dark"></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="" class="text-dark hover-text-primary text-capitalize mb-1">
+                                            Rodney samp deo.
+                                        </a>
+
+                                        <ul class="list-unstyled d-flex flex-wrap mb-0">
+                                            <li class="meta-tag text-gray-color mr-4 mb-1">
+                                                <span class="d-block text-capitalize">Tours package</span>
+                                                <span class="text-primary font-size-base">$30</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-lg-4">
+                        <div class="mb-0">
+                            <h6 class="font-size-15 text-uppercase mb-5">Need help</h6>
+
+                            <div class="bg-dark rounded p-5">
+                                <p class="text-white line-height-24 mb-6">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                                </p>
+
+                                <div class="mb-3">
+                                    <a href="tel:+2512353256" class="btn btn-lg btn-primary rounded-0 btn-block font-weight-semibold">
+                                        <span class="mr-1"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                        +251-235-3256
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+</div>

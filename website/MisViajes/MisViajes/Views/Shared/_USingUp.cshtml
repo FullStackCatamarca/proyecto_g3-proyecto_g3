@@ -1,0 +1,37 @@
+﻿@using MisViajes.Models
+@model RegisterViewModel
+
+@{
+    ViewBag.Title = "Registrarse";
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "", id = "formRegister" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="validation-summary-valid text-danger">
+        <p id="ValSing" style="display:none"></p>
+    </div>
+
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control bg-smoke", id = "S.Email=", type = "email", placeholder = "Email" })
+    </div>
+
+    <div class="form-group">
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control bg-smoke", id = "S.Password=", placeholder = "Password" })
+    </div>
+
+    <div class="form-group">
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control bg-smoke", id = "S.ConfirmPassword=", placeholder = "Confirmar Password" })
+    </div>
+
+    <div class="form-group form-check mb-0">
+        <input type="checkbox" class="form-check-input" id="exampleCheck4" required="Required">
+        <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
+            Acepto Los terminos y condiciones.
+        </label>
+    </div>
+
+}
+
+<button type="button" id="BttnSingIn" class="btn btn-primary btn-block text-uppercase">Registrarse</button>
+
