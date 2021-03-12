@@ -52,5 +52,7 @@ namespace MisViajes.Models
         }
 
         public System.Data.Entity.DbSet<MisViajes.Slider.Slides> Slides { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.UsuarioModel> UsuarioModels { get; set; }
     }
 }
