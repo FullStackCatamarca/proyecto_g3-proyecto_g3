@@ -14,6 +14,8 @@ namespace MisViajes.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Dni { get; set; }
+        public string Email { get; set; } // Agregue el Email
+        public string PhoneNumber { get; set; } // Agregue el Telefono
         public string Domicilio { get; set; }
         public Nullable<int> Pais { get; set; }
         public Nullable<int> Provincia { get; set; }
@@ -27,6 +29,9 @@ namespace MisViajes.Models
         public string CodigoPostal { get; set; }
         public string Acerca { get; set; }
         public string ImgUrl { get; set; }
+        public string UserName { get; set; }
+
+        
     }
 
     public class MantenimientoUsuario
@@ -38,7 +43,7 @@ namespace MisViajes.Models
             Conectar();
             List<UsuarioModel> Usuarios = new List<UsuarioModel>();
 
-            SqlCommand com = new SqlCommand("SELECT [Id],[Nombre],[Apellido],[Dni],[Domicilio],[Pais],[Provincia],[Departamento],[FechaNacimiento],[Sexo],[AspNetUser],[AvatarUrl],[Posicion],[Descripcion],[CodigoPostal],[Acerca],[ImgUrl] FROM Usuarios", con);
+            SqlCommand com = new SqlCommand("SELECT [Id],[Nombre],[Apellido],[Dni],[PhoneNumber],[Email],[Domicilio],[Pais],[Provincia],[Departamento],[FechaNacimiento],[Sexo],[UserName],[AvatarUrl],[Posicion],[Descripcion],[CodigoPostal],[Acerca],[ImgUrl] FROM AspNetUsers", con);
             con.Open();
             SqlDataReader registros = com.ExecuteReader();
             while (registros.Read())
@@ -49,14 +54,16 @@ namespace MisViajes.Models
                     Id = registros["Id"].ToString(),
                     Nombre = registros["Nombre"].ToString(),
                     Apellido = registros["Apellido"].ToString(),
+                    Email = registros["Email"].ToString(), // Agregue el Email
                     Dni = registros["Dni"].ToString(),
+                    PhoneNumber = registros["PhoneNumber"].ToString(),
                     Domicilio = registros["Domicilio"].ToString(),
                     Pais = ToNullableInt(registros["Pais"].ToString()),
                     Provincia = ToNullableInt(registros["Provincia"].ToString()),
                     Departamento = ToNullableInt(registros["Departamento"].ToString()),
                     FechaNacimiento = registros["FechaNacimiento"].ToString(),
                     Sexo = ToNullableInt(registros["Sexo"].ToString()),
-                    AspNetUser = registros["AspNetUser"].ToString(),
+                    AspNetUser = registros["UserName"].ToString(),
                     AvatarUrl = registros["AvatarUrl"].ToString(),
                     Posicion = registros["Posicion"].ToString(),
                     Descripcion = registros["Descripcion"].ToString(),
@@ -83,6 +90,8 @@ namespace MisViajes.Models
             if (registros.Read())
             {
                 Usuario.Id = registros["ID"].ToString();
+                Usuario.PhoneNumber = registros["PhoneNumber"].ToString();
+                Usuario.UserName = registros["UserName"].ToString();
                 Usuario.Nombre = registros["Nombre"].ToString();
                 Usuario.Apellido = registros["Apellido"].ToString();
                 Usuario.Dni = registros["Dni"].ToString();
@@ -98,6 +107,8 @@ namespace MisViajes.Models
                 Usuario.CodigoPostal = registros["CodigoPostal"].ToString();
                 Usuario.Acerca = registros["Acerca"].ToString();
                 Usuario.ImgUrl = registros["ImgUrl"].ToString();
+                Usuario.Email = registros["Email"].ToString();
+
             }
             con.Close();
             return Usuario;
@@ -106,15 +117,19 @@ namespace MisViajes.Models
         public int ModificarPerfil(UsuarioModel Usr)
         {
             Conectar();                                           
-            SqlCommand comando = new SqlCommand("update AspNetUsers set Nombre=@Nombre,Apellido=@Apellido,Dni=@Dni ,Domicilio=@Domicilio ,Pais=@Pais ,Provincia=@Provincia ,Departamento=@Departamento ,FechaNacimiento=@FechaNacimiento ,Sexo=@Sexo ,Posicion=@Posicion ,Descripcion=@Descripcion ,CodigoPostal=@CodigoPostal ,Acerca=@Acerca where Id=@Id", con);
+            SqlCommand comando = new SqlCommand("update AspNetUsers set Nombre=@Nombre,PhoneNumber=@PhoneNumber,UserName=@UserName,Apellido=@Apellido,Dni=@Dni ,Domicilio=@Domicilio ,Pais=@Pais ,Provincia=@Provincia ,Departamento=@Departamento ,FechaNacimiento=@FechaNacimiento ,Sexo=@Sexo ,Posicion=@Posicion ,Descripcion=@Descripcion ,CodigoPostal=@CodigoPostal ,Acerca=@Acerca where Id=@Id", con);
 
             // SqlCommand comando = new SqlCommand("UPDATE AspNetUsers SET Email = @Email, EmailConfirmed = @EmailConfirmed, PasswordHash = @PasswordHash, SecurityStamp = @SecurityStamp, PhoneNumber = @PhoneNumber, PhoneNumberConfirmed = @PhoneNumberConfirmed, TwoFactorEnabled = @TwoFactorEnabled, LockoutEndDateUtc = @LockoutEndDateUtc, LockoutEnabled = @LockoutEnabled, AccessFailedCount = @AccessFailedCount, UserName = @UserName, Nombre = @Nombre, Apellido = @Apellido, Dni = @Dni, Domicilio = @Domicilio, Pais = @Pais, Provincia = @Provincia, Departamento = @Departamento, FechaNacimiento = @FechaNacimiento, Sexo = @Sexo, AvatarUrl = @AvatarUrl, Posicion = @Posicion, Descripcion = @Descripcion, CodigoPostal = @CodigoPostal, Acerca = @Acerca, ImgUrl = @ImgUrl  WHERE (Id = @Id)");
             comando.Parameters.Add("@Id", SqlDbType.NVarChar, 128, "Id");
             comando.Parameters["@Id"].Value = checkDBNull(Usr.Id);
             comando.Parameters.Add("@Nombre", SqlDbType.NText, 0, "Nombre");
             comando.Parameters["@Nombre"].Value = checkDBNull(Usr.Nombre);
+            comando.Parameters.Add("@UserName", SqlDbType.NText, 0, "UserName");
+            comando.Parameters["@UserName"].Value = checkDBNull(Usr.UserName);
             comando.Parameters.Add("@Apellido", SqlDbType.NText, 0, "Apellido");
-            comando.Parameters["@Apellido"].Value = checkDBNull(Usr.Apellido); 
+            comando.Parameters["@Apellido"].Value = checkDBNull(Usr.Apellido);
+            comando.Parameters.Add("@PhoneNumber", SqlDbType.NText, 0, "PhoneNumber");
+            comando.Parameters["@PhoneNumber"].Value = checkDBNull(Usr.PhoneNumber);
             comando.Parameters.Add("@Dni", SqlDbType.NText, 0, "Dni");
             comando.Parameters["@Dni"].Value = checkDBNull(Usr.Dni);
             comando.Parameters.Add("@Domicilio", SqlDbType.NText, 0, "Domicilio");

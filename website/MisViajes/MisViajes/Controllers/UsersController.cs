@@ -30,12 +30,12 @@ namespace MisViajes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UsuarioModel usuarioModel = await db.UsuarioModels.FindAsync(id);
-            if (usuarioModel == null)
+            ApplicationUser Users = new MantenimientoUsuario().RecuperarUsuario(id);
+            if (Users == null)
             {
                 return HttpNotFound();
             }
-            return View(usuarioModel);
+            return View(Users);
         }
 
         // GET: Users/Create
@@ -68,12 +68,13 @@ namespace MisViajes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UsuarioModel usuarioModel = await db.UsuarioModels.FindAsync(id);
-            if (usuarioModel == null)
+
+            ApplicationUser model = new MantenimientoUsuario().RecuperarUsuario(id);
+            if (model == null)
             {
                 return HttpNotFound();
             }
-            return View(usuarioModel);
+            return View(model);
         }
 
         // POST: Users/Edit/5
@@ -81,12 +82,29 @@ namespace MisViajes.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Apellido,Dni,Domicilio,Pais,Provincia,Departamento,FechaNacimiento,Sexo,AspNetUser,AvatarUrl,Posicion,Descripcion,CodigoPostal,Acerca,ImgUrl")] UsuarioModel usuarioModel)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Apellido,Dni,PhoneNumber,UserName,Domicilio,Pais,Provincia,Departamento,FechaNacimiento,Sexo,AvatarUrl,Posicion,Descripcion,CodigoPostal,Acerca")] UsuarioModel usuarioModel)
         {
+            usuarioModel.Nombre = usuarioModel.Nombre;
+            usuarioModel.Apellido = usuarioModel.Apellido;
+            usuarioModel.Dni = usuarioModel.Dni;
+            usuarioModel.PhoneNumber = usuarioModel.PhoneNumber;
+            usuarioModel.Domicilio = usuarioModel.Domicilio;
+            usuarioModel.Pais = usuarioModel.Pais;
+            usuarioModel.Provincia = usuarioModel.Provincia;
+            usuarioModel.Departamento = usuarioModel.Departamento;
+            usuarioModel.FechaNacimiento = usuarioModel.FechaNacimiento;
+            usuarioModel.AvatarUrl = usuarioModel.AvatarUrl;
+            usuarioModel.Posicion = usuarioModel.Posicion;
+            usuarioModel.Descripcion = usuarioModel.Descripcion;
+            usuarioModel.CodigoPostal = usuarioModel.CodigoPostal;
+            usuarioModel.Acerca = usuarioModel.Acerca;
+            usuarioModel.UserName = usuarioModel.UserName;
+
+
+
             if (ModelState.IsValid)
             {
-                db.Entry(usuarioModel).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                int i = new MantenimientoUsuario().ModificarPerfil(usuarioModel);
                 return RedirectToAction("Index");
             }
             return View(usuarioModel);
