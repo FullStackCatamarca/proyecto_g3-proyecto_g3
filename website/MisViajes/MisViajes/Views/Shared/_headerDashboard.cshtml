@@ -100,6 +100,15 @@
                             <span>Configuracion</span>
                         </a>
                     </li>
+                    @if (@ViewBag.Message == "Confirmado")
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="@Url.Action("Index", "Users")">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Usuarios</span>
+                            </a>
+                        </li>
+                    }
                 </ul>
 
                 <div class="navbar-nav-right d-none d-md-block">
@@ -160,6 +169,14 @@
                                             <h5 class="fon-size-15 text-dark text-capitalize">Configuracion</h5>
                                         </a>
                                     </li>
+                                    @if (@ViewBag.Message == "Confirmado")
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Index", "Users")" class="list-group-item border-bottom border-off-white rounded-0">
+                                                <h5 class="fon-size-15 text-dark text-capitalize">Usuarios</h5>
+                                            </a>
+                                        </li>
+                                    }
 
                                     <li class="">
                                         <a href="../Account/LogOff" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
