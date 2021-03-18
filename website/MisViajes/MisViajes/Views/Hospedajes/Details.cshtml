@@ -1,0 +1,106 @@
+﻿@model MisViajes.Models.Hospedajes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hospedajes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotourl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fotourl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puntuacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puntuacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weburl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weburl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.habilitado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.habilitado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitud)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -16,7 +16,7 @@ let localidades;
 function mostrarDpto(Dpts){
     Dpts.map(Dpto => {
         const Option = document.createElement('option');
-        Option.value = Dpto.ID;
+        Option.value = Dpto.Id;
         Option.textContent = Dpto.Nombre ;
         SelectDepartamentos.appendChild(Option);
     })
@@ -28,7 +28,7 @@ function mostrarLocl(Locls) {
     limpiarHtml(SelectLocalidades);
     Locls.map(Locl => {
         const Option = document.createElement('option');
-        Option.value = Locl.ID;
+        Option.value = Locl.Id;
         Option.textContent = Locl.Nombre;
         SelectLocalidades.appendChild(Option);
     })
@@ -69,7 +69,7 @@ function limpiarHtml(idelement) {
 //Obtenemos los datos de la Localidad Seleccionada  y extraemos su lat y long
 function obtenerLocalidad() {
     const localidadID = parseInt(SelectLocalidades.value);
-    let localidadSelect = localidades.find((loc) => loc.ID === localidadID); //Buscamos la localidad Seleccionada y la retornamos en localidadSelect
+    let localidadSelect = localidades.find((loc) => loc.Id === localidadID); //Buscamos la localidad Seleccionada y la retornamos en localidadSelect
 
     //Consultar Clima
 

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MisViajes.Models.Hospedajes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fotourl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puntuacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weburl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.habilitado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ubicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fotourl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puntuacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Localidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weburl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.habilitado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitud)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

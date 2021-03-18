@@ -171,67 +171,39 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AtraccionesController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HospedajesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MonumentosController.cs" />
+    <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="Controllers\ProvinciasController.cs" />
+    <Compile Include="Controllers\RutasController.cs" />
+    <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Controllers\SlidesController.cs" />
+    <Compile Include="Controllers\WaypointsController.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Departamentos.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\DepartamentosModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Localidades.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\LocalidadesController.cs" />
+    <Compile Include="Models\LocalidadesModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Paises.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Provincias.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\PaisesModels.cs" />
+    <Compile Include="Models\ProvinciasModels.cs" />
     <Compile Include="Models\RutaModels.cs" />
-    <Compile Include="Models\ServicioModels.cs" />
+    <Compile Include="Models\ServiciosModels.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\WaypointModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Slider\Slider.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Slider.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Slider\Slider.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Slider.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Slider\Slider.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Slider.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Slider\Slides.cs">
-      <DependentUpon>Slider.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\Slides.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\star-color1.css" />
@@ -718,16 +690,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\plugins\bootstrap\css\bootstrap-grid.css.map" />
@@ -802,13 +764,6 @@
     <Content Include="assets\plugins\slick\slick-theme.scss" />
     <Content Include="assets\plugins\slick\slick.less" />
     <Content Include="assets\plugins\slick\slick.scss" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -820,16 +775,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Slider\Slider.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Slider.edmx</DependentUpon>
-      <LastGenOutput>Slider.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Slider\Slider.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Slider.edmx</DependentUpon>
-      <LastGenOutput>Slider.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -872,13 +817,6 @@
     <Content Include="Views\Shared\_headerDashboard.cshtml" />
     <Content Include="Views\Account\ForgotEmailConfirm.cshtml" />
     <Content Include="Views\Account\ForgotEmailConfirmConfirmation.cshtml" />
-    <EntityDeploy Include="Slider\Slider.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Slider.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Slider\Slider.edmx.diagram">
-      <DependentUpon>Slider.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Shared\_Slides.cshtml" />
     <Content Include="Views\Slides\Create.cshtml" />
     <Content Include="Views\Slides\Delete.cshtml" />
@@ -886,6 +824,61 @@
     <Content Include="Views\Slides\Edit.cshtml" />
     <Content Include="Views\Slides\Index.cshtml" />
     <Content Include="Views\Manage\AdminUserManagement.cshtml" />
+    <Content Include="Views\Rutas\Create.cshtml" />
+    <Content Include="Views\Rutas\Delete.cshtml" />
+    <Content Include="Views\Rutas\Details.cshtml" />
+    <Content Include="Views\Rutas\Edit.cshtml" />
+    <Content Include="Views\Rutas\Index.cshtml" />
+    <Content Include="Views\Servicios\Create.cshtml" />
+    <Content Include="Views\Servicios\Delete.cshtml" />
+    <Content Include="Views\Servicios\Details.cshtml" />
+    <Content Include="Views\Servicios\Edit.cshtml" />
+    <Content Include="Views\Servicios\Index.cshtml" />
+    <Content Include="Views\Hospedajes\Create.cshtml" />
+    <Content Include="Views\Hospedajes\Delete.cshtml" />
+    <Content Include="Views\Hospedajes\Details.cshtml" />
+    <Content Include="Views\Hospedajes\Edit.cshtml" />
+    <Content Include="Views\Hospedajes\Index.cshtml" />
+    <Content Include="Views\Waypoints\Create.cshtml" />
+    <Content Include="Views\Waypoints\Delete.cshtml" />
+    <Content Include="Views\Waypoints\Details.cshtml" />
+    <Content Include="Views\Waypoints\Edit.cshtml" />
+    <Content Include="Views\Waypoints\Index.cshtml" />
+    <Content Include="Views\Paises\Create.cshtml" />
+    <Content Include="Views\Paises\Delete.cshtml" />
+    <Content Include="Views\Paises\Details.cshtml" />
+    <Content Include="Views\Paises\Edit.cshtml" />
+    <Content Include="Views\Paises\Index.cshtml" />
+    <Content Include="Views\Provincias\Create.cshtml" />
+    <Content Include="Views\Provincias\Delete.cshtml" />
+    <Content Include="Views\Provincias\Details.cshtml" />
+    <Content Include="Views\Provincias\Edit.cshtml" />
+    <Content Include="Views\Provincias\Index.cshtml" />
+    <Content Include="Views\Localidades\Create.cshtml" />
+    <Content Include="Views\Localidades\Delete.cshtml" />
+    <Content Include="Views\Localidades\Details.cshtml" />
+    <Content Include="Views\Localidades\Edit.cshtml" />
+    <Content Include="Views\Localidades\Index.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Eventos\Create.cshtml" />
+    <Content Include="Views\Eventos\Delete.cshtml" />
+    <Content Include="Views\Eventos\Details.cshtml" />
+    <Content Include="Views\Eventos\Edit.cshtml" />
+    <Content Include="Views\Eventos\Index.cshtml" />
+    <Content Include="Views\Monumentos\Create.cshtml" />
+    <Content Include="Views\Monumentos\Delete.cshtml" />
+    <Content Include="Views\Monumentos\Details.cshtml" />
+    <Content Include="Views\Monumentos\Edit.cshtml" />
+    <Content Include="Views\Monumentos\Index.cshtml" />
+    <Content Include="Views\Atracciones\Create.cshtml" />
+    <Content Include="Views\Atracciones\Delete.cshtml" />
+    <Content Include="Views\Atracciones\Details.cshtml" />
+    <Content Include="Views\Atracciones\Edit.cshtml" />
+    <Content Include="Views\Atracciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
