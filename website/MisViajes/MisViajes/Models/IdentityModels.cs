@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -26,6 +27,8 @@ namespace MisViajes.Models
         public string Acerca { get; set; }
         public string ImgUrl { get; set; }
 
+        public ICollection<Rutas> Ruta { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Tenga en cuenta que el valor de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
@@ -51,8 +54,22 @@ namespace MisViajes.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<MisViajes.Slider.Slides> Slides { get; set; }
+        public System.Data.Entity.DbSet<MisViajes.Models.Slides> Slides { get; set; }
 
         public System.Data.Entity.DbSet<MisViajes.Models.UsuarioModel> UsuarioModels { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Paises> Paises { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Provincias> Provincias { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Departamentos> Departamentos { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Localidades> Localidades { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Rutas> Rutas { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Servicios> Servicios { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Waypoint> Waypoints { get; set; }
     }
 }
