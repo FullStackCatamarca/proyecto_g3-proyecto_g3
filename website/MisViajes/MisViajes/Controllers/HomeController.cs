@@ -25,27 +25,22 @@ namespace MisViajes.Controllers
 
         public JsonResult ObtenerDepartamentos()
         {
-            List<Departamentos> lst;
-            using (misviajesEntities db = new misviajesEntities())
-            {
+            db.Configuration.LazyLoadingEnabled = false;
+            List<Departamentos> lst = db.Departamentos.ToList<Departamentos>();
 
-                lst = (from d in db.Departamentos
-                       select d).ToList();
-            }
             return Json(lst,JsonRequestBehavior.AllowGet);
         }
-        [HttpPost]
 
+        [HttpPost]
         public JsonResult ObtenerLocalidades(int? idDepartamento)
         {
-            List<Localidades> lst;
-            using (misviajesEntities db = new misviajesEntities())
-            {
-
-                lst = (from d in db.Localidades
-                       where d.Departamento == idDepartamento
-                       select d).ToList();
-            }
+            
+            List<Localidades> lst = new List<Localidades>();
+            
+            db.Configuration.LazyLoadingEnabled = false;
+            if (idDepartamento != null)
+                lst = db.Localidades.Where(l => l.DepartamentoId == idDepartamento).ToList<Localidades>();
+            
             return Json(lst, JsonRequestBehavior.AllowGet);
         }
 
@@ -116,6 +111,7 @@ namespace MisViajes.Controllers
         public ActionResult ShowSlides()
         {
             return PartialView("_Slides", db.Slides.ToList());
+            
         }
     }
 }

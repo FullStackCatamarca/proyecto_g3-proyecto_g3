@@ -8,7 +8,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
-using MisViajes.Slider;
 
 namespace MisViajes.Controllers
 {
