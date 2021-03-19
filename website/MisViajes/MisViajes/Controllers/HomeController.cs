@@ -61,7 +61,13 @@ namespace MisViajes.Controllers
         [Authorize]
         public ActionResult Dashboard()
         {
-            ViewBag.Message = "Panel de Usuario.";
+
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+
+
+            }
 
             return View();
         }

@@ -904,6 +904,7 @@
     <Content Include="Views\Slides\Edit.cshtml" />
     <Content Include="Views\Slides\Index.cshtml" />
     <Content Include="Views\Manage\AdminUserManagement.cshtml" />
+
     <Content Include="Views\Rutas\Create.cshtml" />
     <Content Include="Views\Rutas\Delete.cshtml" />
     <Content Include="Views\Rutas\Details.cshtml" />
