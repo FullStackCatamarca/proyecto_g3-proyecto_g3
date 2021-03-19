@@ -56,6 +56,8 @@ namespace MisViajes.Models
 
         public System.Data.Entity.DbSet<MisViajes.Models.Slides> Slides { get; set; }
 
+        public System.Data.Entity.DbSet<MisViajes.Models.UsuarioModel> UsuarioModels { get; set; }
+
         public System.Data.Entity.DbSet<MisViajes.Models.Paises> Paises { get; set; }
 
         public System.Data.Entity.DbSet<MisViajes.Models.Provincias> Provincias { get; set; }
