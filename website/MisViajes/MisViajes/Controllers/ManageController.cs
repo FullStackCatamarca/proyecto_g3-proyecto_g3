@@ -433,7 +433,7 @@ namespace MisViajes.Controllers
             Error
         }
 
-        private ActionResult AddRoles()
+        public ActionResult AddRoles()
         {
 
             using (var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext())))
