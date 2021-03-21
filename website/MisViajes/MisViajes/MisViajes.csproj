@@ -206,10 +206,10 @@
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PaisesModels.cs" />
-    <Compile Include="Models\Model1.Context.cs">
     <Compile Include="Models\ProvinciasModels.cs" />
     <Compile Include="Models\RutaModels.cs" />
     <Compile Include="Models\ServiciosModels.cs" />
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
