@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -165,12 +167,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ForoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SlidesController.cs" />
@@ -714,6 +715,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Foro\.gitignore" />
+    <Content Include="Foro\e2e\protractor.conf.js" />
+    <Content Include="Foro\karma.conf.js" />
+    <Content Include="Foro\src\app\app.component.css" />
+    <Content Include="Foro\src\app\app.component.html" />
+    <Content Include="Foro\src\app\component\card\card.component.css" />
+    <Content Include="Foro\src\app\component\card\card.component.html" />
+    <Content Include="Foro\src\app\component\component.component.css" />
+    <Content Include="Foro\src\app\component\component.component.html" />
+    <Content Include="Foro\src\app\component\header-forum\header-forum.component.css" />
+    <Content Include="Foro\src\app\component\header-forum\header-forum.component.html" />
+    <Content Include="Foro\src\app\component\new-discussion\new-discussion.component.css" />
+    <Content Include="Foro\src\app\component\new-discussion\new-discussion.component.html" />
+    <Content Include="Foro\src\app\component\sidebar\sidebar.component.css" />
+    <Content Include="Foro\src\app\component\sidebar\sidebar.component.html" />
+    <Content Include="Foro\src\favicon.ico" />
+    <Content Include="Foro\src\index.html" />
+    <Content Include="Foro\src\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
@@ -807,7 +826,30 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Foro\.browserslistrc" />
+    <Content Include="Foro\.editorconfig" />
+    <Content Include="Foro\angular.json" />
+    <Content Include="Foro\e2e\tsconfig.json" />
+    <Content Include="Foro\package.json" />
+    <Content Include="Foro\README.md" />
+    <Content Include="Foro\src\assets\.gitkeep" />
+    <Content Include="Foro\tsconfig.app.json" />
+    <Content Include="Foro\tsconfig.json" />
+    <Content Include="Foro\tsconfig.spec.json" />
+    <Content Include="Foro\tslint.json" />
+    <Content Include="Scripts\foro\main.js.map" />
+    <Content Include="Scripts\foro\polyfills.js.map" />
+    <Content Include="Scripts\foro\runtime.js.map" />
+    <Content Include="Scripts\foro\styles.css.map" />
+    <Content Include="Scripts\foro\vendor.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\foro\favicon.ico" />
+    <Content Include="Scripts\foro\index.html" />
+    <Content Include="Scripts\foro\main.js" />
+    <Content Include="Scripts\foro\polyfills.js" />
+    <Content Include="Scripts\foro\runtime.js" />
+    <Content Include="Scripts\foro\styles.css" />
+    <Content Include="Scripts\foro\vendor.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -884,6 +926,7 @@
     <Content Include="Views\Slides\Edit.cshtml" />
     <Content Include="Views\Slides\Index.cshtml" />
     <Content Include="Views\Manage\AdminUserManagement.cshtml" />
+    <Content Include="Views\Foro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -903,13 +946,38 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Foro\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Foro\e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="Foro\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="Foro\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Foro\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\card\card.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\card\card.component.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\component.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\component.component.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\header-forum\header-forum.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\header-forum\header-forum.component.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\new-discussion\new-discussion.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\new-discussion\new-discussion.component.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\sidebar\sidebar.component.spec.ts" />
+    <TypeScriptCompile Include="Foro\src\app\component\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="Foro\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Foro\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Foro\src\main.ts" />
+    <TypeScriptCompile Include="Foro\src\polyfills.ts" />
+    <TypeScriptCompile Include="Foro\src\test.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
