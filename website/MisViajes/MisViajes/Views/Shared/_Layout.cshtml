@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
     <title>@ViewBag.Title - DFS 2020</title>
     <link href="@Url.Content("~/assets/plugins/isotope/isotope.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/fancybox/jquery.fancybox.min.css")" rel="stylesheet" type="text/css" />
@@ -20,6 +21,9 @@
     <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord-animations.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <!--ANGULAR-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="~/Foro/src/styles.css">
 
 
     <!-- FAVICON -->
@@ -27,6 +31,7 @@
     <link rel="stylesheet" href="@Url.Content("~/assets/css/StyleSheet.css")" type="text/css" />
     <!--ChatBot BlueCaribu-->
     <script async>(function (w, d) { var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://app.bluecaribu.com/conversion/integration/c3063dc2d99319e631631e58cd8c7b14"); h.appendChild(s); })(window, document);</script>
+
 </head>
 
 <body id="body" class="up-scroll" data-spy="scroll" data-target=".element-right-sidebar">
@@ -65,7 +70,7 @@
                     @Html.ActionLink(" ", "Index", "Home", null, new { @class = "menuzord-logo-brand", id = "LogoBlack", @style = "display:none" })
 
                     <!-- Menu Zord for Dashboar (view script in dashboar) -->
-                    <a href='@Url.Action("Index", "Home")' class="menuzord-brand"  id="LogoColor">
+                    <a href='@Url.Action("Index", "Home")' class="menuzord-brand" id="LogoColor">
                         <img src='@Url.Content("~/assets/img/logo-color-big.png")' />
                     </a>
 
@@ -142,7 +147,7 @@
 
                                 @*<li><a href="404.html">404 Not Found</a></li>
 
-                                <li><a href="coming-soon.html">Coming Soon</a></li>*@
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>*@
                             </ul>
                         </li>
 
@@ -177,7 +182,7 @@
                                         <a href="javascript:void(0)" data-toggle="modal" data-target="#login">Ingresar</a>
                                     </li>
                                 }
-                                </ul>
+                            </ul>
                         </li>
 
                         <li class="py-4">
@@ -454,7 +459,7 @@
                         }
                     }
                 });
-                
+
                 return false;
             }
         });
@@ -509,6 +514,12 @@
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
     <script src="@Url.Content("~/assets/js/star.js")"></script>
+
+    <!--SCRIPTS ANGULAR-->
+    <script src="~/scripts/foro/runtime.js" defer></script>
+    <script src="~/scripts/foro/polyfills.js" defer></script>
+    <script src="~/scripts/foro/vendor.js" defer></script>
+    <script src="~/scripts/foro/main.js" defer></script>
 </body>
 </html>
 
