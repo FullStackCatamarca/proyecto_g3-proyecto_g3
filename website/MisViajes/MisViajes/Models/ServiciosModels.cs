@@ -47,9 +47,11 @@ namespace MisViajes.Models
     {
 
     }
-    public class InheritanceMappingContext : Servicios
+
+    public class InheritanceMappingContext : DbContext
     {
         public DbSet<Servicios> Servicios { get; set; }
+        public DbSet<Posts> Post { get; set; }
     }
 
 

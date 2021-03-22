@@ -71,5 +71,7 @@ namespace MisViajes.Models
         public System.Data.Entity.DbSet<MisViajes.Models.Servicios> Servicios { get; set; }
 
         public System.Data.Entity.DbSet<MisViajes.Models.Waypoint> Waypoints { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Posts> Posts { get; set; }
     }
 }
