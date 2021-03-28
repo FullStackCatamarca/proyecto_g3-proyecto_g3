@@ -111,7 +111,6 @@ namespace MisViajes.Controllers
         public ActionResult ShowSlides()
         {
             return PartialView("_Slides", db.Slides.ToList());
-            
         }
     }
 }

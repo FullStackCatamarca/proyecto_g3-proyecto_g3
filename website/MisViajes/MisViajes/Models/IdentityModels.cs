@@ -28,6 +28,7 @@ namespace MisViajes.Models
         public string ImgUrl { get; set; }
 
         public ICollection<Rutas> Ruta { get; set; }
+        public ICollection<Temas> Tema { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -73,5 +74,11 @@ namespace MisViajes.Models
         public System.Data.Entity.DbSet<MisViajes.Models.Waypoint> Waypoints { get; set; }
 
         public System.Data.Entity.DbSet<MisViajes.Models.Posts> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Temas> Temas { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Votos> Votos { get; set; }
+
+        public System.Data.Entity.DbSet<MisViajes.Models.Respuesta> Respuestas { get; set; }
     }
 }
