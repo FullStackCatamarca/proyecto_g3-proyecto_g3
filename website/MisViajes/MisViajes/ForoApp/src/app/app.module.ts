@@ -8,6 +8,7 @@ import { HeaderForumComponent } from './component/header-forum/header-forum.comp
 import { CardComponent } from './component/card/card.component';
 import { NewDiscussionComponent } from './component/new-discussion/new-discussion.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
     HeaderForumComponent,
     CardComponent,
     NewDiscussionComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+<div class="card mb-2">
+    <div class="card-body p-2 p-sm-3">
+        <div class="media forum-item" *ngFor="let item of valor">
+          <div *ngIf="item.Activo">
+            <a href="#" data-toggle="collapse" data-target=".forum-content">
+              <img src="{{item.AvatarUrl}}"
+                   class="mr-3 rounded-circle" width="50" alt="User">
+            </a>
+            <div class="media-body">
+              <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">{{item.Nombre}}</a></h6>
+              <p class="text-secondary">{{item.Descripcion}}</p>
+              <p class="text-muted">
+                <a href="javascript:void(0)">{{item.Usuario}}</a> Respondió <span class="text-secondary font-weight-bold">{{item.Fecha}}</span>
+              </p>
+            </div>
+            <div class="text-muted small text-center align-self-center">
+              <span *ngIf="item.VotosUp > 0" class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/good-quality.png" width=30% /> 1</span>
+              <span *ngIf="item.VotosDown > 0" class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/poor-quality.png" width=30% /> 2</span>
+              <span *ngIf="item.Respuestas > 0" class=" d-sm-inline-block"><img src="https://img.icons8.com/doodle/48/000000/comments.png" width=30% /> 3</span>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

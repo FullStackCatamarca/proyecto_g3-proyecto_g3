@@ -1,0 +1,36 @@
+<div class="modal fade" id="threadModal" tabindex="-1" role="dialog" aria-labelledby="threadModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <form action="/Temas/Create?ReturnUrl=Foro" method="post">
+            <div class="modal-header d-flex align-items-center bg-orange text-white">
+                <h6 class="modal-title mb-0" id="threadModalLabel">Nueva Discusión</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="Nombre">Titulo</label>
+                <input type="text" class="form-control" id="Nombre"  name="Nombre" placeholder="Ingresa un Titulo" autofocus="">
+              </div>
+              <div class="form-group">
+                <label for="Descripcion">Descripcion</label>
+                <input type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Descripcion" autofocus="">
+              </div>
+              <div class="form-group">
+                <label for="Activo"> Activo </label>
+                &nbsp;&nbsp;
+                <input checked="checked" class="check-box" data-val="true" data-val-required="El campo Activo es obligatorio." id="Activo" name="Activo" type="checkbox" value="true" />
+              </div>
+
+              <textarea class="form-control summernote" style="display: none;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <input type="submit" class="btn bg-orange text-white" value="Post">
+            </div>
+        </form>
+    </div>
+</div>
+</div>
