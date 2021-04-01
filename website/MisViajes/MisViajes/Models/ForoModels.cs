@@ -26,6 +26,8 @@ namespace MisViajes.Models
         public string Descripcion { get; set; }
         public Temas Tema { get; set; }
         public ApplicationUser User { get; set; }
+
+        public ICollection<Votos> Voto { get; set; }
     }
 
     public class Votos
@@ -35,12 +37,19 @@ namespace MisViajes.Models
         public DateTime Fecha { get; set; }
         public bool Up { get; set; }
         public Posts Post { get; set; }
+        public Respuestas Respuesta { get; set; }
         public ApplicationUser User { get; set; }
 
     }
-    public class Respuesta : Posts
+    public class Respuestas
     {
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Descripcion { get; set; }
+        public Posts Post { get; set; }
+        public ApplicationUser User { get; set; }
 
+        public ICollection<Votos> Voto { get; set; }
     }
 
     public class ApiTemas
@@ -67,7 +76,7 @@ namespace MisViajes.Models
             at.Descripcion = t.Descripcion;
             at.Activo = t.Activo;
             at.Usuario = t.User.UserName;
-            at.AvatarUrl = t.User.AvatarUrl;
+            at.AvatarUrl = (t.User.AvatarUrl != null) ? t.User.AvatarUrl : "../assets/img/dashboard/profile-img-01.jpg"; ;
             at.Respuestas = 0;
             at.VotosUp = 0;
             at.VotosDown = 0;

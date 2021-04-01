@@ -18,7 +18,7 @@ namespace MisViajes.Controllers
         // GET: Respuestas
         public async Task<ActionResult> Index()
         {
-            return View(await db.Posts.ToListAsync());
+            return View(await db.Respuestas.ToListAsync());
         }
 
         // GET: Respuestas/Details/5
@@ -28,12 +28,12 @@ namespace MisViajes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Respuesta respuesta = (Respuesta) await db.Posts.FindAsync(id);
-            if (respuesta == null)
+            Respuestas respuestas = await db.Respuestas.FindAsync(id);
+            if (respuestas == null)
             {
                 return HttpNotFound();
             }
-            return View(respuesta);
+            return View(respuestas);
         }
 
         // GET: Respuestas/Create
@@ -47,16 +47,16 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Fecha,Descripcion")] Respuesta respuesta)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Fecha,Descripcion")] Respuestas respuestas)
         {
             if (ModelState.IsValid)
             {
-                db.Posts.Add(respuesta);
+                db.Respuestas.Add(respuestas);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(respuesta);
+            return View(respuestas);
         }
 
         // GET: Respuestas/Edit/5
@@ -66,12 +66,12 @@ namespace MisViajes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Respuesta respuesta = (Respuesta) await db.Posts.FindAsync(id);
-            if (respuesta == null)
+            Respuestas respuestas = await db.Respuestas.FindAsync(id);
+            if (respuestas == null)
             {
                 return HttpNotFound();
             }
-            return View(respuesta);
+            return View(respuestas);
         }
 
         // POST: Respuestas/Edit/5
@@ -79,15 +79,15 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Fecha,Descripcion")] Respuesta respuesta)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Fecha,Descripcion")] Respuestas respuestas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(respuesta).State = EntityState.Modified;
+                db.Entry(respuestas).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(respuesta);
+            return View(respuestas);
         }
 
         // GET: Respuestas/Delete/5
@@ -97,12 +97,12 @@ namespace MisViajes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Respuesta respuesta = (Respuesta) await db.Posts.FindAsync(id);
-            if (respuesta == null)
+            Respuestas respuestas = await db.Respuestas.FindAsync(id);
+            if (respuestas == null)
             {
                 return HttpNotFound();
             }
-            return View(respuesta);
+            return View(respuestas);
         }
 
         // POST: Respuestas/Delete/5
@@ -110,8 +110,8 @@ namespace MisViajes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Respuesta respuesta = (Respuesta) await db.Posts.FindAsync(id);
-            db.Posts.Remove(respuesta);
+            Respuestas respuestas = await db.Respuestas.FindAsync(id);
+            db.Respuestas.Remove(respuestas);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -959,11 +959,6 @@
     <Content Include="Views\Posts\Details.cshtml" />
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
-    <Content Include="Views\Respuestas\Create.cshtml" />
-    <Content Include="Views\Respuestas\Delete.cshtml" />
-    <Content Include="Views\Respuestas\Details.cshtml" />
-    <Content Include="Views\Respuestas\Edit.cshtml" />
-    <Content Include="Views\Respuestas\Index.cshtml" />
     <Content Include="Views\Temas\Create.cshtml" />
     <Content Include="Views\Temas\Delete.cshtml" />
     <Content Include="Views\Temas\Details.cshtml" />
@@ -974,6 +969,11 @@
     <Content Include="Views\Votos\Details.cshtml" />
     <Content Include="Views\Votos\Edit.cshtml" />
     <Content Include="Views\Votos\Index.cshtml" />
+    <Content Include="Views\Respuestas\Create.cshtml" />
+    <Content Include="Views\Respuestas\Delete.cshtml" />
+    <Content Include="Views\Respuestas\Details.cshtml" />
+    <Content Include="Views\Respuestas\Edit.cshtml" />
+    <Content Include="Views\Respuestas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
