@@ -179,3 +179,14 @@
         transform: scale(1);
     }
 }
+
+.ordenar_hospedaje .ordenarPrecio {
+    float: right;
+}
+
+@media(max-width: 769px){
+    .ordenar_hospedaje .ordenarPrecio {
+        float:none;
+    }
+
+}
