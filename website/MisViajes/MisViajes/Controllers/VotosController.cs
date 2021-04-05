@@ -8,12 +8,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
 
 namespace MisViajes.Controllers
 {
     public class VotosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: Votos
         public async Task<ActionResult> Index()
@@ -37,8 +40,12 @@ namespace MisViajes.Controllers
         }
 
         // GET: Votos/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id = null)
         {
+            if (id == null) return RedirectToAction("Index", "Foro");
+
+            var post = db.Posts.Where(p => p.Id == id);
+            ViewBag.PostId = new SelectList(post, "Id", "Descripcion");
             return View();
         }
 
@@ -47,8 +54,19 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Fecha,Up")] Votos votos)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Up,Post")] Votos votos, FormCollection form)
         {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var UserId = User.Identity.GetUserId();
+            var user = UserManager.FindById(UserId);
+            votos.User = user;
+            votos.Fecha = DateTime.Now;
+            int id = Convert.ToInt32(form["postId"]);
+            votos.Post = db.Posts.Where(r => r.Id == id).FirstOrDefault();
+
+            ModelState.Remove("Fecha");
+            ModelState.Remove("User");
+
             if (ModelState.IsValid)
             {
                 db.Votos.Add(votos);
@@ -59,8 +77,28 @@ namespace MisViajes.Controllers
             return View(votos);
         }
 
-        // GET: Votos/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+
+        public ActionResult VotoUp(int? postId, bool up)
+        {
+            if (postId != null)
+            {
+                Votos votos = new Votos();
+                this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+                var UserId = User.Identity.GetUserId();
+                var user = UserManager.FindById(UserId);
+                votos.User = user;
+                votos.Fecha = DateTime.Now;
+                votos.Post = db.Posts.Where(r => r.Id == postId).FirstOrDefault();
+                votos.Up = up;
+
+                db.Votos.Add(votos);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "Foro");
+        }
+
+            // GET: Votos/Edit/5
+            public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {

@@ -1002,6 +1002,10 @@
     <TypeScriptCompile Include="ForoApp\src\app\component\sidebar\sidebar.component.ts" />
     <TypeScriptCompile Include="ForoApp\src\app\data.service.spec.ts" />
     <TypeScriptCompile Include="ForoApp\src\app\data.service.ts" />
+    <TypeScriptCompile Include="ForoApp\src\app\posts.ts" />
+    <TypeScriptCompile Include="ForoApp\src\app\respuestas.service.spec.ts" />
+    <TypeScriptCompile Include="ForoApp\src\app\respuestas.service.ts" />
+    <TypeScriptCompile Include="ForoApp\src\app\respuestas.ts" />
     <TypeScriptCompile Include="ForoApp\src\app\slides.ts" />
     <TypeScriptCompile Include="ForoApp\src\app\temas.service.spec.ts" />
     <TypeScriptCompile Include="ForoApp\src\app\temas.service.ts" />

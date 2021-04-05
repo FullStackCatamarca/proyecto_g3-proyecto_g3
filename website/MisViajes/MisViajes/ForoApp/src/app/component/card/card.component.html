@@ -1,111 +1,78 @@
 <li id="comments" class="comments-area">
-  <div *ngFor="let item of valor">
-    <div *ngIf="item.Activo">
-      <ol class="comment-list">
-        <li id="comment-{{item.Id}}" class="comment even thread-even depth-1 parent ">
-          <article id="div-comment-{{item.Id}}" class="comment-body">
-            <div class="comment-content">
-              <h2><a href="#" data-toggle="collapse" data-target=".forum-item" class="text-body">{{item.Nombre}}</a></h2>
-                  <img src="{{item.AvatarUrl}}" class="rounded-circle" width="50" align="left" />
-                  <p class="text-secondary">{{item.Descripcion}}</p>
+    <div *ngFor="let item of valor">
+      <div *ngIf="item.Activo">
+        <ol class="comment-list">
+          <li id="comment-{{item.Id}}" class="comment even thread-even depth-1 parent ">
+            <article id="div-comment-{{item.Id}}" class="comment-body">
+              <div class="comment-content">
+                <h2><a href="#" data-toggle="collapse" data-target=".forum-item" class="text-body">{{item.Nombre}}</a></h2>
+                <img src="{{item.AvatarUrl}}" class="rounded-circle" width="50" align="left" />
+                <p class="text-secondary">{{item.Descripcion}}</p>
               </div>
               <BR clear="left" />
               <p class="text-muted">
                 <a href="javascript:void(0)">{{item.Usuario}}</a> Escribio el:  <span class="text-secondary font-weight-bold">{{item.Fecha}}</span>
               </p>
               <div class="text-muted small text-center">
-                <a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/?replytocom=6335690#respond">Responder</a>
-                <span *ngIf="item.VotosUp > 0" class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/good-quality.png" width=30% />{{item.VotosUp}}</span>
-                <span *ngIf="item.VotosDown > 0" class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/poor-quality.png" width=30% />{{item.VotosDown}}</span>
+                <a rel="nofollow" class="comment-reply-link" href="../posts/create?id={{item.Id}}">Responder</a>
                 <span class=" d-sm-inline-block"><img src="https://img.icons8.com/doodle/48/000000/comments.png" width=30% />{{item.Respuestas}}</span>
               </div>
-          </article><!-- .comment-body -->
-        </li>
-      </ol>
-    </div>
+            </article><!-- .comment-body -->
+            <div *ngIf="item.Respuestas > 0">
+              <div *ngFor="let resp of item.Posts">
+                <ol class="children">
+                  <li id="comment-{{resp.Id}}" class="comment odd alt depth-2 parent ">
+                    <article id="div-comment-{{resp.Id}}" class="comment-body">
+                      <div class="comment-content">
+                        <img src="{{resp.AvatarUrl}}" class="rounded-circle" width="50" align="left" />
+                        <p class="text-secondary">{{resp.Descripcion}}</p>
+                      </div>
+                      <BR clear="left" />
+                      <p class="text-muted">
+                        <a href="javascript:void(0)">{{resp.Usuario}}</a> Escribio el:  <span class="text-secondary font-weight-bold">{{resp.Fecha}}</span>
+                      </p>
+                      <div class="text-muted small text-center">
+                        <a rel="nofollow" class="comment-reply-link" href="../Respuestas/create?id={{resp.Id}}">Responder</a>
+                        <a href="../votos/VotoUp?postId={{resp.Id}}&up=true">
+                            <span class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/good-quality.png" width=30% />{{resp.VotosUp}}</span>
+                        </a>
+                        <a href="../votos/VotoUp?postId={{resp.Id}}&up=false">
+                          <span class="d-none d-sm-inline-block"><img src="https://img.icons8.com/plasticine/100/000000/poor-quality.png" width=30% />{{resp.VotosDown}}</span>
+                        </a>
+                        <span class=" d-sm-inline-block"><img src="https://img.icons8.com/doodle/48/000000/comments.png" width=30% />{{resp.Respuestas}}</span>
+                      </div>
+
+                      <a href="../votos/VotoUp?postId=2&up=false">
+                       
+                      </a>
+
+
+                    </article><!-- .comment-body -->
+                    <div *ngIf="resp.Respuestas > 0">
+                      <div *ngFor="let r of resp.Respuesta">
+                        <ol class="children">
+                          <li id="comment-{{r.Id}}" class="comment odd alt depth-2 parent ">
+                            <article id="div-comment-{{r.Id}}" class="comment-body">
+                              <div class="comment-content">
+                                <img src="{{r.AvatarUrl}}" class="rounded-circle" width="50" align="left" />
+                                <p class="text-secondary">{{r.Descripcion}}</p>
+                              </div>
+                              <BR clear="left" />
+                              <p class="text-muted">
+                                <a href="javascript:void(0)">{{r.Usuario}}</a> Escribio el:  <span class="text-secondary font-weight-bold">{{r.Fecha}}</span>
+                              </p>
+                            </article><!-- .comment-body -->
+                          </li><!-- #comment-## -->
+                        </ol><!-- .children -->
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
 </li>
 
-
-        <div id="comments" class="comments-area">
-          <h2 class="comments-title">
-            10 thoughts on “<span>segunda linea</span>”
-          </h2>
-          <ol class="comment-list">
-            <li id="comment-6335690" class="comment even thread-even depth-1 parent ">
-              <article id="div-comment-6335690" class="comment-body">
-                <footer class="comment-meta">
-                  <div class="comment-author vcard">
-                    <b class="fn">rpavlik</b> <span class="says">says:</span>
-                  </div><!-- .comment-author -->
-
-                  <div class="comment-metadata">
-                    <a href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/#comment-6335690">
-                      <time datetime="2021-03-30T10:50:08-07:00">
-                        March 30, 2021 at 10:50 am
-                      </time>
-                    </a>
-                  </div><!-- .comment-metadata -->
-
-                </footer><!-- .comment-meta -->
-
-                <div class="comment-content">
-                  <p>Cardboard</p>
-                  <p>It still Facebook.</p>
-                </div><!-- .comment-content -->
-                <div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/?replytocom=6335690#respond" data-commentid="6335690" data-postid="468725" data-belowelement="div-comment-6335690" data-respondelement="respond" data-replyto="Reply to rpavlik" aria-label="Reply to rpavlik">Reply</a></div>
-              </article><!-- .comment-body -->
-              <ol class="children">
-                <li id="comment-6335705" class="comment odd alt depth-2 parent ">
-                  <article id="div-comment-6335705" class="comment-body">
-                    <footer class="comment-meta">
-                      <div class="comment-author vcard">
-                        <b class="fn">irox</b> <span class="says">says:</span>
-                      </div><!-- .comment-author -->
-
-                      <div class="comment-metadata">
-                        <a href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/#comment-6335705">
-                          <time datetime="2021-03-30T11:35:44-07:00">
-                            March 30, 2021 at 11:35 am
-                          </time>
-                        </a>
-                      </div><!-- .comment-metadata -->
-
-                    </footer><!-- .comment-meta -->
-
-                    <div class="comment-content">
-                      <p>That sounds awesome. I’ll check out support.</p>
-                    </div><!-- .comment-content -->
-                    <div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/?replytocom=6335705#respond" data-commentid="6335705" data-postid="468725" data-belowelement="div-comment-6335705" data-respondelement="respond" data-replyto="Reply to irox" aria-label="Reply to irox">Reply</a></div>
-                  </article><!-- .comment-body -->
-                  <ol class="children">
-                    <li id="comment-6335777" class="comment even depth-3">
-                      <article id="div-comment-6335777" class="comment-body">
-                        <footer class="comment-meta">
-                          <div class="comment-author vcard">
-                            <b class="fn">rpavlik</b> <span class="says">says:</span>
-                          </div><!-- .comment-author -->
-
-                          <div class="comment-metadata">
-                            <a href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/#comment-6335777">
-                              <time datetime="2021-03-30T17:13:35-07:00">
-                                March 30, 2021 at 5:13 pm
-                              </time>
-                            </a>
-                          </div><!-- .comment-metadata -->
-
-                        </footer><!-- .comment-meta -->
-
-                        <div class="comment-content">
-                          <p>I managed to not actually mention the name of the project: while is the standard,  the open source project implementing it that will eventually have support. (Other like the  and most desktop  now support , but their runtime/drivers only work on their hardware.)</p>
-                        </div><!-- .comment-content -->
-                        <div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2021/03/30/google-calls-it-quits-with-vr-but-cardboard-lives-on/?replytocom=6335777#respond" data-commentid="6335777" data-postid="468725" data-belowelement="div-comment-6335777" data-respondelement="respond" data-replyto="Reply to rpavlik" aria-label="Reply to rpavlik">Reply</a></div>
-                      </article><!-- .comment-body -->
-                    </li><!-- #comment-## -->
-                  </ol><!-- .children -->
-                </li><!-- #comment-## -->
-              </ol><!-- .children -->
-            </li><!-- #comment-## -->
-
-          </ol><!-- .comment-list -->
-        </div>

@@ -8,12 +8,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MisViajes.Controllers
 {
     public class RespuestasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: Respuestas
         public async Task<ActionResult> Index()
@@ -37,8 +40,14 @@ namespace MisViajes.Controllers
         }
 
         // GET: Respuestas/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id = null)
         {
+            if (id == null) return RedirectToAction("Index", "Foro");
+
+            Respuestas respuesta = new Respuestas();
+            var post = db.Posts.Where(r => r.Id == id);
+            ViewBag.postId = new SelectList(post, "Id", "Descripcion");
+ 
             return View();
         }
 
@@ -47,13 +56,24 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Fecha,Descripcion")] Respuestas respuestas)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Descripcion,Post")] Respuestas respuestas, FormCollection form)
         {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var UserId = User.Identity.GetUserId();
+            var user = UserManager.FindById(UserId);
+            respuestas.User = user;
+            respuestas.Fecha = DateTime.Now;
+            int id = Convert.ToInt32(form["postId"]);
+            respuestas.Post = db.Posts.Where(r => r.Id == id).FirstOrDefault();
+
+            ModelState.Remove("Fecha");
+            ModelState.Remove("User");
+
             if (ModelState.IsValid)
             {
                 db.Respuestas.Add(respuestas);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Foro");
             }
 
             return View(respuestas);

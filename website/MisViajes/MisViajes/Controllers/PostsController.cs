@@ -8,12 +8,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MisViajes.Controllers
 {
     public class PostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: Posts
         public async Task<ActionResult> Index()
@@ -37,8 +40,14 @@ namespace MisViajes.Controllers
         }
 
         // GET: Posts/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id=null)
         {
+            if (id == null) return RedirectToAction("Index", "Foro");
+
+            db.Configuration.LazyLoadingEnabled = false;
+            var tema = db.Temas.Where(r => r.Id == id);
+            ViewBag.temaId = new SelectList(tema, "Id", "Nombre");
+
             return View();
         }
 
@@ -47,13 +56,24 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Fecha,Descripcion")] Posts posts)
+        public async Task<ActionResult> Create([Bind(Include = "Id, Descripcion, Tema")] Posts posts, FormCollection form)
         {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var UserId = User.Identity.GetUserId();
+            var user = UserManager.FindById(UserId);
+            posts.User = user;
+            posts.Fecha = DateTime.Now;
+            int id = Convert.ToInt32(form["TemaId"]);
+            posts.Tema = db.Temas.Where(r => r.Id == id).FirstOrDefault();
+
+            ModelState.Remove("Fecha");
+            ModelState.Remove("User");
+
             if (ModelState.IsValid)
             {
                 db.Posts.Add(posts);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Foro");
             }
 
             return View(posts);

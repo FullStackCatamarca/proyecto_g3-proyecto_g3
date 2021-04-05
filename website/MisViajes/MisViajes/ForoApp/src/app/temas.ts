@@ -1,3 +1,4 @@
+import { Posts } from './posts';
 
 
 export interface Temas {
@@ -12,4 +13,5 @@ export interface Temas {
   VotosDown: number;
   Nombre: string;
   Fecha: Date;
+  Posts: Array<Posts>;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TemasService } from '../../temas.service';
 import { Temas } from '../../temas';
+import { Posts } from '../../posts';
 
 @Component({
   selector: 'app-card',
@@ -10,6 +11,7 @@ import { Temas } from '../../temas';
 export class CardComponent implements OnInit {
 
   valor:Temas[] = [];
+  post: Posts[] = [];
 
   constructor(private temasService: TemasService) { }
 
@@ -17,7 +19,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.temasService.sendGetRequest().subscribe(data => {
-      console.log(data);
       this.valor = data;
     })
   }
