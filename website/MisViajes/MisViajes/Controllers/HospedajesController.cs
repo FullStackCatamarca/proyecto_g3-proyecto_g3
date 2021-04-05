@@ -11,6 +11,7 @@ using MisViajes.Models;
 
 namespace MisViajes.Controllers
 {
+    [Authorize]
     public class HospedajesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,6 +19,14 @@ namespace MisViajes.Controllers
         // GET: Hospedajes
         public async Task<ActionResult> Index()
         {
+
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+
+
+            }
+
             List<Hospedajes> hospedajes= new List<Hospedajes>();
             var servicios = await db.Servicios.ToListAsync();
             foreach(var s in servicios)
