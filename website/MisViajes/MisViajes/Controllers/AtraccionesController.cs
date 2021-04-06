@@ -17,7 +17,7 @@ namespace MisViajes.Controllers
 
         // GET: Atracciones
         [Authorize]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string order = "0")
         {
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
             {
@@ -34,6 +34,16 @@ namespace MisViajes.Controllers
                 {
                     atracciones.Add((Atracciones)s);
                 }
+            }
+            var masPopulares = atracciones.OrderByDescending(x => float.Parse(x.Puntuacion));
+           
+            if (order == "0")
+            {
+                return View(atracciones);
+            }
+            if (order == "1")
+            {
+                return View(masPopulares);
             }
             return View(atracciones);
         }
