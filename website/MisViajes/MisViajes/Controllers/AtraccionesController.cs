@@ -16,9 +16,26 @@ namespace MisViajes.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Atracciones
+        [Authorize]
         public async Task<ActionResult> Index()
         {
-            return View(await db.Servicios.ToListAsync());
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+
+
+            }
+            List<Atracciones> atracciones = new List<Atracciones>();
+            var servicios = await db.Servicios.ToListAsync();
+            foreach (var s in servicios)
+            {
+                var a = s.GetType().ToString();
+                if (s.GetType().ToString() == "MisViajes.Models.Atracciones")
+                {
+                    atracciones.Add((Atracciones)s);
+                }
+            }
+            return View(atracciones);
         }
 
         // GET: Atracciones/Details/5
