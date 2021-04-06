@@ -53,10 +53,10 @@
         <div class="col-lg-9">
             <div class="row mb-4 d-flex ordenar_hospedaje">
                 <div class="col-md-6 ">
-                        <a href="#" class="btn  btn-primary  text-white  mb-2  ">ORDENAR POR CALIFICACIÓN</a>
+                        <a href="@Url.Action("Index",new { order = "1"})" class="btn  btn-primary  text-white  mb-2  ">ORDENAR POR CALIFICACIÓN</a>
                    </div> 
                 <div class="col-md-6">
-                 <a href="#" class="btn  btn-primary  text-white ordenarPrecio ">ORDENAR POR PRECIO</a>
+                 <a href="@Url.Action("Index",new { order = "2"})" class="btn  btn-primary  text-white ordenarPrecio ">ORDENAR POR PRECIO</a>
                     
                 </div>
             </div>
@@ -66,8 +66,7 @@
                     <div class="col-md-4 p-0">
 
                         <div class="media-img position-relative">
-                            <img class="rounded-left img-fluid position-relative" data-src="assets/img/holets/hotel-list-02.jpg" src="~/assets/img/holets/hotel-list-01.jpg" alt="gallery-img">
-                            <a class="media-img-overlay" data-fancybox="gallery" href="assets/img/holets/hotel-list-02.jpg"></a>
+                            <img class="rounded-left img-fluid position-relative"  src="@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
                         </div>
 
                     </div>
@@ -79,7 +78,7 @@
                             </div>
                             <div class="col-md-12">
                                 <h4>
-                                    <a class="media-title" href="single-hotel-right-sidebar.html">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                                    <a class="media-title" href=" @Url.Action("Details", "Hospedajes", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
                                 </h4>
                                 <p>
                                     @Html.DisplayFor(modelItem => item.Descripcion)

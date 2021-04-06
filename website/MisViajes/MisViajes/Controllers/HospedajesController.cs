@@ -17,7 +17,7 @@ namespace MisViajes.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Hospedajes
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string order = "0")
         {
 
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
@@ -37,8 +37,27 @@ namespace MisViajes.Controllers
                     hospedajes.Add((Hospedajes) s);
                 }
             }
+
+            var masPopulares = hospedajes.OrderByDescending(x => float.Parse(x.Puntuacion));
+            var hospedajeEconomicos = hospedajes.OrderBy(x => x.costo);
+
+            if (order == "0") {
+                return View(hospedajes);
+            }
+            if(order == "1") {
+                return View(masPopulares);
+            } 
+            if(order == "2") {
+                return View(hospedajeEconomicos);
+            }
+
+            
+
             return View(hospedajes);
+
         }
+
+
 
         // GET: Hospedajes/Details/5
         public async Task<ActionResult> Details(int? id)

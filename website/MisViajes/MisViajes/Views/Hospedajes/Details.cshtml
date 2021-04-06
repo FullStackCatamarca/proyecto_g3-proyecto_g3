@@ -20,7 +20,7 @@
 <div class="container ">
     <div class="row">
         <div class="col-md-12 mt-4 d-flex justify-content-center  ">
-            <img class="w-50 img-fluid card " src="~/assets/img/holets/hotel-list-01.jpg" />
+            <img class="w-50 img-fluid card " src="~/@Html.DisplayFor(model=>model.Fotourl)"  alt="@Html.DisplayFor(model => model.Nombre)"/>
         </div>
         <div class="col-md-12  mt-4">
             <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>
