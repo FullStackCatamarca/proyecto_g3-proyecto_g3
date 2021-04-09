@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from '../../data.service';
 
 @Component({
@@ -10,10 +10,15 @@ import { DataService } from '../../data.service';
 
 export class HeaderForumComponent implements OnInit {
 
+  @Output() HeaderEvent = new EventEmitter<string>();
 
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
     }
+
+  buscar(frase: string): void {
+    this.HeaderEvent.emit(frase);
+  }
 
 }

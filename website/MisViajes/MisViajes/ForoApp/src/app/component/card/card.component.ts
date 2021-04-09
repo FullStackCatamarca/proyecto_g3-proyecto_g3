@@ -11,16 +11,24 @@ import { Posts } from '../../posts';
 export class CardComponent implements OnInit {
 
   valor:Temas[] = [];
-  post: Posts[] = [];
-
+  
   constructor(private temasService: TemasService) { }
 
-  // constructor() { }
-
   ngOnInit(): void {
-    this.temasService.sendGetRequest().subscribe(data => {
+    this.temasService.sendGetRequest("0").subscribe(data => {
+      this.valor = data;
+    })
+
+  }
+
+ ordenarPor(tipo: string): void {
+    this.temasService.sendGetRequest(tipo).subscribe(data => {
       this.valor = data;
     })
   }
-
+  Buscar(frase: string): void {
+    this.temasService.sendFindRequest(frase).subscribe(data => {
+      this.valor = data;
+    })
+  }
 }
