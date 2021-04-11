@@ -17,8 +17,8 @@ namespace MisViajes.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Hospedajes
-        public async Task<ActionResult> Index(string order = "0")
-        {
+        public async Task<ActionResult> Index(string order = "0",string localidad = "0")
+         {
 
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
             {
@@ -40,6 +40,7 @@ namespace MisViajes.Controllers
 
             var masPopulares = hospedajes.OrderByDescending(x => float.Parse(x.Puntuacion));
             var hospedajeEconomicos = hospedajes.OrderBy(x => x.costo);
+            var ord_departamento = hospedajes.OrderBy(x => x.Localidad);
 
             if (order == "0") {
                 return View(hospedajes);
@@ -51,12 +52,34 @@ namespace MisViajes.Controllers
                 return View(hospedajeEconomicos);
             }
 
-            
+
+
 
             return View(hospedajes);
 
         }
 
+        public JsonResult ObtenerDepartamentos()
+        {
+            db.Configuration.LazyLoadingEnabled = false;
+            List<Departamentos> lst = db.Departamentos.ToList<Departamentos>();
+
+            return Json(lst, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult ObtenerLocalidades(int? idDepartamento)
+        {
+
+            List<Localidades> lst = new List<Localidades>();
+
+            db.Configuration.LazyLoadingEnabled = false;
+            if (idDepartamento != null)
+                lst = db.Localidades.Where(l => l.DepartamentoId == idDepartamento).ToList<Localidades>();
+
+            return Json(lst, JsonRequestBehavior.AllowGet);
+        }
 
 
         // GET: Hospedajes/Details/5

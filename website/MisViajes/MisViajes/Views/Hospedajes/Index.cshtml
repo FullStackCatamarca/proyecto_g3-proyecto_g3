@@ -42,12 +42,13 @@
             <div class="mb-6 bg-white p-3 pt-6 border-top border-top-5 border-primary rounded">
                 <h4 class="text-uppercase font-weight-bold">Filtrar Por</h4>
 
-                <select class="form-select selectric p-3 text-gray-color w-100 mb-2">
-                    <option selected value="1">Departamento</option>
+                <select class="form-select selectric p-3 text-gray-color w-100 mb-2 " id="hospedaje_listDpto">
+                    <option selected disabled>Seleccione el Departamento</option>
                 </select>
-                <select class="form-select selectric p-3 text-gray-color w-100">
-                    <option selected value="2">Localidad</option>
+                <select class="form-select selectric p-3 text-gray-color w-100"id="hospedaje_listLoc">
+                    <option selected disabled>Seleccione la Localidad</option>
                 </select>
+                  <a href="@Url.Action("Create")" class="btn  btn-primary  text-white mt-2" id="btn_filtrarHospedaje">Filtrar</a>
             </div>
         </div>
         <div class="col-lg-9">
@@ -117,4 +118,4 @@
     </div>
 </div>
 
-
+<script src="~/assets/js/servicios.js"></script>
