@@ -22,7 +22,9 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-5 col-xl-4">
                             <div class="mb-6 mb-md-0">
-                                <img class="w-100" data-src=" @User.Identity.GetImgUrl() " src=" @User.Identity.GetImgUrl() " alt="Generic placeholder image">
+                                <a href="@Url.Action("SetAvatar", "Manage")">
+                                    <img class="w-100" data-src=" @User.Identity.GetImgUrl() " src=" @User.Identity.GetImgUrl() " alt="Generic placeholder image">
+                                </a>
                             </div>
                         </div>
 
@@ -155,13 +157,16 @@
         </div>
     </section>
 
-    <script>
-            function editar() {
-                $(".efor").toggle();
-                $(".dfor").toggle();
-            }
-    </script>
-
-
 
 </div><!-- element wrapper ends -->
+
+@section Scripts{
+
+    <script>
+        function editar() {
+            $(".efor").toggle();
+            $(".dfor").toggle();
+        }
+    </script>
+
+}

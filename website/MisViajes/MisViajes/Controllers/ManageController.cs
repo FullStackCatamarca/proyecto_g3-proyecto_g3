@@ -382,6 +382,30 @@ namespace MisViajes.Controllers
             return RedirectToAction("AdminUserManagement", "Manage");
         }
 
+        public ActionResult SetAvatar()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Manage/SetPassword
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SetAvatar(SetAvatarViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                // In this project AvatarUrl == ImgUrl (Server Space Saver)
+                user.AvatarUrl = model.AvatarUrl;
+                user.ImgUrl = model.AvatarUrl;
+                await UserManager.UpdateAsync(user);
+                return RedirectToAction("Logoff", "Account");
+            }
+            // Si llegamos a este punto, es que se ha producido un error, volvemos a mostrar el formulario
+            return View(model);
+        }
+
         #region Aplicaciones auxiliares
         // Se usan para protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";

@@ -57,25 +57,25 @@
 
                         @foreach (var item in Model)
                         {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Roles)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Admin", "AddUserRole", new { id = item.UserID, Role = "Administrador" })
-                            <br />
-                            @Html.ActionLink("Staff", "AddUserRole", new { id = item.UserID, Role = "Staff" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Admin", "RemUserRole", new { id = item.UserID, Role = "Administrador" })
-                            <br />
-                            @Html.ActionLink("Staff", "RemUserRole", new { id = item.UserID, Role = "Staff" })
-                        </td>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Roles)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Admin", "AddUserRole", new { id = item.UserID, Role = "Administrador" })
+                                    <br />
+                                    @Html.ActionLink("Staff", "AddUserRole", new { id = item.UserID, Role = "Staff" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Admin", "RemUserRole", new { id = item.UserID, Role = "Administrador" })
+                                    <br />
+                                    @Html.ActionLink("Staff", "RemUserRole", new { id = item.UserID, Role = "Staff" })
+                                </td>
 
-                    </tr>
+                            </tr>
                         }
                     </table>
                 </div>
@@ -84,3 +84,5 @@
     </section>
 
 </div><!-- element wrapper ends -->
+
+@section Scripts{}

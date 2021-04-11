@@ -63,34 +63,34 @@
 
                         @foreach (var item in Model)
                         {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nombre)
-                        </td>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Apellido)
-                        </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Apellido)
+                                </td>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Dni)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AspNetUser)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PhoneNumber)
-                        </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dni)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AspNetUser)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Detalle", "Details", new { id = item.Id })
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Detalle", "Details", new { id = item.Id })
 
-                        </td>
-                    </tr>
+                                </td>
+                            </tr>
                         }
 
                     </table>
@@ -100,3 +100,6 @@
     </section>
 
 </div><!-- element wrapper ends -->
+
+
+@section Scripts{}
