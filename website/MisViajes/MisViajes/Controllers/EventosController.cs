@@ -16,9 +16,41 @@ namespace MisViajes.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Eventos
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string order="0")
         {
-            return View(await db.Servicios.ToListAsync());
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+
+
+            }
+            List<Eventos>eventos=new List<Eventos>();
+            var servicios = await db.Servicios.ToListAsync();
+            foreach (var s in servicios)
+            {
+                var a = s.GetType().ToString();
+                if (s.GetType().ToString() == "MisViajes.Models.Eventos")
+                {
+                    eventos.Add((Eventos)s);
+                }
+            }
+            var masPopulares = eventos.OrderByDescending(x => float.Parse(x.Puntuacion));
+            var masEconomicos = eventos.OrderBy(x => x.costo);
+
+
+            if (order == "0")
+            {
+                return View(eventos);
+            }
+            if (order == "1")
+            {
+                return View(masPopulares);
+            }
+            if (order == "2")
+            {
+                return View(masEconomicos);
+            }
+            return View(eventos);
         }
 
         // GET: Eventos/Details/5

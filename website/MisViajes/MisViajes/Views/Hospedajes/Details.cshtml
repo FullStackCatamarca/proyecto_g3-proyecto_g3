@@ -20,7 +20,16 @@
 <div class="container ">
     <div class="row">
         <div class="col-md-12 mt-4 d-flex justify-content-center  ">
-            <img class="w-50 img-fluid card " src="~/@Html.DisplayFor(model=>model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)" />
+            @if (@Html.DisplayFor(model => model.Fotourl).ToString() == "")
+            {
+                <img class="rounded-left img-fluid position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
+
+            }
+            else
+            {
+                <img class="rounded-left img-fluid position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
+
+            }
         </div>
         <div class="col-md-12  mt-4">
             <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>

@@ -16,9 +16,43 @@ namespace MisViajes.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Monumentos
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string order="0")
         {
-            return View(await db.Servicios.ToListAsync());
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+
+
+            }
+            List<Monumentos>monumentos  = new List<Monumentos>();
+            var servicios = await db.Servicios.ToListAsync();
+            foreach (var s in servicios)
+            {
+                var a = s.GetType().ToString();
+                if (s.GetType().ToString() == "MisViajes.Models.Monumentos")
+                {
+                    monumentos.Add((Monumentos)s);
+                }
+            }
+
+            var masPopulares = monumentos.OrderByDescending(x => float.Parse(x.Puntuacion));
+            var masEconomicos = monumentos.OrderBy(x => x.costo);
+          
+
+            if (order == "0")
+            {
+                return View(monumentos);
+            }
+            if (order == "1")
+            {
+                return View(masPopulares);
+            }
+            if (order == "2")
+            {
+                return View(masEconomicos);
+            }
+
+            return View(monumentos);
         }
 
         // GET: Monumentos/Details/5

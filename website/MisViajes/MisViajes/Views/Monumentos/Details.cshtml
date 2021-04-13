@@ -1,109 +1,64 @@
 ﻿@model MisViajes.Models.Monumentos
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg13.jpg"));">
+        <div class="container">
+            <div class="row align-items-center justify-content-center" style="height: 200px;">
+                <div class="col-lg-6">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h2 class="text-uppercase text-white font-weight-bold">@Html.DisplayFor(model => model.Nombre)</h2>
+                        </div>
+                        <p class="text-white mb-0"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-12 mt-4 d-flex justify-content-center  ">
+            @if (@Html.DisplayFor(model => model.Fotourl).ToString() == "")
+            {
+                <img class="rounded-left img-fluid position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
-<div>
-    <h4>Monumentos</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+            }
+            else
+            {
+                <img class="rounded-left img-fluid position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+            }
+        </div>
+        <div class="col-md-12  mt-4">
+            <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+            <div class="row">
+                <div class="col-md-10">
+                    <p> @Html.DisplayFor(model => model.Descripcion)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-primary font-weight-bold " style="font-size:22px"><i class="fa fa-map-marker" aria-hidden="true"></i>@Html.DisplayFor(model => model.Ubicacion)</p>
+                    <p class="text-primary font-weight-bold " style="font-size:22px">$@Html.DisplayFor(model => model.costo)</p>
+                    <button class="btn btn-xs btn-primary d-none d-lg-inline-block">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4 ">
+        <div class="col-12 d-flex justify-content-end">
+            <a href="@Url.Action("Index")" class="btn  btn-primary d-lg-inline-block text-white">
+                <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                Volver
+            </a>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ubicacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ubicacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fotourl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fotourl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.costo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.costo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Puntuacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Puntuacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Localidad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Localidad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.weburl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.weburl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.habilitado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.habilitado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Latitud)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Latitud)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Longitud)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Longitud)
-        </dd>
-
-    </dl>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
 
 
 @section Scripts{}
+
+

@@ -108,28 +108,19 @@
                         </li>
 
                         <li class="">
-                            @Html.ActionLink("Actividades", "Index", "Home")
+                            <a>Actividades</a>
 
                             <ul class="dropdown drop-up">
                                 <li class=" ||">
 
-                                    <a href="javascript:void(0)">Monumentos</a>
+                                    <a href="@Url.Action("Index","Monumentos")">Monumentos</a>
 
-                                    <ul class="dropdown drop-sub-menu-left drop-up">
-                                        <li class="">
-                                            <a href="@Url.Action("Index", "Home")">Cars List View</a>
-                                        </li>
-                                    </ul>
                                 </li>
 
                                 <li class=" || ">
 
-                                    <a href="javascript:void(0)">Eventos</a>
-                                    <ul class="dropdown drop-sub-menu-left drop-up">
-                                        <li class="">
-                                            <a href="@Url.Action("Index", "Home")">Cruises List View</a>
-                                        </li>
-                                    </ul>
+                                    <a href="@Url.Action("Index","Eventos")">Eventos</a>
+                                   
                                 </li>
                             </ul>
                         </li>
