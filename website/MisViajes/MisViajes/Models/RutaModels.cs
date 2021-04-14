@@ -15,9 +15,9 @@ namespace MisViajes.Models
         [Index(IsUnique = true)]
         [StringLength(200)]
         public string Nombre { get; set; }
-        public Nullable<bool> Abierto { get; set; }
-        public Nullable<bool> Publico { get; set; }
-        public Nullable<bool> Aprobado { get; set; }
+        public bool Abierto { get; set; }
+        public bool Publico { get; set; }
+        public bool Aprobado { get; set; }
         public Servicios Servicio { get; set; }
 
         [Required]

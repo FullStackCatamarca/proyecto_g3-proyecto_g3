@@ -1,53 +1,91 @@
 ﻿@model MisViajes.Models.Rutas
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
+<div class="main-wrapper about-us">
 
-<div>
-    <h4>Rutas</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(../assets/img/pages/page-title-bg.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">@ViewBag.Title</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Abierto)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Abierto)
-        </dd>
+    <!-- ====================================
+    ———	ABOUT TITLE SECTION
+    ===================================== -->
+    <section class="py-8 py-md-10">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Publico)
-        </dt>
+        <div class="container">
+            @Html.ActionLink("Volver a La Lista", "Index", "Rutas", null, new { @class = "btn btn-primary" })
+            <br /><br />
+                  <div class="text-left border-bottom pb-6 mb-7">
+                      <dl class="dl-horizontal form-inline">
+                          <dt class="w-25 mr-5">
+                              @Html.DisplayNameFor(model => model.Nombre)
+                          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Publico)
-        </dd>
+                          <dd class="mb-0 ml-5">
+                              @Html.DisplayFor(model => model.Nombre)
+                          </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Aprobado)
-        </dt>
+                      </dl>
+                      <dl class="dl-horizontal form-inline">
 
-        <dd>
-            @Html.DisplayFor(model => model.Aprobado)
-        </dd>
+                          <dt class="w-25 mr-5">
+                              @Html.DisplayNameFor(model => model.Abierto)
+                          </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                          <dd class="mb-0 ml-5">
+                              @Html.DisplayFor(model => model.Abierto)
+                          </dd>
 
+                      </dl>
+                      <dl class="dl-horizontal form-inline">
+
+                          <dt class="w-25 mr-5">
+                              @Html.DisplayNameFor(model => model.Publico)
+                          </dt>
+
+                          <dd class="mb-0 ml-5">
+                              @Html.DisplayFor(model => model.Publico)
+                          </dd>
+
+                      </dl>
+                      <dl class="dl-horizontal form-inline">
+                      
+                          <dt class="w-25 mr-5">
+                              @Html.DisplayNameFor(model => model.Aprobado)
+                          </dt>
+
+                          <dd class="mb-0 ml-5">
+                              @Html.DisplayFor(model => model.Aprobado)
+                          </dd>
+
+                      </dl>
+                  </div>
+                  <p>
+                      @Html.ActionLink("Editar", "Edit", "Rutas", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                  </p>
+        </div>
+    </section>
+</div><!-- element wrapper ends -->
 
 @section Scripts{}

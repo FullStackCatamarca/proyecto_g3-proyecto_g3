@@ -1,0 +1,43 @@
+﻿<!-- ====================================
+———	COUNTER SECTION
+===================================== -->
+<section class="counter-up dzsparallaxer auto-init use-loading counterup-paralax">
+    <div class="divimage dzsparallaxer--target" style="height: 700px;" data-src="@Url.Content("~/assets/img/home/promotion/promotion-2.jpg")">
+    </div>
+
+    <div class="container paralax-container">
+        <div class="row align-items-center text-center" id="counter">
+            <div class="col-6 col-md-3 mb-5 mb-md-0">
+                <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                    <i class="fa fa-map-marker text-white" aria-hidden="true"></i>
+                </div>
+                <h1 class="counter-value mb-2" data-count="@ViewBag.Rutas">0</h1>
+                <h6 class="">Rutas</h6>
+            </div>
+
+            <div class="col-6 col-md-3 mb-5 mb-md-0">
+                <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                    <i class="fa fa-gift text-white" aria-hidden="true"></i>
+                </div>
+                <h1 class="counter-value mb-2" data-count="@ViewBag.Servicios">0</h1>
+                <h6 class="">Atracciones</h6>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                    <i class="fa fa-smile-o text-white" aria-hidden="true"></i>
+                </div>
+                <h1 class="counter-value mb-2" data-count="@ViewBag.Usuarios">0</h1>
+                <h6 class="">Clientes Felices</h6>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                    <i class="fa fa-bed text-white" aria-hidden="true"></i>
+                </div>
+                <h1 class="counter-value mb-2" data-count="@ViewBag.Hospedajes">0</h1>
+                <h6 class="">Hospedajes</h6>
+            </div>
+        </div>
+    </div>
+</section>    @section Scripts{}

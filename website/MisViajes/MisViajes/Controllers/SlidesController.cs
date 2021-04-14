@@ -37,6 +37,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Slides/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -60,6 +61,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Slides/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,6 +79,7 @@ namespace MisViajes.Controllers
         // POST: Slides/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "id,UrlImagen,Encabezado,Titulo,Descripcion,UrlDestino,TxtBoton,Habilitado")] Slides slides)
@@ -91,6 +94,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Slides/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -106,6 +110,7 @@ namespace MisViajes.Controllers
         }
 
         // POST: Slides/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

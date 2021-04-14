@@ -9,43 +9,6 @@
 
             <div class="navbar-nav-right d-md-none mr-6 pr-1">
                 <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li class="nav-item dropdown nav-item-left">
-                        <a href="#" class="nav-link" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">
-                            <i class="fa fa-bell icon" aria-hidden="true"></i> <span class="badge-pill badge-primary">2</span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-left">
-                            <ul class="list-unstyled list-group list-group-flush">
-                                <li class="">
-                                    <a href="javascript:void(0)" class="list-group-item rounded-0 border-bottom first-child">
-                                        <h3 class="text-dark mb-0">Informacion</h3>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:void(0)" class="list-group-item border-bottom border-off-white rounded-0">
-                                        <h5 class="fon-size-15 text-dark">Maldive Tour Packages</h5>
-                                        <small class="text-gray-color">6 Hours Ago</small>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:void(0)" class="list-group-item border-bottom border-off-white rounded-0">
-                                        <h5 class="fon-size-15 text-dark">London Tour Booking</h5>
-                                        <small class="text-gray-color">15 Hours Ago</small>
-                                    </a>
-                                </li>
-
-                                <li class="">
-                                    <a href="javascript:void(0)" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
-                                        <h5 class="fon-size-15 text-dark">Paris Tour Booking</h5>
-                                        <small class="text-gray-color">15 Hours Ago</small>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
 
                     <li class="nav-item dropdown nav-item-left mr-0">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -56,19 +19,19 @@
                         <div class="dropdown-menu dropdown-menu-right dropdown-left">
                             <ul class="list-unstyled list-group list-group-flush">
                                 <li class="">
-                                    <a href="../Home/Profile" class="list-group-item rounded-0 border-bottom first-child">
+                                    <a href="@Url.Action("Profile", "Home")" class="list-group-item rounded-0 border-bottom first-child">
                                         <h5 class="fon-size-15 text-dark">Perfil</h5>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="../Settings" class="list-group-item border-bottom border-off-white rounded-0">
+                                    <a href="@Url.Action("Index", "Manage")" class="list-group-item border-bottom border-off-white rounded-0">
                                         <h5 class="fon-size-15 text-dark text-capitalize">Datos de tu Cuenta</h5>
                                     </a>
                                 </li>
 
                                 <li class="">
-                                    <a href="../Account/LogOff" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
+                                    <a href="@Url.Action("LogOff", "Account")" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
                                         <h5 class="fon-size-15 text-dark">Salir</h5>
                                     </a>
                                 </li>
@@ -81,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link  active " href="../Home/Dashboard">
+                        <a class="nav-link  active " href="@Url.Action("Dashboard", "Home")">
                             <i class="fa fa-tachometer" aria-hidden="true"></i>
                             <span>Panel</span>
                         </a>
@@ -113,43 +76,6 @@
 
                 <div class="navbar-nav-right d-none d-md-block">
                     <ul class="list-unstyled d-flex align-items-center mb-0">
-                        <li class="nav-item dropdown nav-item-left">
-                            <a href="#" class="nav-link" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                <i class="fa fa-bell" aria-hidden="true"></i> <span class="badge-pill badge-primary">2</span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right dropdown-left">
-                                <ul class="list-unstyled list-group list-group-flush">
-                                    <li class="">
-                                        <a href="javascript:void(0)" class="list-group-item rounded-0 border-bottom first-child">
-                                            <h3 class="text-dark mb-0">Informacion</h3>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript:void(0)" class="list-group-item border-bottom border-off-white rounded-0">
-                                            <h5 class="fon-size-15 text-dark">Maldive Tour Packages</h5>
-                                            <small class="text-gray-color">6 Hours Ago</small>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript:void(0)" class="list-group-item border-bottom border-off-white rounded-0">
-                                            <h5 class="fon-size-15 text-dark">London Tour Booking</h5>
-                                            <small class="text-gray-color">15 Hours Ago</small>
-                                        </a>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="javascript:void(0)" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
-                                            <h5 class="fon-size-15 text-dark">Paris Tour Booking</h5>
-                                            <small class="text-gray-color">15 Hours Ago</small>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
 
                         <li class="nav-item dropdown nav-item-left mr-0">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -179,7 +105,7 @@
                                     }
 
                                     <li class="">
-                                        <a href="../Account/LogOff" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
+                                        <a href="@Url.Action("LogOff", "Account")" class="list-group-item border-off-white border-bottom-0 rounded-0 last-child">
                                             <h5 class="fon-size-15 text-dark">Salir</h5>
                                         </a>
                                     </li>

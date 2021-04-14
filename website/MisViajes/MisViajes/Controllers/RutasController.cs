@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MisViajes.Controllers
 {
+    [Authorize]
     public class RutasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,6 +22,7 @@ namespace MisViajes.Controllers
         // GET: Rutas
         public async Task<ActionResult> Index()
         {
+            //ToDo: Own and Admin / Staff
             return View(await db.Rutas.ToListAsync());
         }
 
@@ -42,32 +44,37 @@ namespace MisViajes.Controllers
         // GET: Rutas/Create
         public ActionResult Create()
         {
-            return View();
+            Rutas model = new Rutas();
+            model.Abierto = true;
+
+            return View(model);
         }
 
         // POST: Rutas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-       
+
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico,Aprobado")] Rutas rutas)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico")] Rutas rutas)
         {
-                this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
-                var UserId = User.Identity.GetUserId();
-                var user = UserManager.FindById(UserId);
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var UserId = User.Identity.GetUserId();
+            var user = UserManager.FindById(UserId);
 
-                rutas.User = user;
+            rutas.User = user;
+            rutas.Aprobado = true;
 
-                ModelState.Clear();
-
-                if (ModelState.IsValid)
-                {
-                    db.Rutas.Add(rutas);
-                    await db.SaveChangesAsync();
-                    return RedirectToAction("Index");
-                }
+            ModelState.Remove("User");
+            ModelState.Remove("Aprovado");
+            
+            if (ModelState.IsValid)
+            {
+                db.Rutas.Add(rutas);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
             return View(rutas);
         }
 
@@ -83,6 +90,7 @@ namespace MisViajes.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(rutas);
         }
 
@@ -91,13 +99,17 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Abierto,Publico,Aprobado")] Rutas rutas)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Abierto,Publico")] Rutas rutas)
         {
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
             var UserId = User.Identity.GetUserId();
             var user = UserManager.FindById(UserId);
 
             rutas.User = user;
+            rutas.Aprobado = true;
+
+            ModelState.Remove("User");
+            ModelState.Remove("Aprovado");
 
             ModelState.Clear();
 

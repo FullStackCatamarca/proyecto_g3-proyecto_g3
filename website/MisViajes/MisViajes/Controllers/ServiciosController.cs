@@ -11,6 +11,7 @@ using MisViajes.Models;
 
 namespace MisViajes.Controllers
 {
+    [Authorize]
     public class ServiciosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

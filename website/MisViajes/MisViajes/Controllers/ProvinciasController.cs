@@ -38,6 +38,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Provincias/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.PaisId = new SelectList(db.Paises, "Id", "Nombre");
@@ -48,6 +49,7 @@ namespace MisViajes.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,PaisId")] Provincias provincias)
         {
@@ -63,6 +65,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Provincias/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,6 +84,7 @@ namespace MisViajes.Controllers
         // POST: Provincias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,PaisId")] Provincias provincias)
@@ -96,6 +100,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Provincias/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -111,6 +116,7 @@ namespace MisViajes.Controllers
         }
 
         // POST: Provincias/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

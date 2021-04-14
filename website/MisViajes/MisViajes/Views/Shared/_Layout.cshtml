@@ -22,12 +22,12 @@
     <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord-animations.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
     <!--ANGULAR-->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="~/scripts/foro/styles.css">
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/assets/img/favicon.png")">
+    <link rel="stylesheet" href="@Url.Content("~/scripts/foro/styles.css")">
 
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/assets/img/favicon.png")" />
     <link rel="stylesheet" href="@Url.Content("~/assets/css/StyleSheet.css")" type="text/css" />
     <!--ChatBot BlueCaribu-->
     <script async>(function (w, d) { var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://app.bluecaribu.com/conversion/integration/c3063dc2d99319e631631e58cd8c7b14"); h.appendChild(s); })(window, document);</script>
@@ -74,26 +74,6 @@
                         <img src='@Url.Content("~/assets/img/logo-color-big.png")' />
                     </a>
 
-                    <div class="nav-item dropdown nav-item-left mr-0">
-                        <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">
-                            <i class="fa fa-search mr-0" aria-hidden="true"></i>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right rounded-0">
-                            <form class="" action="@Url.Action("Index", "Home")" method="post">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
-                                    <div class="input-group-append">
-                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                                            <span class="text-white text-uppercase font-weight-bold">Buscar</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
                     <ul class="menuzord-menu menuzord-right">
                         <li class=" active ">
                             @Html.ActionLink("Portada", "Index", "Home", null, new { @class = "" })
@@ -108,7 +88,7 @@
                         </li>
 
                         <li class="">
-                            <a>Actividades</a>
+                            <a href="javascript:void(0)">Actividades</a>
 
                             <ul class="dropdown drop-up">
                                 <li class=" ||">
@@ -135,10 +115,6 @@
                                 <li class="">
                                     <a href="@Url.Action("Contact", "Home")">Contactanos</a>
                                 </li>
-
-                                @*<li><a href="404.html">404 Not Found</a></li>
-
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>*@
                             </ul>
                         </li>
 
@@ -175,19 +151,6 @@
                                 }
                             </ul>
                         </li>
-
-                        <li class="py-4">
-                            <form class="d-lg-none" action="@Url.Action("Index", "Home")" method="post">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Buscar....">
-                                    <div class="input-group-append">
-                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                                            <span class="text-white text-uppercase font-weight-bold">Buscar</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -223,7 +186,7 @@
                                     <i class="fa fa-home" aria-hidden="true"></i>
                                 </div>
                                 <div class="media-body">
-                                    <a href="Home/Contact">Avenida Siempre Viva, 742, Springfield</a>
+                                    <a href="@Url.Action("Contact", "Home")">Avenida Siempre Viva, 742, Springfield</a>
                                 </div>
                             </li>
 
@@ -254,31 +217,20 @@
 
                         <ul class="list-inline d-flex mb-0">
                             <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://facebook.com/">
                                     <i class="fa fa-facebook text-white" aria-hidden="true"></i>
                                 </a>
                             </li>
 
                             <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://twitter.com/">
                                     <i class="fa fa-twitter text-white" aria-hidden="true"></i>
                                 </a>
                             </li>
 
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-google-plus text-white" aria-hidden="true"></i>
-                                </a>
-                            </li>
-
-                            <li class="mr-3 mr-lg-2 mr-xl-3">
-                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                                    <i class="fa fa-pinterest-p text-white" aria-hidden="true"></i>
-                                </a>
-                            </li>
 
                             <li class="">
-                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                                <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://vimeo.com/user137719306">
                                     <i class="fa fa-vimeo text-white" aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -301,7 +253,7 @@
                     <div class="col-md-6">
                         <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
                             <li class="mr-3">
-                                <a href="@Url.Action("Index", "Home")">Privacidad</a>
+                                <a href="@Url.Action("Privacidad", "Home")">Privacidad</a>
                             </li>
 
                             <li class="mr-3">
@@ -313,7 +265,7 @@
                             </li>
 
                             <li class="">
-                                <a href="@Url.Action("Index", "Home")">Blog</a>
+                                <a href="@Url.Action("Index", "Foro")">Foro</a>
                             </li>
                         </ul>
                     </div>
@@ -365,41 +317,6 @@
         </div>
     </div>
 
-    <!-- INQUIRY IN MODAL -->
-    <div class="modal fade" id="inquiry" tabindex="-1" role="dialog" aria-label="inquiryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header rounded">
-                    <h3 class="modal-title text-uppercase font-weight-bold">Consultas</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body pb-3">
-                    <form class="" action="@Url.Action("Index", "Home")" method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control bg-smoke" required="" placeholder="Your Name">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control bg-smoke" required="" placeholder="Your Email">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="number" class="form-control bg-smoke" required="" placeholder="Phone Number">
-                        </div>
-
-                        <div class="form-group">
-                            <textarea class="form-control bg-smoke" rows="6" placeholder="Message"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary text-uppercase">Enviar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
     <!-- Javascript -->
@@ -422,6 +339,8 @@
     <script src="@Url.Content("~/assets/plugins/revolution/js/jquery.themepunch.tools.min.js")"></script>
     <script src="@Url.Content("~/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js")"></script>
     <script src="@Url.Content("~/assets/plugins/smoothscroll/SmoothScroll.js")"></script>
+    <script src="@Url.Content("~/scripts/jquery.validate.min.js")"></script>">
+
 
     <script type="text/javascript">
         $("#BttnLogin").click(function (event) {
@@ -490,9 +409,18 @@
             }
         });
     </script>
-    <script src="@Url.Content("~/scripts/jquery.validate.min.js")"></script>">
+
 
     @RenderSection("scripts", required: true)
+
+    <script src="@Url.Content("~/assets/js/star.js")"></script>
+
+    <!--SCRIPTS ANGULAR-->
+    <script src="@Url.Content("~/scripts/foro/runtime.js")" defer></script>
+    <script src="@Url.Content("~/scripts/foro/polyfills.js")" defer></script>
+    <script src="@Url.Content("~/scripts/foro/vendor.js")" defer></script>
+    <script src="@Url.Content("~/scripts/foro/main.js")" defer></script>
+
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
@@ -505,13 +433,7 @@
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
-    <script src="@Url.Content("~/assets/js/star.js")"></script>
 
-    <!--SCRIPTS ANGULAR-->
-    <script src="~/scripts/foro/runtime.js" defer></script>
-    <script src="~/scripts/foro/polyfills.js" defer></script>
-    <script src="~/scripts/foro/vendor.js" defer></script>
-    <script src="~/scripts/foro/main.js" defer></script>
 </body>
 </html>
 

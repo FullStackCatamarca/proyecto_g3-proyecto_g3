@@ -11,12 +11,13 @@ using MisViajes.Models;
 
 namespace MisViajes.Controllers
 {
+    [Authorize]
     public class AtraccionesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Atracciones
-        [Authorize]
+ 
         public async Task<ActionResult> Index(string order = "0")
         {
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
