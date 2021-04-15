@@ -85,6 +85,7 @@ namespace MisViajes.Controllers
         // GET: Hospedajes/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -94,8 +95,20 @@ namespace MisViajes.Controllers
             {
                 return HttpNotFound();
             }
+           
+           
             return View(hospedajes);
         }
+
+        [HttpPost]
+        public async Task<JsonResult> coordenadas(int? idServ) {
+            Hospedajes hospedajes = (Hospedajes)await db.Servicios.FindAsync(idServ);
+            return Json(hospedajes, JsonRequestBehavior.AllowGet);
+        }
+   
+       
+
+
 
         // GET: Hospedajes/Create
         public ActionResult Create()

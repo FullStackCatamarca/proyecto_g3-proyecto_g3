@@ -71,6 +71,13 @@ namespace MisViajes.Controllers
             return View(monumentos);
         }
 
+        [HttpPost]
+        public async Task<JsonResult> coordenadas(int? idServ)
+        {
+            Monumentos monumentos = (Monumentos)await db.Servicios.FindAsync(idServ);
+            return Json(monumentos, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Monumentos/Create
         public ActionResult Create()
         {

@@ -68,6 +68,14 @@ namespace MisViajes.Controllers
             return View(eventos);
         }
 
+
+        [HttpPost]
+        public async Task<JsonResult> coordenadas(int? idServ)
+        {
+            Eventos eventos = (Eventos)await db.Servicios.FindAsync(idServ);
+            return Json(eventos, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Eventos/Create
         public ActionResult Create()
         {
