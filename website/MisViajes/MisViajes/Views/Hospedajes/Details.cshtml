@@ -1,5 +1,7 @@
 ﻿@model MisViajes.Models.Hospedajes
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+<link rel="stylesheet" href="~/assets/css/StyleSheet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 <section class="page-title">
     <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg11.jpg"));">
@@ -19,17 +21,22 @@
 </section>
 <div class="container ">
     <div class="row">
-        <div class="col-md-12 mt-4 d-flex justify-content-center  ">
+        <div class="col-md-6 mt-4 p-0 img-fluid ">
             @if (@Html.DisplayFor(model => model.Fotourl).ToString() == "")
             {
-                <img class="rounded-left img-fluid position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img class="imagenes-servicios h-100 rounded-left position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
             else
             {
-                <img class="rounded-left img-fluid position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img class="rounded-left h-100 w-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
+        </div>
+        <div class="col-md-6 mt-4 p-0  ">
+
+            <div id="mapid" class="rounded-right h-100">
+            </div>
         </div>
         <div class="col-md-12  mt-4">
             <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>
@@ -59,6 +66,10 @@
 </div>
 
 
-@section Scripts{}
+@section Scripts{
+    <script src="~/assets/js/mapas.js"></script>
+}
+
+
 
 

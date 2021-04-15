@@ -66,12 +66,12 @@
                         <div class="media-img position-relative">
                             @if (@Html.DisplayFor(modelItem => item.Fotourl).ToString() == "")
                             {
-                                <img class="rounded-left img-fluid position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left  img-fluid h-100 position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                             else
                             {
-                                <img class="rounded-left img-fluid position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left   img-fluid h-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                         </div>
@@ -99,7 +99,7 @@
                     <div class="col-md-2  pr-0  ">
                         <div class="bg-primary text-center p-3 view-details rounded h-100 ">
                             <h2 class="text-white font-weight-bold h1">$@Html.DisplayFor(modelItem => item.costo)</h2>
-                            <p class="text-white text-capitalize">Por Noche</p>
+                           
                             <div>
 
                                 <a href=" @Url.Action("Details", "Eventos", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
@@ -123,7 +123,6 @@
         </div>
     </div>
 </div>
-
 
 @section Scripts{
     <script src="~/assets/js/servicios.js"></script>

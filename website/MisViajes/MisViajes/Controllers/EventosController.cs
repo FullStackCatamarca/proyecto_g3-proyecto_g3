@@ -23,7 +23,6 @@ namespace MisViajes.Controllers
             {
                 ViewBag.Message = "Confirmado";
 
-
             }
             List<Eventos>eventos=new List<Eventos>();
             var servicios = await db.Servicios.ToListAsync();

@@ -53,13 +53,10 @@
         </div>
         <div class="col-lg-9">
             <div class="row mb-4 d-flex ordenar_hospedaje">
-                <div class="col-md-6 ">
-                    <a href="@Url.Action("Index",new { order = "1"})" class="btn  btn-primary  text-white  mb-2  ">ORDENAR POR CALIFICACIÓN</a>
+                <div class="col-md-12 ">
+                    <a href="@Url.Action("Index",new { order = "1"})" class="btn  btn-primary  text-white  mb-2 ordenarPrecio ">ORDENAR POR CALIFICACIÓN</a>
                 </div>
-                <div class="col-md-6">
-                    <a href="@Url.Action("Index",new { order = "2"})" class="btn  btn-primary  text-white ordenarPrecio ">ORDENAR POR PRECIO</a>
-
-                </div>
+               
             </div>
             @foreach (var item in Model)
             {
@@ -101,8 +98,7 @@
 
                     <div class="col-md-2  pr-0  ">
                         <div class="bg-primary text-center p-3 view-details rounded h-100 ">
-                            <h2 class="text-white font-weight-bold h1">$@Html.DisplayFor(modelItem => item.costo)</h2>
-                            <p class="text-white text-capitalize">Por Noche</p>
+                          
                             <div>
 
                                 <a href=" @Url.Action("Details", "Monumentos", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>

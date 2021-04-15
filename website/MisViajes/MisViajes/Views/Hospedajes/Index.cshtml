@@ -69,12 +69,12 @@
                         <div class="media-img position-relative">
                             @if (@Html.DisplayFor(modelItem => item.Fotourl).ToString() == "")
                             {
-                                <img class="rounded-left img-fluid position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid  h-100 position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                             else
                             {
-                                <img class="rounded-left img-fluid position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid  h-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                         </div>

@@ -2,6 +2,7 @@
 const hospedaje_selectDpto = document.querySelector('#hospedaje_listDpto');
 const hospedaje_selectLoc = document.querySelector('#hospedaje_listLoc');
 
+
 //Eventos
 EventListener();
 
@@ -78,4 +79,6 @@ async function filtrarHospedaje() {
         body: JSON.stringify({ order: "0",localidad:hospedaje_selectLoc.value })
     })
 }
+
+
 

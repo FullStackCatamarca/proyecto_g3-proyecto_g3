@@ -502,6 +502,7 @@
     <Content Include="assets\img\toggle\toggle-01.jpg" />
     <Content Include="assets\img\toggle\toggle-02.jpg" />
     <Content Include="assets\js\clima.js" />
+    <Content Include="assets\js\mapas.js" />
     <Content Include="assets\js\servicios.js" />
     <Content Include="assets\js\image-picker.min.js" />
     <Content Include="assets\js\star.js" />
