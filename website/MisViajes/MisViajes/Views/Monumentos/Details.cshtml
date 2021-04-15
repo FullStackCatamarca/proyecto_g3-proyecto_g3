@@ -26,12 +26,12 @@
         <div class="col-md-6 mt-4 p-0 img-fluid ">
             @if (@Html.DisplayFor(model => model.Fotourl).ToString() == "")
             {
-                <img class="imagenes-servicios h-100 rounded-left position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img width="590" height="446" class="imagenes-servicios h-100 rounded-left position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
             else
             {
-                <img class="rounded-left h-100 w-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img width="590" height="446" class="rounded-left h-100 w-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
         </div>

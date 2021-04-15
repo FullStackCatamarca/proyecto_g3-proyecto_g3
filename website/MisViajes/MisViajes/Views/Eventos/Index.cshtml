@@ -8,7 +8,7 @@
                 <div class="col-lg-6">
                     <div class="page-title-content">
                         <div class="title-border">
-                            <h2 class="text-uppercase text-white font-weight-bold">Evento</h2>
+                            <h2 class="text-uppercase text-white font-weight-bold">Eventos</h2>
                         </div>
                         <p class="text-white mb-0"></p>
                     </div>
@@ -63,15 +63,15 @@
                 <div class="row mb-4 border rounded">
                     <div class="col-md-4 p-0">
 
-                        <div class="media-img position-relative">
+                        <div class="media-img  position-relative">
                             @if (@Html.DisplayFor(modelItem => item.Fotourl).ToString() == "")
                             {
-                                <img class="rounded-left  img-fluid h-100 position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid  position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                             else
                             {
-                                <img class="rounded-left   img-fluid h-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid   position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                         </div>
@@ -83,13 +83,20 @@
                             <div class="col-md-12  text-right">
                                 <p class="m-0"><span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(modelItem => item.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></p>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 ">
                                 <h4>
-                                    <a class="media-title" href=" @Url.Action("Details", "Eventos", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                                    <a class="media-title" href=" @Url.Action("Details", "Atracciones", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
                                 </h4>
-                                <p>
-                                    @Html.DisplayFor(modelItem => item.Descripcion)
-                                </p>
+                               
+                                <div class="descripcion_serv">
+                                    <div class="w-50">
+                                        <h4 class=" font-weight-bold  p-1 text-white rounded  m-0 text-align-center bg-primary w-25">$@Html.DisplayFor(modelItem => item.costo)</h4>
+                                    </div>
+                                    <p>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </p>
+                                </div>
+
                             </div>
 
                         </div>
@@ -98,8 +105,8 @@
 
                     <div class="col-md-2  pr-0  ">
                         <div class="bg-primary text-center p-3 view-details rounded h-100 ">
-                            <h2 class="text-white font-weight-bold h1">$@Html.DisplayFor(modelItem => item.costo)</h2>
                            
+
                             <div>
 
                                 <a href=" @Url.Action("Details", "Eventos", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>

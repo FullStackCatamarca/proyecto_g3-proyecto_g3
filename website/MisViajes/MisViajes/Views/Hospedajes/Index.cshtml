@@ -2,7 +2,7 @@
 
 
 <section class="page-title">
-    <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg11.jpg"));">
+    <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg3.jpg"));">
         <div class="container">
             <div class="row align-items-center justify-content-center" style="height: 200px;">
                 <div class="col-lg-6">
@@ -17,9 +17,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 <div class="container">
     <div class="row mt-2 ">
@@ -45,20 +42,20 @@
                 <select class="form-select selectric p-3 text-gray-color w-100 mb-2 " id="hospedaje_listDpto">
                     <option selected disabled>Seleccione el Departamento</option>
                 </select>
-                <select class="form-select selectric p-3 text-gray-color w-100"id="hospedaje_listLoc">
+                <select class="form-select selectric p-3 text-gray-color w-100" id="hospedaje_listLoc">
                     <option selected disabled>Seleccione la Localidad</option>
                 </select>
-                  <a href="@Url.Action("Create")" class="btn  btn-primary  text-white mt-2" id="btn_filtrarHospedaje">Filtrar</a>
+                <a href="@Url.Action("Create")" class="btn  btn-primary  text-white mt-2" id="btn_filtrarHospedaje">Filtrar</a>
             </div>
         </div>
         <div class="col-lg-9">
             <div class="row mb-4 d-flex ordenar_hospedaje">
                 <div class="col-md-6 ">
-                        <a href="@Url.Action("Index",new { order = "1"})" class="btn  btn-primary  text-white  mb-2  ">ORDENAR POR CALIFICACIÓN</a>
-                   </div> 
+                    <a href="@Url.Action("Index",new { order = "1"})" class="btn  btn-primary  text-white  mb-2  ">ORDENAR POR CALIFICACIÓN</a>
+                </div>
                 <div class="col-md-6">
-                 <a href="@Url.Action("Index",new { order = "2"})" class="btn  btn-primary  text-white ordenarPrecio ">ORDENAR POR PRECIO</a>
-                    
+                    <a href="@Url.Action("Index",new { order = "2"})" class="btn  btn-primary  text-white ordenarPrecio ">ORDENAR POR PRECIO</a>
+
                 </div>
             </div>
             @foreach (var item in Model)
@@ -66,15 +63,15 @@
                 <div class="row mb-4 border rounded">
                     <div class="col-md-4 p-0">
 
-                        <div class="media-img position-relative">
+                        <div class="media-img  position-relative">
                             @if (@Html.DisplayFor(modelItem => item.Fotourl).ToString() == "")
                             {
-                                <img class="rounded-left img-fluid  h-100 position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid  position-relative" src="@Html.DisplayFor(modelItem => item.weburl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                             else
                             {
-                                <img class="rounded-left img-fluid  h-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
+                                <img class="rounded-left img-fluid   position-relative" src="/assets/img/holets/@Html.DisplayFor(modelItem => item.Fotourl)" alt="@Html.DisplayFor(modelItem => item.Nombre)">
 
                             }
                         </div>
@@ -86,13 +83,20 @@
                             <div class="col-md-12  text-right">
                                 <p class="m-0"><span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(modelItem => item.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></p>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 ">
                                 <h4>
-                                    <a class="media-title" href=" @Url.Action("Details", "Hospedajes", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                                    <a class="media-title" href=" @Url.Action("Details", "Atracciones", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
                                 </h4>
-                                <p>
-                                    @Html.DisplayFor(modelItem => item.Descripcion)
-                                </p>
+
+                                <div class="descripcion_serv">
+                                    <div class="w-50">
+                                        <h4 class=" font-weight-bold  p-1 text-white rounded  m-0 text-align-center bg-primary ">$@Html.DisplayFor(modelItem => item.costo) Por Noche</h4>
+                                    </div>
+                                    <p>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </p>
+                                </div>
+
                             </div>
 
                         </div>
@@ -101,8 +105,8 @@
 
                     <div class="col-md-2  pr-0  ">
                         <div class="bg-primary text-center p-3 view-details rounded h-100 ">
-                            <h2 class="text-white font-weight-bold h1">$@Html.DisplayFor(modelItem => item.costo)</h2>
-                            <p class="text-white text-capitalize">Por Noche</p>
+
+
                             <div>
 
                                 <a href=" @Url.Action("Details", "Hospedajes", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
@@ -127,7 +131,6 @@
     </div>
 </div>
 
-
 @section Scripts{
-<script src="~/assets/js/servicios.js"></script>
+    <script src="~/assets/js/servicios.js"></script>
 }

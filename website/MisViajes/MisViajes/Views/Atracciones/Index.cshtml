@@ -83,13 +83,16 @@
                             <div class="col-md-12  text-right">
                                 <p class="m-0"><span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(modelItem => item.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></p>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 ">
                                 <h4>
                                     <a class="media-title" href=" @Url.Action("Details", "Atracciones", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
                                 </h4>
-                                <p>
-                                    @Html.DisplayFor(modelItem => item.Descripcion)
-                                </p>
+                                <div class="descripcion_serv">
+                                    <p>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </p>
+                                </div>
+                               
                             </div>
 
                         </div>
