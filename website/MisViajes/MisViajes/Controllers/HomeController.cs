@@ -63,45 +63,17 @@ namespace MisViajes.Controllers
         }
 
         [Authorize]
-        public async Task<ActionResult> Dashboard()
+        public ActionResult Dashboard()
         {
 
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
             {
                 ViewBag.Message = "Confirmado";
 
-
             }
             
-            List<Monumentos> monumentos = new List<Monumentos>();
-            List<Hospedajes> hospedajes = new List<Hospedajes>();
-            List<Atracciones> atracciones = new List<Atracciones>();
-            List<Eventos> eventos = new List<Eventos>();
-            var servicios = await db.Servicios.ToListAsync();
-            foreach (var s in servicios)
-            {
-                var a = s.GetType().ToString();
-                if (s.GetType().ToString() == "MisViajes.Models.Monumentos")
-                {
-                    monumentos.Add((Monumentos)s);
-                }
-                if (s.GetType().ToString() == "MisViajes.Models.Hospedajes")
-                {
-                    hospedajes.Add((Hospedajes)s);
-                }
-                if (s.GetType().ToString() == "MisViajes.Models.Atracciones")
-                {
-                     atracciones.Add((Atracciones)s);
-                }
-                if (s.GetType().ToString() == "MisViajes.Models.Eventos")
-                {
-                    eventos.Add((Eventos)s);
-                }
-            }
-                 ViewBag.MonumentosCount = monumentos.Count;
-                 ViewBag.AtraccionesCount = atracciones.Count;
-                 ViewBag.EventosCount = eventos.Count;
-                 ViewBag.HospedajesCount = hospedajes.Count;
+           
+             Counter();
 
             return View();
         }
@@ -156,12 +128,19 @@ namespace MisViajes.Controllers
             return View();
         }
 
-        public ActionResult Counter()
+        public async Task<ActionResult> Counter()
         {
-            ViewBag.Rutas = db.Rutas.Count().ToString();
-            ViewBag.Usuarios = db.Users.Count().ToString();
+
+            int monumentos = db.Servicios.Where(x => x is Monumentos).Count();
+            ViewBag.Monumentos = monumentos.ToString();
+            int atracciones = db.Servicios.Where(x => x is Atracciones).Count();
+            ViewBag.Atracciones = atracciones.ToString();
+            int eventos = db.Servicios.Where(x => x is Eventos).Count();
+            ViewBag.Eventos = eventos.ToString();
             int hospedajes = db.Servicios.Where(x => x is Hospedajes).Count();
             ViewBag.Hospedajes = hospedajes.ToString();
+            ViewBag.Rutas = db.Rutas.Count().ToString();
+            ViewBag.Usuarios = db.Users.Count().ToString();
             ViewBag.Servicios = (db.Servicios.Count() - hospedajes).ToString();
 
             return View();
