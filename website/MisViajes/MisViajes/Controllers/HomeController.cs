@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace MisViajes.Controllers
 {
@@ -48,6 +49,7 @@ namespace MisViajes.Controllers
 
         public ActionResult About()
         {
+           
             ViewBag.Message = "Acerca del Sitio.";
 
             return View();
@@ -61,7 +63,7 @@ namespace MisViajes.Controllers
         }
 
         [Authorize]
-        public ActionResult Dashboard()
+        public async Task<ActionResult> Dashboard()
         {
 
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
@@ -70,6 +72,36 @@ namespace MisViajes.Controllers
 
 
             }
+            
+            List<Monumentos> monumentos = new List<Monumentos>();
+            List<Hospedajes> hospedajes = new List<Hospedajes>();
+            List<Atracciones> atracciones = new List<Atracciones>();
+            List<Eventos> eventos = new List<Eventos>();
+            var servicios = await db.Servicios.ToListAsync();
+            foreach (var s in servicios)
+            {
+                var a = s.GetType().ToString();
+                if (s.GetType().ToString() == "MisViajes.Models.Monumentos")
+                {
+                    monumentos.Add((Monumentos)s);
+                }
+                if (s.GetType().ToString() == "MisViajes.Models.Hospedajes")
+                {
+                    hospedajes.Add((Hospedajes)s);
+                }
+                if (s.GetType().ToString() == "MisViajes.Models.Atracciones")
+                {
+                     atracciones.Add((Atracciones)s);
+                }
+                if (s.GetType().ToString() == "MisViajes.Models.Eventos")
+                {
+                    eventos.Add((Eventos)s);
+                }
+            }
+                 ViewBag.MonumentosCount = monumentos.Count;
+                 ViewBag.AtraccionesCount = atracciones.Count;
+                 ViewBag.EventosCount = eventos.Count;
+                 ViewBag.HospedajesCount = hospedajes.Count;
 
             return View();
         }

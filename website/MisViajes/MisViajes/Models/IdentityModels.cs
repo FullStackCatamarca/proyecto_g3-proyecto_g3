@@ -80,5 +80,6 @@ namespace MisViajes.Models
         public System.Data.Entity.DbSet<MisViajes.Models.Votos> Votos { get; set; }
 
         public System.Data.Entity.DbSet<MisViajes.Models.Respuestas> Respuestas { get; set; }
+        public object Hospedajes { get; internal set; }
     }
 }
