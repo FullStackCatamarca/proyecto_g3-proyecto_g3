@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace MisViajes.Controllers
 {
@@ -30,19 +31,19 @@ namespace MisViajes.Controllers
             db.Configuration.LazyLoadingEnabled = false;
             List<Departamentos> lst = db.Departamentos.ToList<Departamentos>();
 
-            return Json(lst,JsonRequestBehavior.AllowGet);
+            return Json(lst, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public JsonResult ObtenerLocalidades(int? idDepartamento)
         {
-            
+
             List<Localidades> lst = new List<Localidades>();
-            
+
             db.Configuration.LazyLoadingEnabled = false;
             if (idDepartamento != null)
                 lst = db.Localidades.Where(l => l.DepartamentoId == idDepartamento).ToList<Localidades>();
-            
+
             return Json(lst, JsonRequestBehavior.AllowGet);
         }
 
@@ -70,6 +71,7 @@ namespace MisViajes.Controllers
 
 
             }
+             Counter();
 
             return View();
         }
@@ -100,7 +102,7 @@ namespace MisViajes.Controllers
             model.Id = userId;
             model.UserName = user.UserName;
             int i = new MantenimientoUsuario().ModificarPerfil(model);
-                
+
             return RedirectToAction("../Home/Profile");
         }
 
@@ -124,18 +126,27 @@ namespace MisViajes.Controllers
             return View();
         }
 
-        [ChildActionOnly]
         [AllowAnonymous]
         public ActionResult Counter()
         {
-            ViewBag.Rutas = db.Rutas.Count().ToString();
-            ViewBag.Usuarios = db.Users.Count().ToString();
+            int monumentos = db.Servicios.Where(x => x is Monumentos).Count();
+            ViewBag.Monumentos = monumentos.ToString();
+            int atracciones = db.Servicios.Where(x => x is Atracciones).Count();
+            ViewBag.Atracciones = atracciones.ToString();
+            int eventos = db.Servicios.Where(x => x is Eventos).Count();
+            ViewBag.Eventos = eventos.ToString();
             int hospedajes = db.Servicios.Where(x => x is Hospedajes).Count();
             ViewBag.Hospedajes = hospedajes.ToString();
+            ViewBag.Rutas = db.Rutas.Count().ToString();
+            ViewBag.Usuarios = db.Users.Count().ToString();
             ViewBag.Servicios = (db.Servicios.Count() - hospedajes).ToString();
 
-            return PartialView("Counter");
-        }
-    }
 
+            if ((HttpContext.PreviousHandler as MvcHandler) != null) return PartialView("Counter");
+
+            return View();
+        }
+
+    }
 }
+

@@ -22,6 +22,14 @@
 <div class="container">
     <div class="row mt-2 ">
 
+        <div class="col-md-12 ">
+            <a href="@Url.Action("Create", "Waypoints")" class="btn  btn-primary text-white">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+
+                Agregar Punto de Ruta
+            </a>
+            </p>
+        </div>
 
     </div>
     <div class="row">
@@ -91,18 +99,18 @@
 
                             <div>
 
-                                <a href=" @Url.Action("Details", "Hospedajes", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
+                                <a href=" @Url.Action("RDetails", "Servicios", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
                             </div>
                             @if (@ViewBag.Message == "Confirmado")
                             {
                                 <div>
 
-                                    <a href=" @Url.Action("Delete", "Hospedajes", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Eliminar</a>
+                                    <a href=" @Url.Action("RDelete", "Servicios", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Eliminar</a>
                                 </div>
 
                                 <div>
 
-                                    <a href=" @Url.Action("Edit", "Hospedajes", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Editar</a>
+                                    <a href=" @Url.Action("REdit", "Servicios", new { id = item.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Editar</a>
                                 </div>
                             }
                         </div>

@@ -117,6 +117,66 @@ namespace MisViajes.Controllers
             return RedirectToAction("Index");
         }
 
+
+        // GET: Servicios/REdit/5
+        public async Task<ActionResult> REdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Servicios servicio = await db.Servicios.FindAsync(id);
+            if (servicio == null)
+            {
+                return HttpNotFound();
+            }
+
+            var controller = cleanupServicio(servicio.GetType().ToString());
+
+            return RedirectToAction("Edit", controller, new { id = id });
+        }
+
+        // GET: Servicios/RDetails/5
+        public async Task<ActionResult> RDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Servicios servicio = await db.Servicios.FindAsync(id);
+            if (servicio == null)
+            {
+                return HttpNotFound();
+            }
+
+            var controller = cleanupServicio(servicio.GetType().ToString());
+
+            return RedirectToAction("Details", controller, new { id = id });
+        }
+
+        // GET: Servicios/RDelete/5
+        public async Task<ActionResult> RDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Servicios servicio = await db.Servicios.FindAsync(id);
+            if (servicio == null)
+            {
+                return HttpNotFound();
+            }
+
+            var controller = cleanupServicio(servicio.GetType().ToString());
+
+            return RedirectToAction("Delete", controller, new { id = id });
+        }
+
+        private string cleanupServicio(string Tipo)
+        {
+            return Tipo.Replace("MisViajes.Models.", "");
+
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

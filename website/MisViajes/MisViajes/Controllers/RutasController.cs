@@ -59,6 +59,11 @@ namespace MisViajes.Controllers
         // GET: Rutas/Show/5
         public async Task<ActionResult> Show(int? id)
         {
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+            }
+
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
             var userId = (User.Identity.GetUserId());
 
@@ -98,7 +103,6 @@ namespace MisViajes.Controllers
 
             Rutas model = new Rutas();
             model.Abierto = true;
-
             return View(model);
         }
 
@@ -109,23 +113,19 @@ namespace MisViajes.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico,Aprovado")] Rutas rutas)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico")] Rutas rutas)
         {
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
             var UserId = User.Identity.GetUserId();
             var user = UserManager.FindById(UserId);
 
+            rutas.Aprobado = true;
             rutas.User = user;
 
-            if (!(User.IsInRole("Staff") || User.IsInRole("Administrador")))
-            {
-                rutas.Aprobado = true;
-                ModelState.Remove("Aprovado");
-            }
 
             ModelState.Remove("User");
-            
-            
+            ModelState.Remove("Aprobado");
+
             if (ModelState.IsValid)
             {
                 db.Rutas.Add(rutas);
@@ -138,6 +138,11 @@ namespace MisViajes.Controllers
         // GET: Rutas/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -148,6 +153,7 @@ namespace MisViajes.Controllers
             var userId = (User.Identity.GetUserId());
 
             if ((rutas != null) && (User.IsInRole("Staff") || User.IsInRole("Administrador") || (rutas.User.Id != userId)))
+
                 return View(rutas);
 
 
@@ -159,17 +165,24 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Abierto,Publico")] Rutas rutas)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Abierto,Publico,Aprobado")] Rutas rutas)
         {
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
             var UserId = User.Identity.GetUserId();
             var user = UserManager.FindById(UserId);
+            Rutas rutao = db.Rutas.AsNoTracking().Single(x => x.Id.Equals(rutas.Id));
 
             rutas.User = user;
-            rutas.Aprobado = true;
+
+            if (!(User.IsInRole("Staff") || User.IsInRole("Administrador")))
+            {
+                rutas.Aprobado = rutao.Aprobado;
+                ModelState.Remove("Aprobado");
+            }
+
 
             ModelState.Remove("User");
-            ModelState.Remove("Aprovado");
+
 
             ModelState.Clear();
 
