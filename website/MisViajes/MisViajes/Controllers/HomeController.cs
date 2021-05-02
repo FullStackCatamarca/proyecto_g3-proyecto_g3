@@ -12,7 +12,6 @@ using System.Web;
 using System.Web.Mvc;
 using MisViajes.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
 
 namespace MisViajes.Controllers
 {
@@ -49,7 +48,6 @@ namespace MisViajes.Controllers
 
         public ActionResult About()
         {
-           
             ViewBag.Message = "Acerca del Sitio.";
 
             return View();
@@ -70,10 +68,8 @@ namespace MisViajes.Controllers
             {
                 ViewBag.Message = "Confirmado";
 
+
             }
-            
-           
-             Counter();
 
             return View();
         }
@@ -128,22 +124,17 @@ namespace MisViajes.Controllers
             return View();
         }
 
-        public async Task<ActionResult> Counter()
+        [ChildActionOnly]
+        [AllowAnonymous]
+        public ActionResult Counter()
         {
-
-            int monumentos = db.Servicios.Where(x => x is Monumentos).Count();
-            ViewBag.Monumentos = monumentos.ToString();
-            int atracciones = db.Servicios.Where(x => x is Atracciones).Count();
-            ViewBag.Atracciones = atracciones.ToString();
-            int eventos = db.Servicios.Where(x => x is Eventos).Count();
-            ViewBag.Eventos = eventos.ToString();
-            int hospedajes = db.Servicios.Where(x => x is Hospedajes).Count();
-            ViewBag.Hospedajes = hospedajes.ToString();
             ViewBag.Rutas = db.Rutas.Count().ToString();
             ViewBag.Usuarios = db.Users.Count().ToString();
+            int hospedajes = db.Servicios.Where(x => x is Hospedajes).Count();
+            ViewBag.Hospedajes = hospedajes.ToString();
             ViewBag.Servicios = (db.Servicios.Count() - hospedajes).ToString();
 
-            return View();
+            return PartialView("Counter");
         }
     }
 

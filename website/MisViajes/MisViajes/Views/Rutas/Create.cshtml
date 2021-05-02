@@ -4,7 +4,6 @@
     ViewBag.Title = "Crear Rutas";
 }
 
-<
 <div class="main-wrapper about-us">
 
 
@@ -37,57 +36,60 @@
         <div class="container">
             @Html.ActionLink("Volver a La Lista", "Index", "Rutas", null, new { @class = "btn btn-primary" })
             <br/><br/>
-            <div class="text-left border-bottom pb-6 mb-7">
+                 <div class="text-left border-bottom pb-6 mb-7">
 
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group form-inline">
-                        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control w-50" } })
-                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                     @using (Html.BeginForm())
+                     {
+                         @Html.AntiForgeryToken()
+                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                         <div class="form-group form-inline">
+                             @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                             <div class="col-md-10">
+                                 @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control w-50" } })
+                                 @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                             </div>
+                         </div>
 
-                    <div class="form-group form-inline">
-                        @Html.LabelFor(model => model.Abierto, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <div class="checkbox">
-                                @Html.EditorFor(model => model.Abierto)
-                                @Html.ValidationMessageFor(model => model.Abierto, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+                         <div class="form-group form-inline">
+                             @Html.LabelFor(model => model.Abierto, htmlAttributes: new { @class = "control-label col-md-2" })
+                             <div class="col-md-10">
+                                 <div class="checkbox">
+                                     @Html.EditorFor(model => model.Abierto)
+                                     @Html.ValidationMessageFor(model => model.Abierto, "", new { @class = "text-danger" })
+                                 </div>
+                             </div>
+                         </div>
 
-                    <div class="form-group form-inline">
-                        @Html.LabelFor(model => model.Publico, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <div class="checkbox">
-                                @Html.EditorFor(model => model.Publico)
-                                @Html.ValidationMessageFor(model => model.Publico, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+                         <div class="form-group form-inline">
+                             @Html.LabelFor(model => model.Publico, htmlAttributes: new { @class = "control-label col-md-2" })
+                             <div class="col-md-10">
+                                 <div class="checkbox">
+                                     @Html.EditorFor(model => model.Publico)
+                                     @Html.ValidationMessageFor(model => model.Publico, "", new { @class = "text-danger" })
+                                 </div>
+                             </div>
+                         </div>
 
-                    <div class="form-group form-inline">
-                        @Html.LabelFor(model => model.Aprobado, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <div class="checkbox">
-                                @Html.EditorFor(model => model.Aprobado)
-                                @Html.ValidationMessageFor(model => model.Aprobado, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+                         if (ViewBag.Message == "Confirmado")
+                         {
+                             <div class="form-group form-inline">
+                                 @Html.LabelFor(model => model.Aprobado, htmlAttributes: new { @class = "control-label col-md-2" })
+                                 <div class="col-md-10">
+                                     <div class="checkbox">
+                                         @Html.EditorFor(model => model.Aprobado)
+                                         @Html.ValidationMessageFor(model => model.Aprobado, "", new { @class = "text-danger" })
+                                     </div>
+                                 </div>
+                             </div>
+                         }
 
-                    <div class="form-group form-inline">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Crear Ruta" class="btn btn-primary" />
-                        </div>
-                    </div>
-                }
-            </div>
+                         <div class="form-group form-inline">
+                             <div class="col-md-offset-2 col-md-10">
+                                 <input type="submit" value="Crear Ruta" class="btn btn-primary" />
+                             </div>
+                         </div>
+                     }
+                 </div>
         </div>
     </section>
 </div><!-- element wrapper ends -->

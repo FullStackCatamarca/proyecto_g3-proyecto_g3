@@ -22,28 +22,80 @@ namespace MisViajes.Controllers
         // GET: Rutas
         public async Task<ActionResult> Index()
         {
-            //ToDo: Own and Admin / Staff
-            return View(await db.Rutas.ToListAsync());
+            
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador")) 
+                // Lista Completa
+                return View(await db.Rutas.ToListAsync());
+
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            
+            // Lista Solo las del usuario
+            return View(await db.Rutas.Where(x => x.User.Id == user.Id).ToListAsync());
+
         }
 
         // GET: Rutas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var userId = (User.Identity.GetUserId());
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Rutas rutas = await db.Rutas.FindAsync(id);
-            if (rutas == null)
+
+            if ((rutas != null) && (User.IsInRole("Staff") || User.IsInRole("Administrador") || (rutas.User.Id != userId)))
             {
-                return HttpNotFound();
+                return View(rutas);
             }
-            return View(rutas);
+
+            return HttpNotFound();
+
+        }
+
+        // GET: Rutas/Show/5
+        public async Task<ActionResult> Show(int? id)
+        {
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var userId = (User.Identity.GetUserId());
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
+
+            List<Waypoint> wps = db.Waypoints.Where(w => w.rutaId == id).ToList();
+            List<Servicios> srvs = new List<Servicios>();
+            List<string> destinos = new List<string>();
+
+            foreach (Waypoint wp in wps)
+            {
+                // todo: if servicio is available
+                var srv = db.Servicios.Find(wp.ServiciosId);
+                srvs.Add(srv);
+                destinos.Add(srv.Nombre);
+            }
+
+            Rutas ruta = await db.Rutas.FindAsync(id);
+            
+            ViewBag.Nombre = ruta.Nombre;
+            ViewBag.Destinos = destinos;
+
+            return View(srvs.AsQueryable());
+
         }
 
         // GET: Rutas/Create
         public ActionResult Create()
         {
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+            }
+
             Rutas model = new Rutas();
             model.Abierto = true;
 
@@ -57,17 +109,22 @@ namespace MisViajes.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico")] Rutas rutas)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Abierto,Publico,Aprovado")] Rutas rutas)
         {
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
             var UserId = User.Identity.GetUserId();
             var user = UserManager.FindById(UserId);
 
             rutas.User = user;
-            rutas.Aprobado = true;
+
+            if (!(User.IsInRole("Staff") || User.IsInRole("Administrador")))
+            {
+                rutas.Aprobado = true;
+                ModelState.Remove("Aprovado");
+            }
 
             ModelState.Remove("User");
-            ModelState.Remove("Aprovado");
+            
             
             if (ModelState.IsValid)
             {
@@ -86,12 +143,15 @@ namespace MisViajes.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Rutas rutas = await db.Rutas.FindAsync(id);
-            if (rutas == null)
-            {
-                return HttpNotFound();
-            }
 
-            return View(rutas);
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var userId = (User.Identity.GetUserId());
+
+            if ((rutas != null) && (User.IsInRole("Staff") || User.IsInRole("Administrador") || (rutas.User.Id != userId)))
+                return View(rutas);
+
+
+            return HttpNotFound();
         }
 
         // POST: Rutas/Edit/5
@@ -130,11 +190,14 @@ namespace MisViajes.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Rutas rutas = await db.Rutas.FindAsync(id);
-            if (rutas == null)
-            {
-                return HttpNotFound();
-            }
-            return View(rutas);
+
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
+            var userId = (User.Identity.GetUserId());
+
+            if ((rutas != null) && (User.IsInRole("Staff") || User.IsInRole("Administrador") || (rutas.User.Id != userId)))
+                return View(rutas);
+
+            return HttpNotFound();
         }
 
         // POST: Rutas/Delete/5

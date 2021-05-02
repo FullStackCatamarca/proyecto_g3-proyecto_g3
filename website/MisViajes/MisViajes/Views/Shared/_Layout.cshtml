@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+
     <title>@ViewBag.Title - DFS 2020</title>
     <link href="@Url.Content("~/assets/plugins/isotope/isotope.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/fancybox/jquery.fancybox.min.css")" rel="stylesheet" type="text/css" />
@@ -21,6 +21,10 @@
     <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/menuzord/css/menuzord-animations.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/owl-carousel/owl.carousel.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/plugins/owl-carousel/owl.theme.default.min.css")" rel="stylesheet" type="text/css" />
+
+
     <!--ANGULAR-->
     <link rel="icon" type="image/x-icon" href="@Url.Content("~/assets/img/favicon.png")">
     <link rel="stylesheet" href="@Url.Content("~/scripts/foro/styles.css")">
@@ -100,8 +104,16 @@
                                 <li class=" || ">
 
                                     <a href="@Url.Action("Index","Eventos")">Eventos</a>
-                                   
+
                                 </li>
+
+                                <li class=" || ">
+
+                                    @Html.ActionLink("Rutas", "Show", "Waypoints", null, new { @class = "" })
+
+                                </li>
+
+
                             </ul>
                         </li>
 
@@ -416,10 +428,7 @@
     <script src="@Url.Content("~/assets/js/star.js")"></script>
 
     <!--SCRIPTS ANGULAR-->
-    <script src="@Url.Content("~/scripts/foro/runtime.js")" defer></script>
-    <script src="@Url.Content("~/scripts/foro/polyfills.js")" defer></script>
-    <script src="@Url.Content("~/scripts/foro/vendor.js")" defer></script>
-    <script src="@Url.Content("~/scripts/foro/main.js")" defer></script>
+
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 

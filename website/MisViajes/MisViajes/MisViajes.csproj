@@ -980,6 +980,8 @@
     <Content Include="Views\Manage\SetAvatar.cshtml" />
     <Content Include="Views\Home\Privacidad.cshtml" />
     <Content Include="Views\Home\Counter.cshtml" />
+    <Content Include="Views\Rutas\Show.cshtml" />
+    <Content Include="Views\Waypoints\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

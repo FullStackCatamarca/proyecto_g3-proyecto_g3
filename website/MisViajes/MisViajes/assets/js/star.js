@@ -187,7 +187,7 @@
   }
 
   //============================== gallery-photo-slider =========================
-  var gallery_photo_slider = $('#gallery-photo-slider');
+    var gallery_photo_slider = $("div[class*='mowl-']");
 
   if(gallery_photo_slider.length !== 0){
     gallery_photo_slider.owlCarousel({

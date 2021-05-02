@@ -13,9 +13,11 @@ using Microsoft.AspNet.Identity;
 
 namespace MisViajes.Controllers
 {
+    [Authorize]
     public class WaypointsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        protected UserManager<ApplicationUser> UserManager { get; set; }
 
         // GET: Waypoints
         public async Task<ActionResult> Index()
@@ -23,6 +25,35 @@ namespace MisViajes.Controllers
             var waypoints = db.Waypoints.Include(w => w.ruta).Include(w => w.Servicios);
             return View(await waypoints.ToListAsync());
         }
+
+        public async Task<ActionResult> Show()
+        {
+            if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
+            {
+                ViewBag.Message = "Confirmado";
+            }
+
+            List<Rutas> rutas = await db.Rutas.ToListAsync();
+            Dictionary<Rutas, List<Servicios>> Destinos= new Dictionary<Rutas, List<Servicios>>();
+
+            foreach (Rutas ruta in rutas)
+            {
+                int id = ruta.Id;
+                List<Waypoint> wps = db.Waypoints.Where(w => w.rutaId == id).Include(w => w.Servicios).ToList();
+                List<Servicios> srvs = new List<Servicios>();
+                
+                foreach (Waypoint wp in wps)
+                {
+                    // todo: if servicio is available
+                    var srv = db.Servicios.Find(wp.ServiciosId);
+                    srvs.Add(srv);
+                }
+
+                Destinos.Add(ruta, srvs);
+            }
+            return View(Destinos);
+        }
+
 
         // GET: Waypoints/Details/5
         public async Task<ActionResult> Details(int? id)

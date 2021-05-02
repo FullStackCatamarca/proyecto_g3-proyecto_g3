@@ -23,8 +23,6 @@ namespace MisViajes.Controllers
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
             {
                 ViewBag.Message = "Confirmado";
-
-
             }
 
             List<Hospedajes> hospedajes= new List<Hospedajes>();
