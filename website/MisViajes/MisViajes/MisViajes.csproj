@@ -232,7 +232,6 @@
     <Content Include="assets\img\about-us\about-big.jpg" />
     <Content Include="assets\img\about-us\team-01.jpg" />
     <Content Include="assets\img\about-us\team-02.jpg" />
-    <Content Include="assets\img\about-us\team-03.jpg" />
     <Content Include="assets\img\blog\blog-01.jpg" />
     <Content Include="assets\img\blog\blog-02.jpg" />
     <Content Include="assets\img\blog\blog-03.jpg" />
@@ -300,8 +299,20 @@
     <Content Include="assets\img\cruises\cruise-img-09.jpg" />
     <Content Include="assets\img\dashboard\dash-user.jpg" />
     <Content Include="assets\img\dashboard\profile-img-01.jpg" />
-    <Content Include="assets\img\dashboard\recent-offer-01.jpg" />
-    <Content Include="assets\img\dashboard\recent-offer-02.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f1.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f2.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f3.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f4.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f5.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-f6.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m1.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m2.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m3.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m4.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m5.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m6.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m7.jpg" />
+    <Content Include="assets\img\dashboard\profile-img-m8.jpg" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\gallery\gallery-single-slider-01.jpg" />
     <Content Include="assets\img\gallery\gallery-single-slider-02.jpg" />
@@ -900,8 +911,6 @@
     <Content Include="Views\Rutas\Details.cshtml" />
     <Content Include="Views\Rutas\Edit.cshtml" />
     <Content Include="Views\Rutas\Index.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
@@ -960,7 +969,6 @@
     <Content Include="Views\Posts\Create.cshtml" />
     <Content Include="Views\Posts\Delete.cshtml" />
     <Content Include="Views\Posts\Details.cshtml" />
-    <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Temas\Create.cshtml" />
     <Content Include="Views\Temas\Delete.cshtml" />

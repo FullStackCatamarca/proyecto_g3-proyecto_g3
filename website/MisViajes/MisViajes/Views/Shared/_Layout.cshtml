@@ -34,7 +34,7 @@
     <link rel="shortcut icon" type="image/png" href="@Url.Content("~/assets/img/favicon.png")" />
     <link rel="stylesheet" href="@Url.Content("~/assets/css/StyleSheet.css")" type="text/css" />
     <!--ChatBot BlueCaribu-->
-    <script async>(function (w, d) { var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://app.bluecaribu.com/conversion/integration/c3063dc2d99319e631631e58cd8c7b14"); h.appendChild(s); })(window, document);</script>
+    @*<script async>(function (w, d) { var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://app.bluecaribu.com/conversion/integration/c3063dc2d99319e631631e58cd8c7b14"); h.appendChild(s); })(window, document);</script>*@
 
 </head>
 
@@ -79,7 +79,7 @@
                     </a>
 
                     <ul class="menuzord-menu menuzord-right">
-                        <li class=" active ">
+                        <li class="">
                             @Html.ActionLink("Portada", "Index", "Home", null, new { @class = "" })
                         </li>
 
@@ -428,9 +428,7 @@
     <script src="@Url.Content("~/assets/js/star.js")"></script>
 
     <!--SCRIPTS ANGULAR-->
-
-
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading)
 
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
@@ -441,8 +439,7 @@
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <script src="https://localhost:44344/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-
-
+        -->
 </body>
 </html>
 

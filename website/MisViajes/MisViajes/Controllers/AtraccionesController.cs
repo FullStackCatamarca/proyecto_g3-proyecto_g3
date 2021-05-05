@@ -11,7 +11,7 @@ using MisViajes.Models;
 
 namespace MisViajes.Controllers
 {
-    [Authorize]
+
     public class AtraccionesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -50,6 +50,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Atracciones/Details/5
+        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -65,6 +66,7 @@ namespace MisViajes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<JsonResult> coordenadas(int? idServ)
         {
             Atracciones atracciones = (Atracciones)await db.Servicios.FindAsync(idServ);
@@ -73,6 +75,7 @@ namespace MisViajes.Controllers
 
 
         // GET: Atracciones/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -96,6 +99,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Atracciones/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -114,6 +118,7 @@ namespace MisViajes.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Descripcion,Ubicacion,Fotourl,costo,Puntuacion,Localidad,weburl,habilitado,Latitud,Longitud")] Atracciones atracciones)
         {
@@ -127,6 +132,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Atracciones/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,6 +148,7 @@ namespace MisViajes.Controllers
         }
 
         // POST: Atracciones/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

@@ -11,7 +11,7 @@ using MisViajes.Models;
 
 namespace MisViajes.Controllers
 {
-    [Authorize]
+    
     public class HospedajesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -57,6 +57,7 @@ namespace MisViajes.Controllers
 
         }
 
+        [Authorize]
         public JsonResult ObtenerDepartamentos()
         {
             db.Configuration.LazyLoadingEnabled = false;
@@ -66,6 +67,7 @@ namespace MisViajes.Controllers
         }
 
 
+        [Authorize]
         [HttpPost]
         public JsonResult ObtenerLocalidades(int? idDepartamento)
         {
@@ -81,6 +83,7 @@ namespace MisViajes.Controllers
 
 
         // GET: Hospedajes/Details/5
+        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             
@@ -99,16 +102,18 @@ namespace MisViajes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<JsonResult> coordenadas(int? idServ) {
             Hospedajes hospedajes = (Hospedajes)await db.Servicios.FindAsync(idServ);
             return Json(hospedajes, JsonRequestBehavior.AllowGet);
         }
-   
-       
+
+
 
 
 
         // GET: Hospedajes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -119,6 +124,7 @@ namespace MisViajes.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<ActionResult> Create([Bind(Include = "Id,Nombre,Descripcion,Ubicacion,Fotourl,costo,Puntuacion,Localidad,weburl,habilitado,Latitud,Longitud")] Hospedajes hospedajes)
         {
             if (ModelState.IsValid)
@@ -132,6 +138,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Hospedajes/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -150,6 +157,7 @@ namespace MisViajes.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Descripcion,Ubicacion,Fotourl,costo,Puntuacion,Localidad,weburl,habilitado,Latitud,Longitud")] Hospedajes hospedajes)
         {
@@ -163,6 +171,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Hospedajes/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -178,6 +187,7 @@ namespace MisViajes.Controllers
         }
 
         // POST: Hospedajes/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
