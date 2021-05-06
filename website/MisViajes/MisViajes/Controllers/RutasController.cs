@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace MisViajes.Controllers
 {
-    [Authorize]
+
     public class RutasController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -36,6 +36,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Rutas/Details/5
+        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.db));
@@ -57,6 +58,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Rutas/Show/5
+        [Authorize]
         public async Task<ActionResult> Show(int? id)
         {
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
@@ -94,6 +96,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Rutas/Create
+        [Authorize]
         public ActionResult Create()
         {
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
@@ -136,6 +139,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Rutas/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (User.IsInRole("Staff") || User.IsInRole("Administrador"))
@@ -164,6 +168,7 @@ namespace MisViajes.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Nombre,Abierto,Publico,Aprobado")] Rutas rutas)
         {
@@ -196,6 +201,7 @@ namespace MisViajes.Controllers
         }
 
         // GET: Rutas/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -214,6 +220,7 @@ namespace MisViajes.Controllers
         }
 
         // POST: Rutas/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
