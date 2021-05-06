@@ -1,11 +1,12 @@
 ﻿@model MisViajes.Models.Monumentos
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
 <link rel="stylesheet" href="~/assets/css/StyleSheet.css" />
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 
 <section class="page-title">
-    <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg13.jpg"));">
+    <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg3.jpg"));">
         <div class="container">
             <div class="row align-items-center justify-content-center" style="height: 200px;">
                 <div class="col-lg-6">
@@ -21,39 +22,45 @@
     </div>
 </section>
 <div class="container ">
-
     <div class="row">
-        <div class="col-md-6 mt-4 p-0 img-fluid ">
+        <div class="col-lg-6 mt-4 p-0  ">
             @if (@Html.DisplayFor(model => model.Fotourl).ToString() == "")
             {
-                <img width="590" height="446" class="imagenes-servicios h-100 rounded-left position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img width="590" height="446" class=" w-100  rounded-left position-relative" src="@Html.DisplayFor(model => model.weburl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
             else
             {
-                <img width="590" height="446" class="rounded-left h-100 w-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
+                <img width="590" height="446" class="rounded-left  w-100 position-relative" src="/assets/img/holets/@Html.DisplayFor(model => model.Fotourl)" alt="@Html.DisplayFor(model => model.Nombre)">
 
             }
         </div>
-        <div class="col-md-6 mt-4 p-0  ">
+        <div class="col-lg-6 mt-4 p-0  ">
 
-            <div id="mapid" class="rounded-right h-100">
+            <div id="mapid" class="rounded-right " width="590" height="446">
             </div>
         </div>
-        <div class="col-md-12  mt-4">
-            <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>
+        <div class="row">
+            <div class="col-md-12  mt-4">
+                <h1>  @Html.DisplayFor(model => model.Nombre) <span class="bg-primary rounded p-1 text-white">@Html.DisplayFor(model => model.Puntuacion) <i class="fa fa-star" aria-hidden="true"></i></span></h1>
 
-            <div class="row">
-                <div class="col-md-10">
-                    <p> @Html.DisplayFor(model => model.Descripcion)</p>
+                <div class="row">
+                    <div class="col-md-10">
+                        <p> @Html.DisplayFor(model => model.Descripcion)</p>
 
-                </div>
-                <div class="col-md-6">
-                    <p class="text-primary font-weight-bold " style="font-size:22px"><i class="fa fa-map-marker" aria-hidden="true"></i>@Html.DisplayFor(model => model.Ubicacion)</p>
-                   
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-primary font-weight-bold " style="font-size:22px"><i class="fa fa-map-marker" aria-hidden="true"></i>@Html.DisplayFor(model => model.Ubicacion)</p>
+
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
     </div>
     <div class="row mb-4 ">
         <div class="col-12 d-flex justify-content-end">
@@ -66,6 +73,9 @@
     </div>
 </div>
 
+
 @section Scripts{
     <script src="~/assets/js/mapas.js"></script>
 }
+
+

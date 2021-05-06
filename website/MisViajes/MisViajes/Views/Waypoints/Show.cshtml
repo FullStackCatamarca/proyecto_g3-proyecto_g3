@@ -41,93 +41,88 @@
             </div>
         </div>
 
-
-
         <div class="col-lg-9">
             @foreach (KeyValuePair<Rutas, List<Servicios>> destino in Model)
             {
                 if (!destino.Key.Aprobado){ continue; }
                 if (!destino.Key.Publico) { continue; }
 
-                <div class="row mb-4 border rounded">
-                    <div class="col-md-4 p-0">
+            <div class="row mb-4 border rounded">
+                <div class="col-md-4 p-0">
 
-                        <div class="media-img  position-relative">
+                    <div class="media-img  position-relative">
 
-                            <div id="gallery-photo-slider-@destino.Key.Id" class="owl-carousel owl-theme gallery-photo-slider mowl-@destino.Key.Id mb-6" data-number="owl-@destino.Key.Id" style="width: 291px; height: 212px;">
-                                @foreach (Servicios item in destino.Value)
-                                {
-                                    <div class="item" data-hash="@destino.Key.Id-owl-@item.Id">
-                                        <img class="lazyestload" style="width: 291px; height: 212px;" data-src="@item.weburl" src="@item.weburl" alt="image">
-                                    </div>
-                                }
-                            </div>
-
-                            <div class="owl-slider-tabs position-absolute">
-                                <ul class="list-unstyled d-flex mb-0">
-                                    @foreach (Servicios item in destino.Value)
-                                    {
-                                        int counter = 1;
-
-                                        <li class="">
-                                            <a class="one slidetabs active" href="#@destino.Key.Id-owl-@item.Id">
-                                                <img class="lazyestload" data-src="@item.weburl" src="@item.weburl" alt="img" style="width: 85px">
-                                            </a>
-                                        </li>
-
-                                        counter++;
-                                        if (counter > 3)
-                                        {
-                                            break;
-                                        }
-
-                                    }
-                                </ul>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6 mt-2 ">
-                        <div class="row">
-                            <h3>@destino.Key.Nombre</h3><br />
+                        <div id="gallery-photo-slider-@destino.Key.Id" class="owl-carousel owl-theme gallery-photo-slider mowl-@destino.Key.Id mb-6" data-number="owl-@destino.Key.Id" style="width: 291px; height: 212px;">
                             @foreach (Servicios item in destino.Value)
                             {
-                                <div class="col-md-12 ">
-                                    <h4>
-                                        <a class="media-title" href=" @Url.Action("Details", "Atracciones", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
-                                    </h4>
+                                <div class="item" data-hash="@destino.Key.Id-owl-@item.Id">
+                                    <img class="rounded-left img-fluid  w-100 position-relative imgIndex" style="width: 500px; height: 240px;" data-src="@item.weburl" src="@item.weburl" alt="image">
                                 </div>
                             }
                         </div>
 
+                        <div class="owl-slider-tabs position-absolute">
+                            <ul class="list-unstyled d-flex mb-0">
+                                @foreach (Servicios item in destino.Value)
+                                {
+                                    int counter = 1;
+
+                                    <li class="">
+                                        <a class="one slidetabs active" href="#@destino.Key.Id-owl-@item.Id">
+                                            <img class="lazyestload" data-src="@item.weburl" src="@item.weburl" alt="img" style="width: 85px">
+                                        </a>
+                                    </li>
+
+                                    counter++;
+                                    if (counter > 3)
+                                    {
+                                        break;
+                                    }
+
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2 ">
+                    <div class="row">
+                        <h3>@destino.Key.Nombre</h3><br />
+                        @foreach (Servicios item in destino.Value)
+                        {
+                            <div class="col-md-12 ">
+                                <h4>
+                                    <a class="media-title" href=" @Url.Action("Details", "Atracciones", new { id = item.Id })">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                                </h4>
+                            </div>
+                        }
                     </div>
 
-                    <div class="col-md-2  pr-0  ">
-                        <div class="bg-primary text-center p-3 view-details rounded h-100 ">
+                </div>
 
-
+                <div class="col-lg-2 bg-primary  mt-0 rounded">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-lg-12 align-self-center p-4">
                             <div>
-
-                                <a href=" @Url.Action("Show", "Rutas", new { id = destino.Key.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
+                                <a href=" @Url.Action("Details", "Hospedajes", new {id = destino.Key.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Detalle</a>
                             </div>
                             @if (@ViewBag.Message == "Confirmado")
                             {
                                 <div>
-                                    <a href=" @Url.Action("Delete", "Rutas", new { id = destino.Key.Id  })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Eliminar</a>
+                                    <a href=" @Url.Action("Delete", "Hospedajes", new { id = destino.Key.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Eliminar</a>
                                 </div>
 
                                 <div>
-
-                                    <a href=" @Url.Action("Edit", "Rutas", new { id = destino.Key.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Editar</a>
+                                    <a href=" @Url.Action("Edit", "Hospedajes", new { id = destino.Key.Id })" class="btn btn-xs btn-block btn-outline-white btn-booking text-uppercase mb-2">Editar</a>
                                 </div>
                             }
                         </div>
                     </div>
+
                 </div>
+            </div>
             }
-            }
+            
         </div>
     </div>
 </div>

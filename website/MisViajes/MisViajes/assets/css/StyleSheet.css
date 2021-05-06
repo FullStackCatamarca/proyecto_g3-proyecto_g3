@@ -191,16 +191,24 @@
 
 }
 
+
+
+
 #mapid {
-    width: 555px;
-    height: 400px;
-   
+    width: 590px;
+    height: 446px;
 }
 
+
 .descripcion_serv {
-    
-    height: 100px;
+   
+    height: 150px;
     overflow-y: scroll;
+}
+
+.imgIndex{
+    width:max-content;
+    height:250px;
 }
 
 

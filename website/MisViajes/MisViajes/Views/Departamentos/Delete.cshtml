@@ -1,44 +1,86 @@
 ﻿@model MisViajes.Models.Departamentos
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar";
 }
 
-<h2>Delete</h2>
 
-<h3>Estas seguro de querer Eliminiar?</h3>
-<div>
-    <h4>Departamentos</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Provincia.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Provincia.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class=btn  btn-primary d-lg-inline-block text-white" /> |
-            @Html.ActionLink("Volver a la Lista", "Index")
+<div class="main-wrapper element-title">
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken"
+             style="background-image: url(@Url.Content("~/assets/img/pages/page-title-bg4.jpg"));">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">@ViewBag.Title</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
-</div>
+    </section>
+
+    <!-- ====================================
+    ———	CONTACT INFO SECTION
+    ===================================== -->
 
 
-@section Scripts{}
+    <section class="">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-11 col-lg-10 col-xl-10">
+
+
+                    <h3 class="text-danger">¿Estás seguro que quieres eliminar el Departamento (@Html.DisplayFor(model => model.Nombre))?</h3>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Provincia.Nombre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Provincia.Nombre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Nombre)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Eliminar" class="btn  btn-danger d-lg-inline-block text-white" />
+                            </div>
+                        }
+                        <div class="row mb-4 ">
+                            <div class="col-12 d-flex justify-content-end">
+                                <a href="@Url.Action("Index")" class="btn  btn-primary d-lg-inline-block text-white">
+                                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                    Volver
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- element wrapper ends -->
+
+
+    @section Scripts{}
